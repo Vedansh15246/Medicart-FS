@@ -1,0 +1,171 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 3000;
+}
+
+.modal-box {
+  width: 520px;
+  max-width: 90%;
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.category {
+  color: #1f8a46;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.details {
+  max-height: 220px;
+  overflow-y: auto;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.add-cart-btn {
+  width: 100%;
+  background: #2fbf5d;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.add-cart-btn:hover {
+  background: #1f8a46;
+}
+.modal-qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.qty-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #2fbf5d;
+  background: #f0fdf4; /* light green */
+  color: #2fbf5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background: #2fbf5d;
+  color: white;
+}
+
+.qty-count {
+  font-weight: 700;
+  font-size: 16px;
+  color: #374151;
+  min-width: 24px;
+  text-align: center;
+}
+.prescription-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.prescription-banner svg {
+  color: #b91c1c;
+}
+.prescription-banner {
+  background-color: #fff1f0;
+  color: #cf1322;
+  border: 1px solid #ffa39e;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.expiry-warning-box {
+  background-color: #fffbe6;
+  color: #856404;
+  border: 1px solid #ffe58f;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.expiry-warning-box svg {
+  color: #faad14;
+  font-size: 1.2rem;
+}
+
+.stock-count {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.out-of-stock-msg {
+    color: #d9534f;
+    font-weight: bold;
+    background: #fdf2f2;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}

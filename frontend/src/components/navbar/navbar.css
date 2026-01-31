@@ -1,0 +1,271 @@
+/* ===============================
+   GLOBAL BRAND VARIABLES
+================================ */
+:root {
+  --green-primary: #2fbf5d;
+  --green-dark: #1f8a46;
+  --green-soft: #e9f7ef;
+
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+
+  --border-light: #e5e7eb;
+  --bg-white: #ffffff;
+}
+
+/* ===============================
+   NAVBAR CONTAINER
+================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 10px;
+  height: 72px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+/* ===============================
+   BRAND LOGO (WORDMARK)
+================================ */
+.brand {
+  display: flex;
+  flex-direction: column;   /* ✅ Stack text + underline vertically */
+  align-items: flex-start;  /* ✅ Keep left aligned */
+  cursor: pointer;
+}
+
+.brand-text {
+  display: flex;            /* ✅ Medi + Cart side by side */
+  gap: 4px;                 /* ✅ Small spacing */
+}
+
+.brand-main,
+.brand-accent {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1;
+}
+
+.brand-main {
+  color: var(--text-dark);
+}
+
+.brand-accent {
+  color: var(--green-primary);
+}
+
+.brand-underline {
+  width: 53%;              /* ✅ Stretch under both words */
+  height: 3px;
+  margin-top: 4px;
+  background: linear-gradient(90deg, var(--green-primary), var(--green-dark));
+  border-radius: 999px;
+}
+
+
+/* ===============================
+   SEARCH BAR (ENTERPRISE STYLE)
+================================ */
+.navbar-search {
+  flex: 1;
+  max-width: 600px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 0 60px;
+  padding: 12px 18px;
+
+  background: var(--green-soft);
+  border-radius: 14px;
+
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.navbar-search:focus-within {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(47, 191, 93, 0.25);
+}
+
+.search-icon {
+  color: var(--green-dark);
+  font-size: 14px;
+}
+
+.navbar-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.navbar-search input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ===============================
+   RIGHT ACTIONS
+================================ */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+/* CART */
+.cart-wrapper {
+  position: relative;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.cart-wrapper:hover {
+  color: var(--green-primary);
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+
+  min-width: 18px;
+  height: 18px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--green-primary);
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  border-radius: 999px;
+}
+
+/* PROFILE */
+.profile-icon {
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.profile-icon:hover {
+  color: var(--green-primary);
+}
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 35px; /* below the icon */
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.profile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.profile-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* ===============================
+   REFINED RESPONSIVE STRATEGY
+================================ */
+
+/* Tablet & Small Desktop (Under 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 20px;
+    gap: 15px;
+  }
+  .navbar-search {
+    margin: 0 10px;
+  }
+}
+
+/* Mobile (Under 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;           /* Allow navbar to grow vertically */
+    flex-wrap: wrap;        /* Allow items to wrap to a second line */
+    padding: 12px 15px;
+    gap: 10px;
+  }
+
+  /* Keep Logo and Actions on the top row */
+  .brand {
+    order: 1;
+  }
+
+  .navbar-actions {
+    order: 2;
+    gap: 12px;             /* Tighten spacing between icons/buttons */
+  }
+
+  /* Push Search Bar to a new row at the bottom */
+  .navbar-search {
+    order: 3;
+    flex: 0 0 100%;        /* Force search to take full width */
+    margin: 8px 0 0 0;     /* Add a little top margin */
+    max-width: 100%;
+  }
+
+  /* Make Login/Register buttons smaller instead of hiding them */
+  .navbar-actions .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    white-space: nowrap;    /* Prevent text from wrapping inside the button */
+  }
+
+  .brand-main, .brand-accent {
+    font-size: 18px;
+  }
+}
+
+/* Extra Small Mobile (Under 400px) */
+@media (max-width: 400px) {
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  /* If it's still too tight, we hide the text but keep the buttons visible as small pills */
+  .navbar-actions .btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .cart-wrapper, .profile-icon {
+    transform: scale(0.9); /* Slightly shrink icons */
+  }
+}

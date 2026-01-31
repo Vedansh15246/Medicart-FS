@@ -1,0 +1,243 @@
+:root {
+  --green-500: #2fbf5d;
+  --green-700: #1f8a46;
+  --green-100: #e9f7ef;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e9f7ef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#2fbf5d, #1f8a46);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f8a46;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2fbf5d #e9f7ef;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #edecec;
+  color: var(--text-dark);
+}
+
+/* PAGE */
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--green-500), var(--green-700));
+  color: white;
+  padding: 48px 32px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(47, 191, 93, 0.25);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.hero span {
+  color: #eafff2;
+}
+
+.hero p {
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+/* SEARCH */
+.search-box {
+  display: flex;
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-box button {
+  background: var(--green-700);
+  color: white;
+  border: none;
+  padding: 0 28px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #166f38;
+}
+
+/* CATEGORY PILLS */
+.categories {
+  display: flex;
+  gap: 12px;
+  margin: 28px 0;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: var(--green-100);
+  color: var(--green-700);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pill:hover {
+  background: var(--green-500);
+  color: white;
+}
+
+/* CONTENT */
+.content {
+  margin-top: 20px;
+}
+
+.status {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.status.error {
+  color: red;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+/* ... Keep your existing CSS variables and scrollbar styles above ... */
+
+/* PAGE CONTAINER */
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* CATEGORY PILLS - Responsive Fix */
+.categories {
+  display: flex;
+  gap: 12px;
+  margin: 28px 0;
+  overflow-x: auto; /* Allow horizontal scroll on mobile */
+  padding-bottom: 10px; /* Space for scrollbar if it appears */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.categories::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.pill {
+  background: var(--green-100);
+  color: var(--green-700);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  white-space: nowrap; /* Prevent text from wrapping inside pill */
+}
+
+.pill.active {
+  background: var(--green-500);
+  color: white;
+}
+
+/* GRID - Smarter Auto-fit */
+.grid {
+  display: grid;
+  /* minmax(240px) might be too wide for small phones, we adjust it in media queries */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* ===============================
+   RESPONSIVE MEDIA QUERIES
+================================ */
+
+/* Tablet (Under 768px) */
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+  }
+
+  .grid {
+    /* Two columns on tablets */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile (Under 480px) */
+@media (max-width: 480px) {
+  .page {
+    padding: 12px;
+  }
+
+  /* One column on small phones for better readability */
+  .grid {
+    grid-template-columns: 1fr; 
+    gap: 16px;
+  }
+
+  .pill {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .categories {
+    margin: 15px 0;
+    /* This ensures the scroll starts from the very edge of the screen */
+    margin-left: -12px; 
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

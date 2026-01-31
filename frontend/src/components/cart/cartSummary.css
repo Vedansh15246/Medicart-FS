@@ -1,0 +1,24 @@
+.cart-summary {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: #2fbf5d;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
+
+.cart-summary button {
+  background: white;
+  color: #2fbf5d;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}

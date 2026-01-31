@@ -1,0 +1,95 @@
+/* CheckoutPage.css */
+.checkout-grid {
+  display: grid;
+  /* Make the form take available space, keep summary at a fixed readable width */
+  grid-template-columns: 1fr 400px; 
+  gap: 30px;
+  align-items: start;
+}
+
+.page-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--text-main);
+}
+
+.form-group { margin-bottom: 1.5rem; }
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: #fcfcfc;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: white;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.summary-total {
+  border-top: 2px solid var(--border-color);
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 20px 0;
+}
+
+.btn-primary {
+  width: 100%;
+  background:  red;
+  color: white;
+  padding: 4px;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background:rgb(151, 11, 11);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+  .checkout-grid {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+  }
+}

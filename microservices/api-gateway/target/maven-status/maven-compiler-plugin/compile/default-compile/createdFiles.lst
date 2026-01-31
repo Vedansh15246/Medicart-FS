@@ -1,0 +1,3 @@
+com\medicart\gateway\config\GatewayConfig.class
+com\medicart\gateway\config\SecurityConfig.class
+com\medicart\gateway\ApiGatewayApplication.class

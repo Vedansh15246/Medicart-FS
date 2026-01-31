@@ -1,0 +1,125 @@
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { addressService } from "../../api/orderService";
+import AddressForm from './AddressForm';
+import AddressList from './AddressList';
+import Navbar from '../../components/navbar/Navbar';
+
+const AddressPage = () => {
+  const [addresses, setAddresses] = useState([]);
+  const [editing, setEditing] = useState(null);
+  const [selectedId, setSelectedId] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const fetchAddresses = async () => {
+    setLoading(true);
+    try {
+      const data = await addressService.getAddresses();
+      setAddresses(data);
+      
+      // Select the default address automatically
+      const def = data.find(a => a.isDefault === true);
+      if (def) setSelectedId(def.id);
+      else if (data.length > 0) setSelectedId(data[0].id);
+    } catch (err) {
+      console.error("Error fetching addresses", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAddresses();
+  }, []);
+
+  const handleSetDefault = async (id) => {
+    try {
+      // We call a specific endpoint or PUT the whole object
+      const target = addresses.find(a => a.id === id);
+      await addressService.updateAddress(id, { ...target, isDefault: true });
+      fetchAddresses(); // Refresh to see changes
+    } catch (err) {
+      alert("Failed to update default address");
+    }
+  };
+
+  const handleSave = async (payload) => {
+    try {
+      if (editing) {
+        await addressService.updateAddress(editing, payload);
+      } else {
+        await addressService.createAddress(payload);
+      }
+      setEditing(null);
+      fetchAddresses();
+    } catch (err) {
+      alert("Save failed");
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this address?")) return;
+    try {
+      await addressService.deleteAddress(id);
+      fetchAddresses();
+    } catch (err) {
+      alert("Delete failed");
+    }
+  };
+
+  return (
+    <div>
+      <Navbar />
+      <div style={{ padding: '32px', maxWidth: '1200px', margin: '0 auto' }}>
+        <button onClick={() => navigate("/cart")} style={pageStyles.backBtn}>
+          ← Back to Cart
+        </button>
+        
+        <div style={pageStyles.layout}>
+          <div style={pageStyles.formSection}>
+            <h3>{editing ? 'Edit Address' : 'Add New Address'}</h3>
+            <AddressForm 
+              initialValues={addresses.find(a => a.id === editing)} 
+              onSubmit={handleSave} 
+              onCancel={() => setEditing(null)} 
+            />
+          </div>
+
+          <div style={pageStyles.listSection}>
+            <h3>Saved Addresses</h3>
+            {loading ? <p>Loading...</p> : (
+              <AddressList 
+                addresses={addresses}
+                selectedId={selectedId}
+                onSelect={setSelectedId}
+                onEdit={setEditing}
+                onDelete={handleDelete}
+                onSetDefault={handleSetDefault}
+              />
+            )}
+            
+            <button 
+              disabled={!selectedId} 
+              onClick={() => navigate('/payment')}
+              style={{
+                ...pageStyles.deliverBtn,
+                opacity: selectedId ? 1 : 0.5
+              }}
+            >
+              Deliver to Selected Address
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const pageStyles = {
+  layout: { display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '40px', marginTop: '20px' },
+  backBtn: { background: 'none', border: '1px solid #2fbf5d', color: '#2fbf5d', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' },
+  deliverBtn: { marginTop: '20px', width: '100%', padding: '14px', background: '#2fbf5d', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '16px' }
+};
+
+export default AddressPage;
