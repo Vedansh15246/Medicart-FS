@@ -1,0 +1,268 @@
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Header */
+.card-header-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.icon-wrap {
+  width: 70px;
+  height: 70px;
+  background: var(--green-100);
+  color: var(--green-700);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+/* Body */
+.card-body {
+  margin: 12px 0;
+}
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.card-footer-1 {
+  margin-top: auto;
+}
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn-cart,
+.btn-outline {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-cart {
+  background: #2fbf5d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+ 
+}
+.btn-cart:hover {
+  background: #26a654;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid #9ca3af;
+  color: #374151;
+}
+.btn-outline:hover {
+  border-color: #2fbf5d;
+  color: #2fbf5d;
+  background: #f0fdf4;
+}
+
+/* Out of Stock */
+.out-of-stock {
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  border: 1px dashed #d1d5db;
+}
+
+/* Quantity Controls */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+.qty-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #2fbf5d;
+  background: #f0fdf4;
+  color: #2fbf5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.qty-controls button:hover {
+  background: #2fbf5d;
+  color: #fff;
+}
+.qty-controls span {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #374151;
+}
+
+
+
+
+/* ===========================
+   OUT OF STOCK (OOS) LABEL
+=========================== */
+.label-oos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Colors: Professional Deep Red */
+  background-color: #fef2f2; /* Very light red background */
+  color: #991b1b;            /* Deep, readable red text */
+  border: 1px solid #fecaca; /* Soft red border */
+  
+  /* Typography */
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  
+  /* Sizing */
+  padding: 4px 10px;
+  border-radius: 9999px;    /* "Pill" shape */
+  white-space: nowrap;
+  
+  /* Subtle shadow for depth */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Optional: Pulse effect to catch attention */
+.label-oos::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #dc2626;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* ... Keep your existing .card and .card-header-1 styles ... */
+
+/* Improved Body Styling */
+.card-body {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* PROFESSIONAL STOCK INDICATOR */
+.stock-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0fdf4; /* Very light green */
+  color: #16a34a;      /* Forest green */
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid #dcfce7;
+}
+
+.stock-icon {
+  font-size: 10px;
+}
+
+/* EXPIRED LABEL */
+.label-expired {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4b5563; /* Dark Slate for expired */
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* OUT OF STOCK LABEL (Full width version for card footer) */
+.label-oos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px dashed #fda4af;
+  padding: 10px;
+  width: 100%; /* Spans full card width */
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Removes the pulse dot for the card footer version to keep it clean */
+.label-oos::before {
+  display: none; 
+}
+
+/* QTY LIMIT REACHED */
+.disabled-btn {
+  opacity: 0.3;
+  cursor: not-allowed !important;
+  border-color: #d1d5db !important;
+  color: #9ca3af !important;
+}

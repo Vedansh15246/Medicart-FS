@@ -1,0 +1,114 @@
+2026-02-02 18:11:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-02-02 18:11:44 [main] INFO  c.m.auth.AuthServiceApplication - Starting AuthServiceApplication using Java 24.0.1 with PID 28544 (C:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\auth-service\target\classes started by 2460603 in C:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\auth-service)
+2026-02-02 18:11:44 [main] DEBUG c.m.auth.AuthServiceApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-02-02 18:11:44 [main] INFO  c.m.auth.AuthServiceApplication - The following 1 profile is active: "dev"
+2026-02-02 18:11:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-02 18:11:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 169 ms. Found 2 JPA repository interfaces.
+2026-02-02 18:11:46 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=dd5223f8-7271-3ff5-b452-2fcc3425b803
+2026-02-02 18:11:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-02 18:11:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-02 18:11:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-02 18:11:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-02-02 18:11:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-02 18:11:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2205 ms
+2026-02-02 18:11:47 [main] DEBUG c.m.a.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-02 18:11:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-02 18:11:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-02-02 18:11:47 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-02 18:11:47 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-02 18:11:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-02 18:11:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65d6640
+2026-02-02 18:11:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-02 18:11:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-02 18:11:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-02-02 18:11:48 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-02 18:11:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-02 18:11:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-02 18:11:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-02 18:11:49 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fae3a1da-a303-49d3-bd56-8f3c42b599f2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-02 18:11:49 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-02 18:11:49 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 15 mappings in 'requestMappingHandlerMapping'
+2026-02-02 18:11:49 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-02 18:11:49 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/me, /api/auth/me] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-02 18:11:49 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-02 18:11:49 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [PUT, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-02 18:11:50 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-02-02 18:11:50 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-02 18:11:50 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-02 18:11:50 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-02-02 18:11:50 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-02 18:11:50 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-02-02 18:11:50 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-02-02 18:11:50 [main] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/
+2026-02-02 18:11:50 [main] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-02-02 18:11:50 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-02 18:11:50 [main] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-02-02 18:11:50 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1770036110956 with initial instances count: 6
+2026-02-02 18:11:50 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application AUTH-SERVICE with eureka with status UP
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1770036110966, current=UP, previous=STARTING]
+2026-02-02 18:11:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-02 18:11:50 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081: registering service...
+2026-02-02 18:11:50 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8761/eureka/apps/AUTH-SERVICE
+2026-02-02 18:11:50 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1770036110978, current=DOWN, previous=UP]
+2026-02-02 18:11:50 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-02-02 18:11:50 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-02 18:11:50 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-02 18:11:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-02 18:11:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-02 18:11:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-02-02 18:11:50 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Writing [InstanceInfo [instanceId = auth-service:8081, appName = AUTH-SERVICE, hostName = localhost, status = DOWN, ipAddr = 10.96.91.62, port = 8081, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@6d0d5147] as "application/json"
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Response 204 NO_CONTENT
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - registration status: 204
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081: registering service...
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8761/eureka/apps/AUTH-SERVICE
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Writing [InstanceInfo [instanceId = auth-service:8081, appName = AUTH-SERVICE, hostName = localhost, status = DOWN, ipAddr = 10.96.91.62, port = 8081, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@6d0d5147] as "application/json"
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Response 204 NO_CONTENT
+2026-02-02 18:11:51 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - registration status: 204
+2026-02-02 18:11:51 [main] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-02-02 18:11:51 [main] DEBUG o.s.web.client.RestTemplate - HTTP DELETE http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081
+2026-02-02 18:11:51 [main] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2026-02-02 18:11:51 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-02 18:11:51 [main] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - deregister  status: 200
+2026-02-02 18:11:51 [main] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-02-02 18:11:51 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-02 18:11:51 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+

@@ -1,0 +1,110 @@
+{
+  "medicines": [
+    {
+      "id": "5",
+      "sku": "CET-10",
+      "name": "Cetirizine 1000mg",
+      "category": "Tablet",
+      "price": 25,
+      "requires_rx": true,
+      "inStock": true
+    },
+    {
+      "id": "6",
+      "sku": "LEV-5",
+      "name": "Levocetirizine 5mg",
+      "category": "Tablet",
+      "price": "300",
+      "requires_rx": false,
+      "inStock": true
+    },
+    {
+      "id": "7",
+      "sku": "VITC-500",
+      "name": "Vitamin C 500mg",
+      "category": "Tablet",
+      "price": 60,
+      "requires_rx": false,
+      "inStock": true
+    },
+    {
+      "id": "8",
+      "sku": "ORS-POW",
+      "name": "ORS Powder",
+      "category": "Powder",
+      "price": 20,
+      "requires_rx": false,
+      "inStock": true
+    },
+    {
+      "id": "2",
+      "sku": "INS-GLAR",
+      "name": "Insulin Glargine",
+      "category": "Injection",
+      "price": 450,
+      "requires_rx": true,
+      "inStock": true
+    },
+    {
+      "id": "10",
+      "sku": "PCM-SYP",
+      "name": "Paracetamol Syrup",
+      "category": "Syrup",
+      "price": 55,
+      "requires_rx": false,
+      "inStock": true
+    },
+    {
+      "id": "1",
+      "sku": "PCM-650",
+      "name": "Paracetamol 650mg",
+      "category": "Capsule",
+      "price": 30,
+      "requires_rx": false,
+      "inStock": true
+    },
+    {
+      "id": "865e",
+      "sku": "DOLO",
+      "name": "Dolo 650",
+      "category": "Tablet",
+      "price": "10",
+      "requires_rx": true,
+      "inStock": true
+    },
+    {
+      "id": "c973",
+      "sku": "jj",
+      "name": "h",
+      "category": "Tablet",
+      "price": "8",
+      "requires_rx": false,
+      "inStock": true
+    },
+    {
+      "id": "dab2",
+      "sku": "Pcm-900",
+      "name": "Dolo",
+      "category": "Tablet",
+      "price": "20",
+      "requires_rx": true,
+      "inStock": true
+    }
+  ],
+  "batches": [
+    {
+      "id": "2",
+      "medicineId": 1,
+      "batchNo": "BATCH-PCM-002",
+      "expiryDate": "2025-11-01",
+      "qtyAvailable": 80
+    },
+    {
+      "id": "ae30",
+      "medicineId": 10,
+      "batchNo": "PCM",
+      "expiryDate": "2026-02-17",
+      "qtyAvailable": "40"
+    }
+  ]
+}

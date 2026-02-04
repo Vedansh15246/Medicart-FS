@@ -1,0 +1,207 @@
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Badge Styles */
+.badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.badge.ok { background-color: #e6f4ea; color: #1e7e34; }       /* Green */
+.badge.warn { background-color: #fff3cd; color: #856404; }     /* Yellow */
+.badge.danger { background-color: #f8d7da; color: #721c24; }   /* Red */
+.badge.rx { background-color: #e0f2ff; color: #004085; }       /* Blue */
+.badge.secondary { background-color: #e9ecef; color: #495057; }/* Gray */
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sku { font-family: monospace; font-weight: bold; color: #666; }
+.no-data { text-align: center; padding: 40px; color: #999; }
+
+.table-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Handles responsiveness on small screens */
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Ensures table doesn't get too squashed */
+}
+
+.admin-table th, .admin-table td {
+  padding: 14px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-table th {
+  background-color: #f9fafb;
+  color: #4b5563;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Controls Styling */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px solid #f3f4f6;
+}
+
+.nav-arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2fbf5d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.nav-arrow:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.nav-arrow:not(:disabled):hover {
+  background: #1f8a46;
+}
+
+.page-indicator {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Badges & Buttons */
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge.ok { background: #dcfce7; color: #166534; }
+.badge.warn { background: #fef9c3; color: #854d0e; }
+.badge.danger { background: #fee2e2; color: #991b1b; }
+
+.actions { display: flex; gap: 8px; }
+.btn-edit { background: #eff6ff; color: #1d4ed8; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+.btn-delete { background: #fee2e2; color: #b91c1c; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+
+
+
+/* Container for the whole table section */
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Scrollable wrapper for mobile */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+}
+
+.admin-table {
+  min-width: 800px; /* Prevents squashing on mobile */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Pagination Controls */
+.table-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+@media (max-width: 768px) {
+  /* Move pagination to top of the table on mobile */
+  .table-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .table-controls {
+    order: -1; /* Jumps the "Navigator" to the top */
+    margin-top: 0;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .nav-arrow {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}

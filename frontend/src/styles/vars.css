@@ -1,0 +1,60 @@
+/* src/styles/vars.css */
+:root {
+  /* ===== PRIMARY GREEN PALETTE (50 → 700) ===== */
+  --color-primary-50: #e9f7ef;
+  --color-primary-100: #cbf0d8;
+  --color-primary-300: #6fe48f;
+  --color-primary-500: #2fbf5d; /* main brand green */
+  --color-primary-700: #21894b;
+
+  /* ===== WHITE & SURFACE COLORS ===== */
+  --color-white: #ffffff;
+  --color-surface: #f8faf8;        /* soft off-white background */
+  --color-surface-card: #ffffff;   /* pure white for cards */
+  --color-border: #e6efe8;         /* subtle green-tinted border */
+
+  /* ===== TEXT COLORS ===== */
+  --text-default: #1b2b23;         /* dark green-gray for body */
+  --text-muted: #6b726e;
+  --text-on-primary: #ffffff;      /* white text on green buttons */
+  --text-error: #d32f2f;
+
+  /* ===== SPACING SCALE (rem-based for accessibility) ===== */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+
+  /* ===== RADIUS & SHADOW ===== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* ===== Z-INDEX LAYERS ===== */
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+}
+
+/* ===== DARK MODE (optional future-proofing) ===== */
+/* .dark { */
+/*   --color-surface: #0f170f; */
+/*   --text-default: #e2e8e2; */
+/* } */
+
+/* ===== ACCESSIBILITY: High-contrast mode support ===== */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #000000;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}

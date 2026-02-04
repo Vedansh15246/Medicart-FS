@@ -1,0 +1,4 @@
+com\medicart\analytics\controller\ReportController.class
+com\medicart\analytics\controller\AnalyticsController.class
+com\medicart\analytics\AnalyticsServiceApplication.class
+com\medicart\analytics\config\WebSecurityConfig.class
