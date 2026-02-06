@@ -41,21 +41,6 @@ public class AuthService {
 
             log.info("✅ Email is available, creating new user");
             
-            // Get or create ROLE_USER (default role for new users)
-            com.medicart.auth.entity.Role role = roleRepository.findByName("ROLE_USER")
-                    .orElse(null);
-            
-            if (role == null) {
-                log.warn("⚠️ ROLE_USER not found - Creating it now");
-                role = new com.medicart.auth.entity.Role();
-                role.setName("ROLE_USER");
-                role.setDescription("Standard user role");
-                role = roleRepository.save(role);
-                log.info("✅ ROLE_USER created successfully");
-            } else {
-                log.info("✅ ROLE_USER found - Using existing role");
-            }
-            
             // Create new user
             User user = User.builder()
                     .email(request.getEmail())
@@ -63,7 +48,8 @@ public class AuthService {
                     .fullName(request.getFullName())
                     .phone(request.getPhone())
                     .isActive(true)
-                    .role(role)
+                    .role(roleRepository.findByName("ROLE_USER")
+                            .orElseThrow(() -> new RuntimeException("Role not found")))
                     .build();
 
             user = userRepository.save(user);

@@ -4,13 +4,9 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -110,73 +106,6 @@ public class BatchController {
         logSecurityContext("reduceBatchQuantity");
         
         service.reduceBatchQuantity(batchId, quantity);
-    }
-
-    /**
-     * Exception handler for database constraint violations
-     * Catches duplicate batch_number errors and returns proper error response
-     */
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ErrorResponse> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
-        log.error("❌ [BatchController] DATABASE CONSTRAINT VIOLATION");
-        log.error("   Error: {}", ex.getMessage());
-        
-        String errorMessage = "Database constraint violation";
-        
-        // Check if it's a duplicate batch_number error
-        if (ex.getMessage() != null && ex.getMessage().contains("Duplicate entry")) {
-            if (ex.getMessage().contains("UK7m5b87j08fvngd8ki2dwl93g6")) {
-                errorMessage = "❌ BATCH NUMBER ALREADY EXISTS for this medicine! " +
-                        "Cannot create duplicate batch numbers for the same medicine. " +
-                        "Please use a different batch number.";
-            } else {
-                errorMessage = "❌ DUPLICATE ENTRY: " + ex.getMessage();
-            }
-        }
-        
-        log.error("   Returning: 400 Bad Request with message: {}", errorMessage);
-        
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorResponse(
-                    400,
-                    errorMessage,
-                    "Please check your batch data and try again"
-                ));
-    }
-
-    /**
-     * Generic exception handler for other runtime exceptions
-     */
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex) {
-        log.error("❌ [BatchController] RUNTIME EXCEPTION", ex);
-        
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorResponse(
-                    400,
-                    ex.getMessage(),
-                    "Request processing failed"
-                ));
-    }
-
-    /**
-     * Error response DTO
-     */
-    public static class ErrorResponse {
-        public int status;
-        public String message;
-        public String details;
-
-        public ErrorResponse(int status, String message, String details) {
-            this.status = status;
-            this.message = message;
-            this.details = details;
-        }
-
-        public int getStatus() { return status; }
-        public String getMessage() { return message; }
-        public String getDetails() { return details; }
+        log.debug("✅ [PUT /batches/{}/reduce-quantity] RESPONSE SENT", batchId);
     }
 }
