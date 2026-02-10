@@ -1,54 +1,103 @@
-
 import React from 'react';
+import './AddressList.css';
 
 export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete, onSetDefault }) => {
-  if (!addresses || addresses.length === 0) return null;
+  if (!addresses || addresses.length === 0) {
+    return (
+      <div className="empty-state">
+        <div className="empty-state-icon">�</div>
+        <div className="empty-state-text">No saved addresses yet. Add your first address above.</div>
+      </div>
+    );
+  }
 
   return (
-    <div style={styles.list}>
+    <div className="address-list">
       {addresses.map(a => (
-        <div key={a.id} style={{ ...styles.card, borderColor: selectedId === a.id ? '#007bff' : '#eee' }}>
-          <div style={styles.header}>
-            <div style={styles.label}>{a.label}</div>
-            {a.isDefault && <div style={styles.tagDefault}>Default</div>}
+        <div 
+          key={a.id} 
+          className={`address-card ${selectedId === a.id ? 'selected' : ''}`}
+          onClick={() => onSelect(a.id)}
+        >
+          <div className="card-header">
+            <div className="card-label-wrapper">
+              <div className="card-label">
+                {a.label || 'Address'}
+              </div>
+              {a.isDefault && (
+                <div className="tag-default">
+                  Default
+                </div>
+              )}
+            </div>
           </div>
 
-          <div style={styles.body} onClick={() => onSelect(a.id)}>
-            <strong>{a.name}</strong>
-            <div style={{ color: '#555' }}>{a.phone}</div>
-            <div>{a.addressLine1}</div>
-            {a.addressLine2 && <div>{a.addressLine2}</div>}
-            <div>{a.city}, {a.state} - {a.pincode}</div>
+          <div className="card-body">
+            <div className="info-row">
+              <div className="info-item">
+                <span className="info-label">Name:</span>
+                <span className="info-value">{a.name}</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">Phone:</span>
+                <span className="info-value">{a.phone}</span>
+              </div>
+            </div>
+            <div className="info-row">
+              <div className="info-item full">
+                <span className="info-label">Address:</span>
+                <span className="info-value">
+                  {a.streetAddress}
+                  {a.addressLine1 && `, ${a.addressLine1}`}
+                  {a.addressLine2 && `, ${a.addressLine2}`}
+                </span>
+              </div>
+            </div>
+            <div className="info-row">
+              <div className="info-item">
+                <span className="info-label">City:</span>
+                <span className="info-value">{a.city}</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">State:</span>
+                <span className="info-value">{a.state}</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">PIN:</span>
+                <span className="info-value">{a.postalCode || a.pincode}</span>
+              </div>
+            </div>
           </div>
 
-          <div style={styles.actions}>
-            <button style={styles.smallBtn} onClick={() => onEdit(a.id)}>Edit</button>
-            <button style={styles.smallBtn} onClick={() => onDelete(a.id)}>Delete</button>
-            {!a.isDefault && (
-              <button style={styles.smallBtn} onClick={() => onSetDefault(a.id)}>Set Default</button>
-            )}
-            {/* <button
-              style={{ ...styles.smallBtn, background: selectedId === a.id ? 'rgb(47, 191, 93)' : '#eee', color: selectedId === a.id ? '#fff' : 'rgb(47, 191, 93)' }}
-              onClick={() => onSelect(a.id)}
+          <div className="card-actions" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="action-btn edit" 
+              onClick={() => onEdit(a.id)}
+              title="Edit this address"
             >
-              Deliver Here
-            </button> */}
+              Edit
+            </button>
+            <button 
+              className="action-btn delete" 
+              onClick={() => onDelete(a.id)}
+              title="Delete this address"
+            >
+              Delete
+            </button>
+            {!a.isDefault && (
+              <button 
+                className="action-btn default" 
+                onClick={() => onSetDefault(a.id)}
+                title="Set as default address"
+              >
+                Set Default
+              </button>
+            )}
           </div>
         </div>
       ))}
     </div>
   );
-};
-
-const styles = {
-  list: { display: 'grid', gridTemplateColumns: '1fr', gap: 12 },
-  card: { border: '2px solid #eee', borderRadius: 8, padding: 12, background: '#fff' },
-  header: { display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 },
-  label: { fontSize: 12, padding: '2px 6px', borderRadius: 4, background: '#f0f3ff', color: '#3b4cca' },
-  tagDefault: { fontSize: 12, padding: '2px 6px', borderRadius: 4, background: '#e6ffed', color: '#067d40' },
-  body: { cursor: 'pointer', marginBottom: 8 },
-  actions: { display: 'flex', gap: 8, flexWrap: 'wrap' },
-  smallBtn: { padding: '6px 10px', borderRadius: 6, border: 'none', background: '#eee', cursor: 'pointer' },
 };
 
 export default AddressList;

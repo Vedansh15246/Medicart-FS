@@ -1,5 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
+import './AddressForm.css';
 
 const initial = {
   name: '',
@@ -14,13 +14,15 @@ const initial = {
   isDefault: false,
 };
 
- const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
+const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
   const [form, setForm] = useState(initial);
   const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
 
   useEffect(() => {
     setForm(initialValues ? { ...initial, ...initialValues } : initial);
     setErrors({});
+    setTouched({});
   }, [initialValues]);
 
   const validate = () => {
@@ -38,6 +40,16 @@ const initial = {
 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
+    if (touched[field]) {
+      // Validate on change if field was touched
+      const tempErrors = { ...errors };
+      delete tempErrors[field];
+      setErrors(tempErrors);
+    }
+  };
+
+  const handleBlur = (field) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
   };
 
   const handleSubmit = (e) => {
@@ -45,189 +57,214 @@ const initial = {
     if (!validate()) return;
     const payload = { ...form, isDefault: !!form.isDefault };
     onSubmit && onSubmit(payload);
-    // Reset only if you’re adding a new address (not editing)
-    if (!initialValues) setForm(initial);
+    // Reset only if you're adding a new address (not editing)
+    if (!initialValues) {
+      setForm(initial);
+      setTouched({});
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={styles.form} noValidate>
-      {/* Name, Street Address & Phone */}
-      <div style={styles.row}>
-        <div style={styles.field}>
-          <label htmlFor="name" style={styles.label}>Full Name</label>
-          <input
-            id="name"
-            type="text"
-            value={form.name}
-            onChange={e => handleChange('name', e.target.value)}
-            placeholder="e.g., Shahid"
-            autoComplete="name"
-            style={styles.input}
-          />
-          {errors.name && <span style={styles.error}>{errors.name}</span>}
-        </div>
-        <div style={styles.field}>
-          <label htmlFor="streetAddress" style={styles.label}>Street Address</label>
-          <input
-            id="streetAddress"
-            type="text"
-            value={form.streetAddress}
-            onChange={e => handleChange('streetAddress', e.target.value)}
-            placeholder="House no., street name"
-            autoComplete="street-address"
-            style={styles.input}
-          />
-          {errors.streetAddress && <span style={styles.error}>{errors.streetAddress}</span>}
-        </div>
-        <div style={styles.field}>
-          <label htmlFor="phone" style={styles.label}>Phone</label>
-          <input
-            id="phone"
-            type="tel"
-            value={form.phone}
-            onChange={e => handleChange('phone', e.target.value)}
-            placeholder="10 digits"
-            autoComplete="tel"
-            style={styles.input}
-          />
-          {errors.phone && <span style={styles.error}>{errors.phone}</span>}
-        </div>
-      </div>
-
-      {/* Address Line 1 & 2 */}
-      <div style={styles.row}>
-        <div style={styles.field}>
-          <label htmlFor="addressLine1" style={styles.label}>Address Line 1</label>
-          <input
-            id="addressLine1"
-            type="text"
-            value={form.addressLine1}
-            onChange={e => handleChange('addressLine1', e.target.value)}
-            placeholder="Apartment, suite, etc."
-            autoComplete="address-line1"
-            style={styles.input}
-          />
-          {errors.addressLine1 && <span style={styles.error}>{errors.addressLine1}</span>}
-        </div>
-        <div style={styles.field}>
-          <label htmlFor="addressLine2" style={styles.label}>Address Line 2 (optional)</label>
-          <input
-            id="addressLine2"
-            type="text"
-            value={form.addressLine2}
-            onChange={e => handleChange('addressLine2', e.target.value)}
-            placeholder="Area, landmark"
-            autoComplete="address-line2"
-            style={styles.input}
-          />
-        </div>
-      </div>
-
-      {/* City, State, Postal Code */}
-      <div style={styles.row}>
-        <div style={styles.field}>
-          <label htmlFor="city" style={styles.label}>City</label>
-          <input
-            id="city"
-            type="text"
-            value={form.city}
-            onChange={e => handleChange('city', e.target.value)}
-            placeholder="e.g., Pune"
-            autoComplete="address-level2"
-            style={styles.input}
-          />
-          {errors.city && <span style={styles.error}>{errors.city}</span>}
-        </div>
-        <div style={styles.field}>
-          <label htmlFor="state" style={styles.label}>State</label>
-          <input
-            id="state"
-            type="text"
-            value={form.state}
-            onChange={e => handleChange('state', e.target.value)}
-            placeholder="e.g., MH"
-            autoComplete="address-level1"
-            style={styles.input}
-          />
-          {errors.state && <span style={styles.error}>{errors.state}</span>}
-        </div>
-        <div style={styles.field}>
-          <label htmlFor="postalCode" style={styles.label}>PIN Code</label>
-          <input
-            id="postalCode"
-            type="text"
-            inputMode="numeric"
-            value={form.postalCode}
-            onChange={e => handleChange('postalCode', e.target.value)}
-            placeholder="6 digits"
-            autoComplete="postal-code"
-            style={styles.input}
-          />
-          {errors.postalCode && <span style={styles.error}>{errors.postalCode}</span>}
-        </div>
-      </div>
-
-      {/* Country & Default */}
-      <div style={styles.row}>
-        <div style={styles.field}>
-          <label htmlFor="country" style={styles.label}>Country</label>
-          <input
-            id="country"
-            type="text"
-            value={form.country}
-            onChange={e => handleChange('country', e.target.value)}
-            placeholder="e.g., USA"
-            autoComplete="country"
-            style={styles.input}
-          />
-        </div>
-        <div style={{ ...styles.field, justifyContent: 'flex-end' }}>
-          <label htmlFor="isDefault" style={styles.checkboxLabel}>
+    <form onSubmit={handleSubmit} className="address-form" noValidate>
+      <div className="form-section">
+        <h4 className="section-title">
+          Personal Information
+        </h4>
+        
+        <div className="form-row">
+          <div className="form-field">
+            <label htmlFor="name" className="form-label">
+              Full Name <span className="required">*</span>
+            </label>
             <input
-              id="isDefault"
-              type="checkbox"
-              checked={form.isDefault}
-              onChange={e => handleChange('isDefault', e.target.checked)}
+              id="name"
+              type="text"
+              value={form.name}
+              onChange={e => handleChange('name', e.target.value)}
+              onBlur={() => handleBlur('name')}
+              placeholder="Enter your full name"
+              autoComplete="name"
+              className={`form-input ${errors.name ? 'error' : ''}`}
             />
-            {' '}Set as default
-          </label>
+            {errors.name && <span className="error-message">{errors.name}</span>}
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="phone" className="form-label">
+              Phone Number <span className="required">*</span>
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              value={form.phone}
+              onChange={e => handleChange('phone', e.target.value)}
+              onBlur={() => handleBlur('phone')}
+              placeholder="10-digit mobile number"
+              autoComplete="tel"
+              className={`form-input ${errors.phone ? 'error' : ''}`}
+            />
+            {errors.phone && <span className="error-message">{errors.phone}</span>}
+          </div>
         </div>
       </div>
 
-      {/* Actions */}
-      <div style={styles.actions}>
+      <div className="form-section">
+        <h4 className="section-title">
+          Address Details
+        </h4>
+        
+        <div className="form-row">
+          <div className="form-field full-width">
+            <label htmlFor="streetAddress" className="form-label">
+              Street Address <span className="required">*</span>
+            </label>
+            <input
+              id="streetAddress"
+              type="text"
+              value={form.streetAddress}
+              onChange={e => handleChange('streetAddress', e.target.value)}
+              onBlur={() => handleBlur('streetAddress')}
+              placeholder="House no., building name, street name"
+              autoComplete="street-address"
+              className={`form-input ${errors.streetAddress ? 'error' : ''}`}
+            />
+            {errors.streetAddress && <span className="error-message">{errors.streetAddress}</span>}
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="form-field">
+            <label htmlFor="addressLine1" className="form-label">
+              Address Line 1 <span className="required">*</span>
+            </label>
+            <input
+              id="addressLine1"
+              type="text"
+              value={form.addressLine1}
+              onChange={e => handleChange('addressLine1', e.target.value)}
+              onBlur={() => handleBlur('addressLine1')}
+              placeholder="Apartment, suite, unit, floor"
+              autoComplete="address-line1"
+              className={`form-input ${errors.addressLine1 ? 'error' : ''}`}
+            />
+            {errors.addressLine1 && <span className="error-message">{errors.addressLine1}</span>}
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="addressLine2" className="form-label">
+              Address Line 2 <span className="optional">(Optional)</span>
+            </label>
+            <input
+              id="addressLine2"
+              type="text"
+              value={form.addressLine2}
+              onChange={e => handleChange('addressLine2', e.target.value)}
+              placeholder="Area, landmark, nearby location"
+              autoComplete="address-line2"
+              className="form-input"
+            />
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="form-field">
+            <label htmlFor="city" className="form-label">
+              City <span className="required">*</span>
+            </label>
+            <input
+              id="city"
+              type="text"
+              value={form.city}
+              onChange={e => handleChange('city', e.target.value)}
+              onBlur={() => handleBlur('city')}
+              placeholder="e.g., Mumbai"
+              autoComplete="address-level2"
+              className={`form-input ${errors.city ? 'error' : ''}`}
+            />
+            {errors.city && <span className="error-message">{errors.city}</span>}
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="state" className="form-label">
+              State <span className="required">*</span>
+            </label>
+            <input
+              id="state"
+              type="text"
+              value={form.state}
+              onChange={e => handleChange('state', e.target.value)}
+              onBlur={() => handleBlur('state')}
+              placeholder="e.g., Maharashtra"
+              autoComplete="address-level1"
+              className={`form-input ${errors.state ? 'error' : ''}`}
+            />
+            {errors.state && <span className="error-message">{errors.state}</span>}
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="postalCode" className="form-label">
+              PIN Code <span className="required">*</span>
+            </label>
+            <input
+              id="postalCode"
+              type="text"
+              inputMode="numeric"
+              value={form.postalCode}
+              onChange={e => handleChange('postalCode', e.target.value)}
+              onBlur={() => handleBlur('postalCode')}
+              placeholder="6-digit PIN"
+              autoComplete="postal-code"
+              className={`form-input ${errors.postalCode ? 'error' : ''}`}
+            />
+            {errors.postalCode && <span className="error-message">{errors.postalCode}</span>}
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="form-field">
+            <label htmlFor="country" className="form-label">
+              Country
+            </label>
+            <input
+              id="country"
+              type="text"
+              value={form.country}
+              onChange={e => handleChange('country', e.target.value)}
+              placeholder="e.g., India"
+              autoComplete="country"
+              className="form-input"
+            />
+          </div>
+
+          <div className="form-field checkbox-field">
+            <label htmlFor="isDefault" className="checkbox-label">
+              <input
+                id="isDefault"
+                type="checkbox"
+                checked={form.isDefault}
+                onChange={e => handleChange('isDefault', e.target.checked)}
+                className="checkbox-input"
+              />
+              <span className="checkbox-text">
+                Set as default address
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="form-actions">
         {onCancel && (
-          <button type="button" style={styles.secondary} onClick={onCancel}>
+          <button type="button" className="btn btn-secondary" onClick={onCancel}>
             Cancel
           </button>
         )}
-        <button type="submit" style={styles.primary}>
+        <button type="submit" className="btn btn-primary">
           {initialValues ? 'Save Changes' : 'Add Address'}
         </button>
       </div>
     </form>
   );
-};
-
-const styles = {
-  form: { display: 'flex', flexDirection: 'column', gap: 14 },
-  row: { display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 },
-  field: { display: 'flex', flexDirection: 'column' },
-  label: { fontSize: 13, color: '#333', marginBottom: 6, fontWeight: 600 },
-  input: {
-    padding: '10px 12px',
-    border: '1px solid #ccc',
-    borderRadius: 6,
-    fontSize: 14,
-    outline: 'none',
-  },
-  error: { color: '#b00020', fontSize: 12, marginTop: 4 },
-  radioGroup: {display: 'flex', gap: 16, alignItems: 'center' },
-  radioLabel: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 14 },
-  checkboxLabel: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 14 },
-  actions: { display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 8 },
-  primary: { background: 'rgb(47, 191, 93)', color: '#fff', border: 'none', padding: '10px 16px', borderRadius: 6, cursor: 'pointer' },
-  secondary: { background: '#eee', color: '#333', border: 'none', padding: '10px 16px', borderRadius: 6, cursor: 'pointer' },
 };
 
 export default AddressForm;
