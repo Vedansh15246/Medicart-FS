@@ -144,7 +144,7 @@ const CheckoutPage = () => {
                         >
                             {addresses.map(addr => (
                                 <option key={addr.id} value={addr.id}>
-                                    {addr.street}, {addr.city} - {addr.pincode}
+                                    {addr.streetAddress}
                                 </option>
                             ))}
                         </select>
