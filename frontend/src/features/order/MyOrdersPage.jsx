@@ -7,24 +7,65 @@ export default function MyOrdersPage() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [medicineNames, setMedicineNames] = useState({});
   const navigate = useNavigate();
 
+  // Function to fetch medicine name by ID
+  const fetchMedicineName = async (medicineId) => {
+    try {
+      const response = await fetch(`/api/medicines/${medicineId}`);
+      if (response.ok) {
+        const medicine = await response.json();
+        return medicine.name || "Unknown Medicine";
+      }
+    } catch (error) {
+      console.error(`Error fetching medicine ${medicineId}:`, error);
+    }
+    return "Medicine Item";
+  };
+
   useEffect(() => {
-    orderService.getMyOrders()
-      .then(res => {
-        console.log("Order Data Received:", res);
-        setOrders(Array.isArray(res) ? res : []);
-      })
-      .catch(err => {
+    const loadOrdersAndMedicines = async () => {
+      try {
+        const ordersData = await orderService.getMyOrders();
+        console.log("Order Data Received:", ordersData);
+        const ordersArray = Array.isArray(ordersData) ? ordersData : [];
+        setOrders(ordersArray);
+
+        // Collect all unique medicine IDs
+        const medicineIds = new Set();
+        ordersArray.forEach(order => {
+          order.items?.forEach(item => {
+            if (item.medicineId) {
+              medicineIds.add(item.medicineId);
+            }
+          });
+        });
+
+        // Fetch medicine names for all IDs
+        const medicineNamesMap = {};
+        await Promise.all(
+          Array.from(medicineIds).map(async (medicineId) => {
+            const name = await fetchMedicineName(medicineId);
+            medicineNamesMap[medicineId] = name;
+          })
+        );
+
+        setMedicineNames(medicineNamesMap);
+      } catch (err) {
         console.error("Fetch Orders Error:", err);
         if (err.response?.status === 401) {
           setError("Session expired. Please login again.");
-          navigate("/login"); // Redirect to login if not authenticated
+          navigate("/login");
         } else {
           setError("Failed to load orders. Please try again later.");
         }
-      })
-      .finally(() => setLoading(false));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadOrdersAndMedicines();
   }, [navigate]);
 
   return (
@@ -57,7 +98,7 @@ export default function MyOrdersPage() {
                   {order.items?.map(item => (
                     <div key={item.id} className="flex justify-between text-sm">
                       <span>
-                        {item.batch?.medicine?.name || "Medicine Item"} x {item.quantity}
+                        {medicineNames[item.medicineId] || item.MedicineName || item.batch?.medicine?.name || "Medicine Item"} x {item.quantity}
                       </span>
                       <span className="font-medium text-gray-700">
                         ₹{(item.priceAtPurchase * item.quantity).toFixed(2)}
