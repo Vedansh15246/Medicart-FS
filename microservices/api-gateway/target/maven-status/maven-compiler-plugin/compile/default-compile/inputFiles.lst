@@ -1,4 +1,6 @@
-C:\Users\SHAHID\OneDrive\Desktop\Project\microservices\api-gateway\src\main\java\com\medicart\gateway\config\SecurityConfig.java
-C:\Users\SHAHID\OneDrive\Desktop\Project\microservices\api-gateway\src\main\java\com\medicart\gateway\config\WebSecurityConfig.java
-C:\Users\SHAHID\OneDrive\Desktop\Project\microservices\api-gateway\src\main\java\com\medicart\gateway\ApiGatewayApplication.java
-C:\Users\SHAHID\OneDrive\Desktop\Project\microservices\api-gateway\src\main\java\com\medicart\gateway\config\GatewayConfig.java
+C:\Project\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\controller\ApiDocsAggregatorController.java
+C:\Project\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\filter\RequestLoggingFilter.java
+C:\Project\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\controller\SwaggerRedirectController.java
+C:\Project\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\filter\JwtAuthenticationFilter.java
+C:\Project\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\SecurityConfig.java
+C:\Project\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\ApiGatewayApplication.java

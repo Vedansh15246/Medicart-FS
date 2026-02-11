@@ -1,11 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import HomePage from "./features/catalog/HomePage";
 import AdminLayout from "./features/admin/AdminLayout";
 import AdminProductsPage from "./features/admin/AdminProductsPage";
 import AdminBatchPage from "./features/admin/AdminBatchPage";
 import AdminLoginPage from "./features/admin/AdminLoginPage";
-import MediCartModule4 from "./features/payment/MediCartModule4";
 import AddressPage from "./features/delivery/AddressPage";
+import CheckoutPage from "./features/payment/CheckoutPage";
 import MyOrdersPage from "./features/order/MyOrdersPage";
 import OrderDetailsPage from "./features/order/OrderDetailsPage";
 import Login from "./features/auth/pages/Login";
@@ -23,7 +25,21 @@ import ProtectedRoute from "./features/auth/ProtectedRoute"; // The Gatekeeper
 import AdminOrdersPage from "./features/admin/AdminOrdersPage.jsx";
 import AdminUsersPage from "./features/admin/AdminUsersPage.jsx";
 import OtpPage from "./features/auth/components/OtpPage.jsx";
+import PaymentSelect from "./features/payment/PaymentSelect.jsx";
+import CardPayment from "./features/payment/CardPaymentNew.jsx";
+import UPIPayment from "./features/payment/UPIPayment.jsx";
+import NetBankingPayment from "./features/payment/NetBankingPayment.jsx";
+import Success from "./features/payment/Success.jsx";
+import { initializeAuth } from "./features/auth/authSlice.js";
+
 export default function App() {
+  const dispatch = useDispatch();
+
+  // Initialize auth from localStorage on app start
+  useEffect(() => {
+    dispatch(initializeAuth());
+  }, [dispatch]);
+
   return (
     <Routes>
       {/* 1. PUBLIC ROUTES */}
@@ -40,9 +56,15 @@ export default function App() {
       <Route element={<ProtectedRoute />}>
         <Route path="/address" element={<AddressPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/payment" element={<CheckoutPage />} />
+        <Route path="/payment/select" element={<PaymentSelect />} />
+        <Route path="/payment/card" element={<CardPayment />} />
+        <Route path="/payment/debit" element={<CardPayment />} />
+        <Route path="/payment/upi" element={<UPIPayment />} />
+        <Route path="/payment/netbanking" element={<NetBankingPayment />} />
+        <Route path="/payment/success" element={<Success />} />
         <Route path="/orders" element={<MyOrdersPage />} />
         <Route path="/orders/:orderId" element={<OrderDetailsPage />} />
-        <Route path="/payment" element={<MediCartModule4 />} />
         
         <Route path="dashboard_client" element={<ClientDashboard />}>
           <Route index element={<Navigate to="prescription" />} />

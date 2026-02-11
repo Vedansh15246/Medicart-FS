@@ -9,9 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "batches", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"medicine_id", "batch_number"})
-})
+@Table(name = "batches")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

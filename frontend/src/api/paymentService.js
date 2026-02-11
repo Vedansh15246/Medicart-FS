@@ -5,14 +5,15 @@ import client from "./client";
 
 export const paymentService = {
   // Process payment for an order
-  processPayment: async (orderId, amount, paymentMethod = "CREDIT_CARD") => {
-    const response = await client.post("/api/payment/process", null, {
-      params: {
-        orderId,
-        amount,
-        paymentMethod
-      }
-    });
+  processPayment: async (orderId, amount, paymentMethod = "CREDIT_CARD", cardData = null) => {
+    const payload = {
+      orderId: orderId,
+      amount: amount,
+      paymentMethod: paymentMethod,
+      ...cardData // Include card details if provided
+    };
+    
+    const response = await client.post("/api/payment/process", payload);
     return response.data;
   },
 

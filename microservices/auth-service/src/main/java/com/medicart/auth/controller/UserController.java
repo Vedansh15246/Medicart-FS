@@ -1,13 +1,23 @@
 package com.medicart.auth.controller;
 
-import com.medicart.auth.service.AuthService;
-import com.medicart.common.dto.UserDTO;
-import com.medicart.common.dto.RegisterRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.medicart.auth.service.AuthService;
+import com.medicart.common.dto.RegisterRequest;
+import com.medicart.common.dto.UserDTO;
 
 @RestController
 @RequestMapping("/auth/users")
@@ -17,15 +27,26 @@ public class UserController {
     @Autowired
     private AuthService authService;
 
+    // ===== GET ALL USERS (admin) =====
+    @GetMapping
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
+        try {
+            List<UserDTO> users = authService.getAllUsers();
+            log.info("Fetched {} users", users.size());
+            return ResponseEntity.ok(users);
+        } catch (Exception e) {
+            log.error("Failed to fetch all users: {}", e.getMessage());
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
     @GetMapping("/{userId}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long userId) {
         try {
-            log.info("👤 Fetching user details for userId: {}", userId);
             UserDTO user = (UserDTO) authService.getUserById(userId);
-            log.info("✅ User details retrieved for userId: {}", userId);
             return ResponseEntity.ok(user);
         } catch (Exception e) {
-            log.error("❌ Failed to fetch user (userId: {}): {}", userId, e.getMessage());
+            log.error("Failed to fetch user - userId: {}: {}", userId, e.getMessage());
             return ResponseEntity.notFound().build();
         }
     }
@@ -34,12 +55,10 @@ public class UserController {
     public ResponseEntity<UserDTO> getUserProfile(
             @RequestHeader("X-User-Id") Long userId) {
         try {
-            log.info("👤 Fetching user profile for userId: {}", userId);
             UserDTO user = (UserDTO) authService.getUserById(userId);
-            log.info("✅ User profile retrieved for userId: {}", userId);
             return ResponseEntity.ok(user);
         } catch (Exception e) {
-            log.error("❌ Failed to fetch user profile (userId: {}): {}", userId, e.getMessage());
+            log.error("Failed to fetch user profile - userId: {}: {}", userId, e.getMessage());
             return ResponseEntity.notFound().build();
         }
     }
@@ -50,24 +69,32 @@ public class UserController {
             @RequestHeader("X-User-Id") Long requestingUserId,
             @RequestBody RegisterRequest request) {
         try {
-            log.info("✏️ Update user profile attempt for userId: {}", userId);
-            log.info("   Requesting user ID: {}", requestingUserId);
-            
-            // Verify user is updating their own profile
             if (!userId.equals(requestingUserId)) {
-                log.warn("⚠️ Unauthorized update attempt - user {} trying to update user {}", requestingUserId, userId);
+                log.warn("Unauthorized update attempt - user {} trying to update user {}", requestingUserId, userId);
                 return ResponseEntity.status(403).body(java.util.Map.of("error", "Cannot update other user's profile"));
             }
 
             com.medicart.auth.entity.User updatedUser = authService.updateUser(userId, request);
-            log.info("✅ User profile updated successfully for userId: {}", userId);
             
             return ResponseEntity.ok(java.util.Map.of(
                     "message", "Profile updated successfully",
                     "user", updatedUser.getFullName()
             ));
         } catch (Exception e) {
-            log.error("❌ Failed to update user profile (userId: {}): {}", userId, e.getMessage(), e);
+            log.error("Failed to update user profile - userId: {}: {}", userId, e.getMessage());
+            return ResponseEntity.badRequest().body(java.util.Map.of("error", e.getMessage()));
+        }
+    }
+
+    // ===== DELETE USER (admin) =====
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
+        try {
+            authService.deleteUser(userId);
+            log.info("User deleted successfully - userId: {}", userId);
+            return ResponseEntity.ok(java.util.Map.of("message", "User deleted successfully"));
+        } catch (Exception e) {
+            log.error("Failed to delete user - userId: {}: {}", userId, e.getMessage());
             return ResponseEntity.badRequest().body(java.util.Map.of("error", e.getMessage()));
         }
     }

@@ -18,10 +18,11 @@ export default function Navbar({ searchValue, onSearch }) {
   const items = useSelector((state) => state.cart.items);
   const totalQty = items.reduce((sum, item) => sum + item.qty, 0);
 
-  // ✅ ADD THIS EFFECT: Fetch cart on load if logged in
+  // ✅ ADD THIS EFFECT: Fetch cart on load if logged in AND userId is available
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
-    if (token) {
+    const userId = localStorage.getItem('userId');
+    if (token && userId) {
       dispatch(fetchCart());
     }
   }, [dispatch]);

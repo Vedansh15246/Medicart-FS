@@ -4,39 +4,72 @@ import { Link, useNavigate } from "react-router-dom";
 import client from "../../../api/client";
 
 const ForgotPassword = () => {
-  // Validation functions
-  const [error, setError] = useState();
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [info, setInfo] = useState(null);
+  const [infoType, setInfoType] = useState("info");
+  const navigate = useNavigate();
+
   const validateEmail = (email) => {
     const regex = /^\S+@\S+\.\S+$/;
     return regex.test(email) ? "" : "Invalid email address";
   };
 
   useEffect(() => {
-    const emailErr = validateEmail(email);
-    setError(emailErr);
-  }, [email])
-
-  const [info, setInfo] = useState(null)
-  const navigate = useNavigate()
-  const [submitting, setSubmitting] = useState(false)
-  const [infoType, setInfoType] = useState('info')
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (error) return
-    try {
-      setSubmitting(true)
-      const res = await client.post('/api/auth/forgot-password', { email })
-      setInfoType('success')
-      setInfo(res?.data?.message || 'If an account exists, a reset link was sent to your email.')
-    } catch (err) {
-      setInfoType('danger')
-      setInfo(err?.response?.data?.message || 'Failed to request reset link')
-    } finally {
-      setSubmitting(false)
+    if (email) {
+      setEmailError(validateEmail(email));
+    } else {
+      setEmailError("");
     }
-  }
+  }, [email]);
+
+  // Step 1: Submit email → check if registered → show OTP in alert
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    if (emailError || !email) return;
+    try {
+      setSubmitting(true);
+      setInfo(null);
+      const res = await client.post("/auth/forgot-password", { email });
+      setOtpSent(true);
+      setInfoType("success");
+      setInfo("Email verified! OTP has been generated.");
+      // Show OTP in alert for demo purposes
+      if (res.data.demoOtp) {
+        alert(`📧 Your OTP: ${res.data.demoOtp}\n\nNote: In production, this would be sent via email.`);
+      }
+    } catch (err) {
+      setInfoType("danger");
+      setInfo(err?.response?.data?.error || "No account found with this email.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  // Step 2: Verify OTP → redirect to change-password
+  const handleVerifyOtp = async (e) => {
+    e.preventDefault();
+    if (!otp || otp.length < 6) return;
+    try {
+      setSubmitting(true);
+      setInfo(null);
+      await client.post("/auth/forgot-password/verify-otp", { email, otp });
+      setInfoType("success");
+      setInfo("OTP verified! Redirecting to change password...");
+      // Redirect to change-password page with email in state
+      setTimeout(() => {
+        navigate("/auth/change-password", { state: { email } });
+      }, 1000);
+    } catch (err) {
+      setInfoType("danger");
+      setInfo(err?.response?.data?.error || "Invalid or expired OTP. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="container my-auto mx-auto pb-md-0 pb-5">
@@ -48,33 +81,109 @@ const ForgotPassword = () => {
           <div className="row g-4 px-3 py-4 rounded bg-body-tertiary border shadow-sm">
             <div>
               <h3 className="text-center fw-semibold text-success">Forgot Password</h3>
-              <p className="text-center mb-0 fs-sm">Enter your email address to reset your password.</p>
+              <p className="text-center mb-0 fs-sm">
+                {!otpSent
+                  ? "Enter your registered email address."
+                  : "Enter the OTP sent to your email."}
+              </p>
             </div>
-            <form onSubmit={handleSubmit}>
-              <div className="row g-3">
-                <div className="form-floating col-12">
-                  <input type="email" className={`${email && error ? "is-invalid" : ""} form-control`} id="floatingEmail" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} />
-                  <label htmlFor="floatingEmail">Email Address</label>
-                  {email && error && <div className="invalid-feedback d-block">{error}</div>}
+
+            {/* Step 1: Email input */}
+            {!otpSent && (
+              <form onSubmit={handleSendOtp}>
+                <div className="row g-3">
+                  <div className="form-floating col-12">
+                    <input
+                      type="email"
+                      className={`form-control ${email && emailError ? "is-invalid" : ""}`}
+                      id="floatingEmail"
+                      placeholder="name@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <label htmlFor="floatingEmail">Email Address</label>
+                    {email && emailError && (
+                      <div className="invalid-feedback d-block">{emailError}</div>
+                    )}
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="btn btn-success w-100 mb-3"
+                      disabled={!!emailError || !email || submitting}
+                    >
+                      {submitting ? "Checking..." : "Send OTP"}
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <button type="submit" className="btn btn-success w-100 mb-3" disabled={!!error || !email || submitting}>
-                    {submitting ? 'Sending...' : 'Generate Link'}
-                  </button>
+              </form>
+            )}
+
+            {/* Step 2: OTP input */}
+            {otpSent && (
+              <form onSubmit={handleVerifyOtp}>
+                <div className="row g-3">
+                  <div className="form-floating col-12">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="floatingOtp"
+                      placeholder="Enter 6-digit OTP"
+                      maxLength={6}
+                      value={otp}
+                      onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
+                    />
+                    <label htmlFor="floatingOtp">Enter OTP</label>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="btn btn-success w-100 mb-3"
+                      disabled={otp.length < 6 || submitting}
+                    >
+                      {submitting ? "Verifying..." : "Verify OTP"}
+                    </button>
+                  </div>
+                  <div className="text-center">
+                    <button
+                      type="button"
+                      className="btn btn-link text-secondary btn-sm"
+                      onClick={() => {
+                        setOtpSent(false);
+                        setOtp("");
+                        setInfo(null);
+                      }}
+                    >
+                      ← Change email
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            )}
+
             {info && (
-              <div className="mt-3">
-                <div className={`alert ${infoType === 'success' ? 'alert-success' : infoType === 'danger' ? 'alert-danger' : 'alert-info'}`}>{info}</div>
-                <p className="small">After you receive the reset email, click the link to open the Change Password page. If you have the token, you can open the Change Password page and paste it there.</p>
-                <div className="d-flex gap-2">
-                  <button className="btn btn-outline-secondary" onClick={() => navigate('/auth/change-password')}>Open Change Password</button>
+              <div className="mt-2">
+                <div
+                  className={`alert ${
+                    infoType === "success"
+                      ? "alert-success"
+                      : infoType === "danger"
+                      ? "alert-danger"
+                      : "alert-info"
+                  } mb-0`}
+                >
+                  {info}
                 </div>
               </div>
             )}
+
             <div>
-              <Link to={"/login"} className="fs-sm d-flex align-items-center justify-content-center gap-1"> <IoCaretBackCircle /> Back to Login </Link>
+              <Link
+                to={"/auth/login"}
+                className="fs-sm d-flex align-items-center justify-content-center gap-1"
+              >
+                <IoCaretBackCircle /> Back to Login
+              </Link>
             </div>
           </div>
         </div>

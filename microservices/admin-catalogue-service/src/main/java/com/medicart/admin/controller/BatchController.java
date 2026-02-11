@@ -1,14 +1,25 @@
 package com.medicart.admin.controller;
 
-import com.medicart.admin.service.BatchService;
-import com.medicart.common.dto.BatchDTO;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.medicart.admin.service.BatchService;
+import com.medicart.common.dto.BatchDTO;
 
 @RestController
 @RequestMapping("/batches")
@@ -21,62 +32,71 @@ public class BatchController {
         this.service = service;
     }
 
-    private void logSecurityContext(String methodName) {
-        log.debug("════════════════════════════════════════════════════════════════");
-        log.debug("🎯 [BatchController.{}] SECURITY CONTEXT CHECK", methodName);
-        
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        
-        if (auth == null) {
-            log.debug("   ❌ Authentication: NULL");
-        } else {
-            log.debug("   ✅ Authentication: EXISTS");
-            log.debug("   Principal: {}", auth.getPrincipal());
-            log.debug("   Authorities: {}", auth.getAuthorities());
-            log.debug("   Authenticated: {}", auth.isAuthenticated());
-        }
-        log.debug("════════════════════════════════════════════════════════════════");
-    }
-
     @GetMapping
     public List<BatchDTO> getAllBatches() {
-        log.debug("🔷 [GET /batches] REQUEST RECEIVED");
-        logSecurityContext("getAllBatches");
-        
-        List<BatchDTO> batches = service.getAllBatches();
-        log.debug("✅ [GET /batches] RESPONSE SENT: {} batches", batches.size());
-        return batches;
+        return service.getAllBatches();
+    }
+
+    @GetMapping("/{medicineId}/available")
+    public List<BatchDTO> getAvailableBatches(@PathVariable Long medicineId) {
+        return service.getAvailableBatches(medicineId);
     }
 
     @PostMapping
     public BatchDTO createBatch(@RequestBody BatchDTO dto) {
-        log.debug("🔶 [POST /batches] REQUEST RECEIVED");
-        log.debug("   Body: {}", dto);
-        logSecurityContext("createBatch");
-        
-        BatchDTO created = service.createBatch(dto);
-        log.debug("✅ [POST /batches] RESPONSE SENT: {}", created.getId());
-        return created;
+        return service.createBatch(dto);
     }
 
     @PutMapping("/{id}")
-    public BatchDTO updateBatch(@PathVariable Long id,
-                                @RequestBody BatchDTO dto) {
-        log.debug("🔶 [PUT /batches/{}] REQUEST RECEIVED", id);
-        log.debug("   Body: {}", dto);
-        logSecurityContext("updateBatch");
-        
-        BatchDTO updated = service.updateBatch(id, dto);
-        log.debug("✅ [PUT /batches/{}] RESPONSE SENT", id);
-        return updated;
+    public BatchDTO updateBatch(@PathVariable Long id, @RequestBody BatchDTO dto) {
+        return service.updateBatch(id, dto);
     }
 
     @DeleteMapping("/{id}")
     public void deleteBatch(@PathVariable Long id) {
-        log.debug("🔴 [DELETE /batches/{}] REQUEST RECEIVED", id);
-        logSecurityContext("deleteBatch");
-        
         service.deleteBatch(id);
-        log.debug("✅ [DELETE /batches/{}] RESPONSE SENT", id);
+    }
+
+    @PutMapping("/{batchId}/reduce-quantity")
+    public void reduceBatchQuantity(@PathVariable Long batchId, @RequestParam Integer quantity) {
+        service.reduceBatchQuantity(batchId, quantity);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<ErrorResponse> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
+        log.error("Database constraint violation: {}", ex.getMessage());
+
+        String errorMessage = "Database constraint violation";
+        if (ex.getMessage() != null && ex.getMessage().contains("Duplicate entry")) {
+            errorMessage = ex.getMessage().contains("UK7m5b87j08fvngd8ki2dwl93g6")
+                    ? "Batch number already exists for this medicine. Please use a different batch number."
+                    : "Duplicate entry: " + ex.getMessage();
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorResponse(400, errorMessage, "Please check your batch data and try again"));
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex) {
+        log.error("Request processing failed: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorResponse(400, ex.getMessage(), "Request processing failed"));
+    }
+
+    public static class ErrorResponse {
+        public int status;
+        public String message;
+        public String details;
+
+        public ErrorResponse(int status, String message, String details) {
+            this.status = status;
+            this.message = message;
+            this.details = details;
+        }
+
+        public int getStatus() { return status; }
+        public String getMessage() { return message; }
+        public String getDetails() { return details; }
     }
 }

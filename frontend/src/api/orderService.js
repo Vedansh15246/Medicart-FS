@@ -4,11 +4,40 @@ import client from "./client";
 // Routes through API Gateway to Cart-Orders Service (port 8083)
 
 export const orderService = {
-  // Place order (FIFO algorithm on backend)
+  // ✅ FIXED: Place order with explicit validation
   placeOrder: async (addressId) => {
-    const response = await client.post("/api/orders/place", null, {
-      params: { addressId }
+    console.log("📍 placeOrder called with addressId:", addressId, "type:", typeof addressId);
+    
+    // ✅ EXPLICIT VALIDATION
+    if (addressId === null || addressId === undefined || addressId === '') {
+      const errMsg = "Address ID is required but was not provided";
+      console.error("❌", errMsg);
+      throw new Error(errMsg);
+    }
+    
+    // Ensure addressId is a number
+    const addressIdNum = Number(addressId);
+    if (isNaN(addressIdNum)) {
+      const errMsg = `Invalid address ID format: ${addressId}`;
+      console.error("❌", errMsg);
+      throw new Error(errMsg);
+    }
+    
+    if (addressIdNum <= 0) {
+      const errMsg = `Invalid address ID: ${addressIdNum} (must be > 0)`;
+      console.error("❌", errMsg);
+      throw new Error(errMsg);
+    }
+    
+    console.log("✅ Validated addressId:", addressIdNum);
+    console.log("📤 Sending POST /api/orders/place with addressId:", addressIdNum);
+    
+    // ✅ FIX: Send addressId as request body (more reliable than query params with axios)
+    const response = await client.post("/api/orders/place", {
+      addressId: addressIdNum
     });
+    
+    console.log("✅ Order created successfully:", response.data);
     return response.data;
   },
 
@@ -35,6 +64,12 @@ export const orderService = {
   // Update order status (admin only)
   updateOrderStatus: async (orderId, status) => {
     const response = await client.put(`/api/orders/${orderId}/status`, { status });
+    return response.data;
+  },
+
+  // Update order (admin - status + deliveryDate)
+  updateOrder: async (orderId, data) => {
+    const response = await client.put(`/api/orders/${orderId}`, data);
     return response.data;
   },
 

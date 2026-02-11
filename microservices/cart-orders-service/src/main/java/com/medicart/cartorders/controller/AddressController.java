@@ -20,21 +20,6 @@ public class AddressController {
             @RequestHeader("X-User-Id") Long userId,
             @RequestBody AddressDTO addressDTO) {
         try {
-            log.info("=== /api/address POST START ===");
-            log.info("X-User-Id: {}", userId);
-                log.info("AddressDTO received: id={}, name={}, streetAddress={}, addressLine1={}, addressLine2={}, city={}, state={}, postalCode={}, country={}, phone={}, isDefault={}",
-                    addressDTO.getId(),
-                    addressDTO.getName(),
-                    addressDTO.getStreetAddress(),
-                    addressDTO.getAddressLine1(),
-                    addressDTO.getAddressLine2(),
-                    addressDTO.getCity(),
-                    addressDTO.getState(),
-                    addressDTO.getPostalCode(),
-                    addressDTO.getCountry(),
-                    addressDTO.getPhone(),
-                    addressDTO.getIsDefault());
-
             // Validate required fields
             StringBuilder validationErrors = new StringBuilder();
             if (addressDTO == null) validationErrors.append("AddressDTO is null. ");
@@ -46,16 +31,14 @@ public class AddressController {
             if (addressDTO.getPhone() == null || addressDTO.getPhone().trim().isEmpty()) validationErrors.append("phone is required. ");
 
             if (validationErrors.length() > 0) {
-                log.warn("Validation failed: {}", validationErrors.toString());
+                log.warn("Address validation failed for userId {}: {}", userId, validationErrors);
                 return ResponseEntity.badRequest().body(null);
             }
 
             AddressDTO newAddress = addressService.addAddress(userId, addressDTO);
-            log.info("Address created successfully: id={}, userId={}", newAddress.getId(), userId);
-            log.info("=== /api/address POST SUCCESS ===");
             return ResponseEntity.ok(newAddress);
         } catch (Exception e) {
-            log.error("=== /api/address POST ERROR ===", e);
+            log.error("Failed to add address for userId {}: {}", userId, e.getMessage());
             return ResponseEntity.badRequest().build();
         }
     }

@@ -15,6 +15,8 @@ public class OrderItemDTO {
     private String medicineName;
     private Integer quantity;
     private Double priceAtPurchase;
+    private Double unitPrice;
+    private Double subtotal;
     private Long batchId;
     private String batchNo;
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import client from "../../../api/client";
+import { setUser } from "../authSlice";
 import { FiCheckCircle, FiAlertCircle, FiClock } from "react-icons/fi";
 
 const OTPPage = () => {
@@ -13,6 +15,7 @@ const OTPPage = () => {
     
     const location = useLocation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const userData = location.state?.userData;
 
     // Feature: Timer Logic
@@ -80,18 +83,39 @@ const handleVerify = async (e) => {
     if (res.data.token) {
       const token = res.data.token;
       const roles = res.data.roles || "USER";
+      const userId = res.data.userId; // ✅ Extract userId from response
       
       console.log("✅ Authentication successful! Token received");
+      console.log("📍 userId received from backend:", userId);
       setSuccess("✅ Successfully authenticated! Redirecting...");
 
-      // 1. Save token and role to localStorage IMMEDIATELY
+      // 1. Save token, userId, and role to localStorage IMMEDIATELY
       localStorage.setItem("accessToken", token);
+      localStorage.setItem("userId", String(userId)); // ✅ Store userId as string
       localStorage.setItem("userRole", roles.includes("ADMIN") ? "ADMIN" : "USER");
+      localStorage.setItem("userName", userData?.fullName || "User");
+      localStorage.setItem("userEmail", userData?.email || "user@medicart.com");
 
-      // 2. Update client headers IMMEDIATELY so next requests use the token
+      // 2. Update Redux auth state
+      dispatch(setUser({
+        user: {
+          id: userId,
+          name: userData?.fullName || "User",
+          email: userData?.email || "user@medicart.com"
+        },
+        token: token,
+        userId: userId
+      }));
+
+      // 3. Update client headers IMMEDIATELY so next requests use the token
       client.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      if (userId) {
+        client.defaults.headers.common["X-User-Id"] = String(userId); // ✅ Add X-User-Id header
+      }
 
-      console.log("🔐 Token stored. Headers updated. Redirecting...");
+      console.log("🔐 Token stored. userId stored. Redux updated. Headers updated. Redirecting...");
+      console.log("   ✅ localStorage.accessToken:", token.substring(0, 20) + "...");
+      console.log("   ✅ localStorage.userId:", userId);
 
       // 3. Wait a bit to show success message, then redirect
       setTimeout(() => {

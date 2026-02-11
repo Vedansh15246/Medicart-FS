@@ -1,21 +1,27 @@
 package com.medicart.payment.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.medicart.payment.client.CartOrdersClient;
 import com.medicart.payment.entity.Payment;
 import com.medicart.payment.entity.Transaction;
 import com.medicart.payment.repository.PaymentRepository;
 import com.medicart.payment.repository.TransactionRepository;
-import com.medicart.payment.client.CartOrdersClient;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.UUID;
-import java.util.Optional;
-import java.util.List;
 
 @Service
 public class PaymentService {
+
+    private static final Logger log = LoggerFactory.getLogger(PaymentService.class);
 
     @Autowired
     private PaymentRepository paymentRepository;
@@ -31,20 +37,36 @@ public class PaymentService {
         try {
             // Check if payment already exists for this order
             Optional<Payment> existingPayment = paymentRepository.findByOrderId(orderId);
-            if (existingPayment.isPresent() && existingPayment.get().getPaymentStatus() == Payment.PaymentStatus.SUCCESS) {
-                return existingPayment.get();
+            
+            Payment payment;
+            
+            if (existingPayment.isPresent()) {
+                payment = existingPayment.get();
+                
+                // If payment already succeeded, return it
+                if (payment.getPaymentStatus() == Payment.PaymentStatus.SUCCESS) {
+                    return payment;
+                }
+                
+                // ✅ FIX: If payment exists but failed/pending, UPDATE it instead of creating new one
+                // This prevents duplicate key constraint violation
+                payment.setPaymentStatus(Payment.PaymentStatus.PROCESSING);
+                payment.setPaymentMethod(paymentMethod);
+                payment.setAmount(amount);
+                payment.setTransactionId(UUID.randomUUID().toString());
+                payment.setPaymentDate(LocalDateTime.now());
+            } else {
+                // Create new payment record
+                payment = Payment.builder()
+                        .orderId(orderId)
+                        .userId(userId)
+                        .amount(amount)
+                        .paymentMethod(paymentMethod)
+                        .paymentStatus(Payment.PaymentStatus.PROCESSING)
+                        .transactionId(UUID.randomUUID().toString())
+                        .paymentDate(LocalDateTime.now())
+                        .build();
             }
-
-            // Create payment record
-            Payment payment = Payment.builder()
-                    .orderId(orderId)
-                    .userId(userId)
-                    .amount(amount)
-                    .paymentMethod(paymentMethod)
-                    .paymentStatus(Payment.PaymentStatus.PROCESSING)
-                    .transactionId(UUID.randomUUID().toString())
-                    .paymentDate(LocalDateTime.now())
-                    .build();
 
             payment = paymentRepository.save(payment);
 
@@ -67,8 +89,18 @@ public class PaymentService {
             payment.setPaymentStatus(Payment.PaymentStatus.SUCCESS);
             payment = paymentRepository.save(payment);
 
-            // Update order status in Cart-Orders service
-            cartOrdersClient.updateOrderStatus(orderId, "CONFIRMED");
+            try {
+                cartOrdersClient.finalizePayment(orderId, userId);
+            } catch (Exception e) {
+                log.warn("Failed to finalize payment for order {}: {}", orderId, e.getMessage());
+            }
+
+            // Clear cart after successful payment
+            try {
+                cartOrdersClient.clearCart(userId);
+            } catch (Exception e) {
+                log.warn("Failed to clear cart for user {}: {}", userId, e.getMessage());
+            }
 
             return payment;
         } catch (Exception e) {

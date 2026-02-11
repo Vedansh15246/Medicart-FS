@@ -42,24 +42,34 @@ client.interceptors.request.use((config) => {
     if (token && token !== "null" && token !== "undefined" && token.trim() !== "") {
       config.headers.Authorization = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
       logger.info("🔐 Token added to request", { url: config.url });
-      
-      // Extract and add user ID from token
-      let userId = extractUserIdFromToken(token);
-      // Fallback to stored userId (set at login) if token payload doesn't include it
-      if (!userId) {
-        const stored = localStorage.getItem("userId");
-        if (stored && stored !== "null" && stored !== "undefined") {
-          userId = Number(stored);
-        }
-      }
-      if (userId) {
-        // Ensure header is string
-        config.headers["X-User-Id"] = String(userId);
-        logger.info("👤 User ID added to request", { userId, url: config.url });
-      }
     } else {
       delete config.headers.Authorization;
+    }
+    
+    // ALWAYS try to add user ID - from token first, then fallback to localStorage
+    let userId = null;
+    
+    // Try to extract from token if it exists
+    if (token && token !== "null" && token !== "undefined") {
+      userId = extractUserIdFromToken(token);
+    }
+    
+    // Fallback to stored userId if extraction failed or no token
+    if (!userId) {
+      const stored = localStorage.getItem("userId");
+      if (stored && stored !== "null" && stored !== "undefined") {
+        userId = Number(stored);
+      }
+    }
+    
+    // ✅ FIX: PROPER VALIDATION OF userId (check for null/undefined, NOT truthiness)
+    // This handles case where userId = 0, which is falsy but valid!
+    if (userId !== null && userId !== undefined) {
+      config.headers["X-User-Id"] = String(userId);
+      logger.info("👤 User ID added to request", { userId, url: config.url });
+    } else {
       delete config.headers["X-User-Id"];
+      logger.warn("⚠️ No User ID available for request", { url: config.url, userId });
     }
   } catch (e) {
     logger.error("Request interceptor error", e);

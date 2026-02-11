@@ -1,9 +1,9 @@
 com\medicart\auth\entity\Role.class
 com\medicart\auth\service\OtpService$OtpData.class
-com\medicart\auth\config\JwtConfigProperties.class
 com\medicart\auth\controller\OtpController.class
 com\medicart\auth\repository\RoleRepository.class
 com\medicart\auth\controller\UserController.class
+com\medicart\auth\exception\GlobalExceptionHandler.class
 com\medicart\auth\service\JwtService.class
 com\medicart\auth\entity\Role$RoleBuilder.class
 com\medicart\auth\config\PasswordConfig.class

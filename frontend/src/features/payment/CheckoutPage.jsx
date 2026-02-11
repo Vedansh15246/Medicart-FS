@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import paymentService from "../../api/paymentService"; 
 import { orderService } from "../../api/orderService";
 import { clearCart, fetchCart } from "../../components/cart/cartSlice";
 
@@ -11,7 +10,6 @@ const CheckoutPage = () => {
     const cart = useSelector((state) => state.cart);
     const auth = useSelector((state) => state.auth);
     
-    const [isProcessing, setIsProcessing] = useState(false);
     const [selectedAddress, setSelectedAddress] = useState(null);
     const [addresses, setAddresses] = useState([]);
     const [loadingAddresses, setLoadingAddresses] = useState(true);
@@ -59,33 +57,19 @@ const CheckoutPage = () => {
             return;
         }
 
-        setIsProcessing(true);
-
-        try {
-            // Step 1: Place order (FIFO algorithm runs on backend)
-            const order = await orderService.placeOrder(selectedAddress);
-            console.log("Order placed:", order);
-
-            // Step 2: Process payment
-            const payment = await paymentService.processPayment(
-                order.id,
+        // ✅ UPDATED FLOW: Don't create order yet, just pass addressId to payment
+        // Order will be created during payment processing (after selecting payment method)
+        navigate('/payment/select', {
+            state: {
+                selectedAddressId: selectedAddress,
+                cartItems: cart.items,
+                subtotal,
+                tax,
+                delivery,
                 total,
-                "CREDIT_CARD"
-            );
-            console.log("Payment processed:", payment);
-
-            // Step 3: Clear cart and navigate
-            dispatch(clearCart());
-            navigate(`/orders/${order.id}`, { 
-                state: { orderPlaced: true, paymentId: payment.paymentId } 
-            });
-        } catch (error) {
-            console.error("Order error:", error);
-            const message = error.response?.data?.error || error.message || "An unexpected error occurred.";
-            alert("Order Error: " + message);
-        } finally {
-            setIsProcessing(false);
-        }
+                itemCount: cart.items.length
+            }
+        });
     };
 
     if (cart.status === 'loading') {
@@ -165,14 +149,14 @@ const CheckoutPage = () => {
 
             <button 
                 onClick={handlePlaceOrder}
-                disabled={isProcessing || cart.items.length === 0 || !selectedAddress}
+                disabled={cart.items.length === 0 || !selectedAddress}
                 className={`w-full mt-6 py-3 text-white rounded font-bold transition text-lg ${
-                    isProcessing || cart.items.length === 0 || !selectedAddress
+                    cart.items.length === 0 || !selectedAddress
                     ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-green-600 hover:bg-green-700'
+                    : 'bg-emerald-600 hover:bg-emerald-700'
                 }`}
             >
-                {isProcessing ? "Processing Order..." : `Confirm & Pay ₹${total.toFixed(2)}`}
+                {`Proceed to Payment ₹${total.toFixed(2)}`}
             </button>
         </div>
     );

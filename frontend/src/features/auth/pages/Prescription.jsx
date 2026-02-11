@@ -155,11 +155,16 @@ const Prescription = () => {
                 <td colSpan={3}>No prescriptions uploaded yet.</td>
               </tr>
             )}
-            {!loading && history && history.map((p, idx) => (
+            {!loading && history && history.map((p, idx) => {
+              // ✅ Safely parse the date
+              const uploadDate = p.uploadedAt ? new Date(p.uploadedAt) : null;
+              const isValidDate = uploadDate && uploadDate instanceof Date && !isNaN(uploadDate.getTime());
+              
+              return (
               <tr key={p.id}>
                 <th scope="row">{idx + 1}</th>
-                <td>{new Date(p.uploadedAt).toLocaleDateString()}</td>
-                <td>{new Date(p.uploadedAt).toLocaleTimeString()}</td>
+                <td>{isValidDate ? uploadDate.toLocaleDateString() : 'N/A'}</td>
+                <td>{isValidDate ? uploadDate.toLocaleTimeString() : 'N/A'}</td>
                 <td>{p.fileName || 'Prescription'}</td>
                 <td>
                   <div className="d-flex gap-2">
@@ -173,7 +178,8 @@ const Prescription = () => {
                   </div>
                 </td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>

@@ -103,6 +103,7 @@ const Auth = ({ type = "Login", onSubmit }) => {
                                     id="floatingName"
                                     placeholder="Sample user"
                                     name="fullName"
+                                    maxLength={26}
                                     value={data.fullName}
                                     onChange={handleOnChange}
                                 />

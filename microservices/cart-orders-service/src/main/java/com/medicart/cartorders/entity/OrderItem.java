@@ -31,6 +31,12 @@ public class OrderItem {
     @Column(nullable = false)
     private Double priceAtPurchase;
 
+    @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
+    private Double unitPrice;
+
+    @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
+    private Double subtotal;
+
     @Column(nullable = false)
     private Long batchId;
 

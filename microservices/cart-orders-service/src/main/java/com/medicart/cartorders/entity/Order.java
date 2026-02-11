@@ -22,6 +22,9 @@ public class Order {
     @Column(nullable = false)
     private Long userId;
 
+    @Column(nullable = false, unique = true, length = 50)
+    private String orderNumber;
+
     @Column(nullable = false)
     private LocalDateTime orderDate;
 
@@ -38,6 +41,9 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<OrderItem> items;
 
+    @Column(name = "delivery_date")
+    private LocalDateTime deliveryDate;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -49,6 +55,10 @@ public class Order {
         orderDate = LocalDateTime.now();
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
+        // Generate unique order number: ORD-{userId}-{timestamp}
+        if (orderNumber == null) {
+            orderNumber = "ORD-" + userId + "-" + System.currentTimeMillis();
+        }
     }
 
     @PreUpdate

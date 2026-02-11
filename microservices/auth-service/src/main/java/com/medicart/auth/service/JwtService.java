@@ -27,6 +27,10 @@ public class JwtService {
         claims.put("scope", "ROLE_" + user.getRole().getName().replace("ROLE_", ""));
         claims.put("email", user.getEmail());
         claims.put("fullName", user.getFullName());
+        // include numeric user id so gateway and downstream services can identify the user
+        if (user.getId() != null) {
+            claims.put("userId", user.getId());
+        }
 
         return Jwts.builder()
                 .claims(claims)
