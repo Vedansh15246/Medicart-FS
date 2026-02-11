@@ -77,7 +77,7 @@ const AddressPage = () => {
   };
 
   const handleEdit = (id) => {
-    setEditing(id);
+    setEditing(id)
     setShowForm(true);
     if (window.innerWidth <= 768) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
