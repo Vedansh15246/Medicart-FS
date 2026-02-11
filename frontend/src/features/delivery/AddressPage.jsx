@@ -11,6 +11,7 @@ const AddressPage = () => {
   const [editing, setEditing] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
 
   const fetchAddresses = async () => {
@@ -57,6 +58,7 @@ const AddressPage = () => {
       }
       console.log("✅ Address saved successfully");
       setEditing(null);
+      setShowForm(false);
       fetchAddresses();
     } catch (err) {
       console.error("❌ Save failed:", err.response?.data || err.message);
@@ -76,6 +78,7 @@ const AddressPage = () => {
 
   const handleEdit = (id) => {
     setEditing(id);
+    setShowForm(true);
     if (window.innerWidth <= 768) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -95,17 +98,7 @@ const AddressPage = () => {
         </div>
         
         <div className="address-page-layout">
-          <div className="form-section">
-            <h3 className="section-heading">
-              {editing ? 'Edit Address' : 'Add New Address'}
-            </h3>
-            <AddressForm 
-              initialValues={addresses.find(a => a.id === editing)} 
-              onSubmit={handleSave} 
-              onCancel={editing ? () => setEditing(null) : null} 
-            />
-          </div>
-
+          {/* SAVED ADDRESSES SECTION - NOW FIRST */}
           <div className="list-section">
             <h3 className="section-heading">
               Saved Addresses {addresses.length > 0 && `(${addresses.length})`}
@@ -126,6 +119,35 @@ const AddressPage = () => {
                   onSetDefault={handleSetDefault}
                 />
                 
+                {/* Add New Address Button */}
+                {!showForm && (
+                  <button 
+                    onClick={() => setShowForm(true)}
+                    className="add-address-btn"
+                    style={{
+                      width: '100%',
+                      padding: '12px 20px',
+                      background: '#ffffff',
+                      border: '2px dashed #2fbf5d',
+                      color: '#2fbf5d',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      fontSize: '14px',
+                      fontWeight: '600',
+                      marginTop: '16px',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#f0fdf4';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = '#ffffff';
+                    }}
+                  >
+                    + Add New Address
+                  </button>
+                )}
+                
                 <button 
                   disabled={!selectedId} 
                   onClick={() => navigate('/payment')}
@@ -138,6 +160,23 @@ const AddressPage = () => {
               </>
             )}
           </div>
+
+          {/* ADD/EDIT ADDRESS FORM - NOW SECOND, CONDITIONALLY SHOWN */}
+          {showForm && (
+            <div className="form-section">
+              <h3 className="section-heading">
+                {editing ? 'Edit Address' : 'Add New Address'}
+              </h3>
+              <AddressForm 
+                initialValues={addresses.find(a => a.id === editing)} 
+                onSubmit={handleSave} 
+                onCancel={() => {
+                  setEditing(null);
+                  setShowForm(false);
+                }} 
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

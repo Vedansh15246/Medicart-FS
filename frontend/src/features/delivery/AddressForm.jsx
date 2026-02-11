@@ -10,7 +10,7 @@ const initial = {
   city: '',
   state: '',
   postalCode: '',
-  country: 'USA',
+  country: 'India',
   isDefault: false,
 };
 
@@ -56,6 +56,8 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
     e.preventDefault();
     if (!validate()) return;
     const payload = { ...form, isDefault: !!form.isDefault };
+    console.log("This",payload);
+    
     onSubmit && onSubmit(payload);
     // Reset only if you're adding a new address (not editing)
     if (!initialValues) {

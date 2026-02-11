@@ -129,7 +129,9 @@ export const addressService = {
 
   // Create new address
   createAddress: async (addressData) => {
+    console.log("Inside orederservicw",addressData);
     const response = await client.post("/api/address", addressData);
+    
     return response.data;
   },
 

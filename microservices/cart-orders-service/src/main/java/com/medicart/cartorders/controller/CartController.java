@@ -38,40 +38,28 @@ public class CartController {
             @RequestHeader(value = "X-User-Id", required = false) Long userId,
             @RequestParam Long medicineId,
             @RequestParam Integer quantity) {
-        
-        log.info("🛒 [POST /api/cart/add] REQUEST RECEIVED");
-        log.info("   medicineId: {}, quantity: {}, userId: {}", medicineId, quantity, userId);
-        
+                
         if (userId == null) {
-            log.error("❌ X-User-Id header is MISSING or null");
             return ResponseEntity.status(403).build();
         }
         
         MedicineDTO medicineDTO = medicineClient.getMedicineById(medicineId);
         if (medicineDTO == null) {
-            log.error("❌ Medicine not found: {}", medicineId);
             return ResponseEntity.badRequest().build();
         }
 
-        log.info("✅ Medicine found: {}", medicineDTO.getName());
         CartItemDTO cartItem =
                 cartService.addToCart(userId, medicineId, quantity, medicineDTO);
         
-        log.info("✅ Item added to cart: {}", cartItem.getId());
         return ResponseEntity.ok(cartItem);
     }
 
     @GetMapping
     public ResponseEntity<List<CartItemDTO>> getCart(
-            @RequestHeader(value = "X-User-Id", required = false) Long userId) {
-        
-        log.info("🛒 [GET /api/cart] REQUEST RECEIVED - userId: {}", userId);
-        
+         @RequestHeader(value = "X-User-Id", required = false) Long userId) {
         if (userId == null) {
-            log.error("❌ X-User-Id header is MISSING or null");
             return ResponseEntity.status(403).build();
         }
-
         return ResponseEntity.ok(cartService.getUserCart(userId));
     }
 
@@ -81,15 +69,13 @@ public class CartController {
             @RequestHeader(value = "X-User-Id", required = false) Long userId,
             @RequestParam Integer quantity) {
         
-        log.info("🛒 [PUT /api/cart/update/{}] REQUEST RECEIVED - userId: {}, quantity: {}", itemId, userId, quantity);
         
         if (userId == null) {
-            log.error("❌ X-User-Id header is MISSING or null");
             return ResponseEntity.status(403).build();
         }
 
         return ResponseEntity.ok(
-                cartService.updateCartItem(itemId, quantity, userId)
+            cartService.updateCartItem(itemId, quantity, userId)
         );
     }
 

@@ -20,12 +20,9 @@ public class UserController {
     @GetMapping("/{userId}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long userId) {
         try {
-            log.info("👤 Fetching user details for userId: {}", userId);
             UserDTO user = (UserDTO) authService.getUserById(userId);
-            log.info("✅ User details retrieved for userId: {}", userId);
             return ResponseEntity.ok(user);
         } catch (Exception e) {
-            log.error("❌ Failed to fetch user (userId: {}): {}", userId, e.getMessage());
             return ResponseEntity.notFound().build();
         }
     }
