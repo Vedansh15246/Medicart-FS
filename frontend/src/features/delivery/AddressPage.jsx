@@ -59,7 +59,7 @@ const AddressPage = () => {
       console.log("✅ Address saved successfully");
       setEditing(null);
       setShowForm(false);
-      fetchAddresses();
+      fetchAddresses()
     } catch (err) {
       console.error("❌ Save failed:", err.response?.data || err.message);
       alert("Save failed: " + (err.response?.data?.message || err.message));
@@ -77,7 +77,7 @@ const AddressPage = () => {
   };
 
   const handleEdit = (id) => {
-    setEditing(id);
+    setEditing(id)
     setShowForm(true);
     if (window.innerWidth <= 768) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
