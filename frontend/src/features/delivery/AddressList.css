@@ -1,0 +1,251 @@
+/* Address List Styles - Professional Design with Compact Layout */
+
+.address-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+}
+
+.address-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.address-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.address-card.selected {
+  border-color: #2fbf5d;
+  background: #f9fafb;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.card-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #f3f4f6;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-default {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.card-body {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.info-item.full {
+  grid-column: 1 / -1;
+}
+
+.info-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-size: 13px;
+  color: #111827;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 90px;
+}
+
+.action-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.action-btn.edit:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.action-btn.delete:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.action-btn.default:hover {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #9ca3af;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty-state-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Tablet Responsive - iPad (768px to 1024px) */
+@media (max-width: 1024px) {
+  .address-card {
+    padding: 14px;
+  }
+
+  .card-actions {
+    gap: 6px;
+  }
+
+  .action-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-width: 80px;
+  }
+
+  .info-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Responsive (below 768px) */
+@media (max-width: 768px) {
+  .address-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .address-card {
+    padding: 14px;
+  }
+
+  .card-header {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .info-label {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 12px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .action-btn {
+    width: 100%;
+    padding: 8px 14px;
+    font-size: 13px;
+    min-width: unset;
+    flex: none;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .address-card {
+    padding: 12px;
+  }
+
+  .info-label {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 12px;
+  }
+}
