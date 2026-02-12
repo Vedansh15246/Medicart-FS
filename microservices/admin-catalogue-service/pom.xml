@@ -115,20 +115,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <includes>
-                        <include>
-                            <groupId>io.jsonwebtoken</groupId>
-                            <artifactId>jjwt-api</artifactId>
-                        </include>
-                        <include>
-                            <groupId>io.jsonwebtoken</groupId>
-                            <artifactId>jjwt-impl</artifactId>
-                        </include>
-                        <include>
-                            <groupId>io.jsonwebtoken</groupId>
-                            <artifactId>jjwt-jackson</artifactId>
-                        </include>
-                    </includes>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
