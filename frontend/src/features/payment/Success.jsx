@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { CheckCircle, Download, Home, ShoppingBag } from 'lucide-react';
 import logger from '../../utils/logger';
+import AlertModal from '../../components/ui/AlertModal';
 
 export default function Success() {
   const navigate = useNavigate();
   const location = useLocation();
   const [orderDetails, setOrderDetails] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   useEffect(() => {
     logger.info('✅ Success page loaded');
@@ -41,7 +43,7 @@ export default function Success() {
   const handleDownloadReceipt = () => {
     logger.info('📥 Downloading receipt');
     // TODO: Implement receipt download functionality
-    alert('Receipt download feature coming soon!');
+    setAlertModal({ open: true, title: "Coming Soon", message: "Receipt download feature coming soon!", type: "info" });
   };
 
   const handleContinueShopping = () => {
@@ -193,6 +195,14 @@ export default function Success() {
           </div>
         </div>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { orderService } from "../../api/orderService";
+import AlertModal from "../../components/ui/AlertModal";
 
 export default function OrderStatusModal({ order, onClose, onSaved }) {
   const [form, setForm] = useState({
     status: "Pending",
     deliveryDate: ""
   });
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   useEffect(() => {
     if (order) {
@@ -24,7 +26,7 @@ export default function OrderStatusModal({ order, onClose, onSaved }) {
       onSaved();
       onClose();
     } catch (error) {
-      alert("Failed to update order");
+      setAlertModal({ open: true, title: "Error", message: "Failed to update order", type: "error" });
     }
   };
 
@@ -61,6 +63,14 @@ export default function OrderStatusModal({ order, onClose, onSaved }) {
           </div>
         </form>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 }

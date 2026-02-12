@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoCaretBackCircle } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import client from "../../../api/client";
+import AlertModal from "../../../components/ui/AlertModal";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ const ForgotPassword = () => {
   const [submitting, setSubmitting] = useState(false);
   const [info, setInfo] = useState(null);
   const [infoType, setInfoType] = useState("info");
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
   const navigate = useNavigate();
 
   const validateEmail = (email) => {
@@ -39,7 +41,12 @@ const ForgotPassword = () => {
       setInfo("Email verified! OTP has been generated.");
       // Show OTP in alert for demo purposes
       if (res.data.demoOtp) {
-        alert(`📧 Your OTP: ${res.data.demoOtp}\n\nNote: In production, this would be sent via email.`);
+        setAlertModal({
+          open: true,
+          title: "📧 Your OTP",
+          message: `${res.data.demoOtp}\n\nNote: In production, this would be sent via email.`,
+          type: "success",
+        });
       }
     } catch (err) {
       setInfoType("danger");
@@ -188,6 +195,14 @@ const ForgotPassword = () => {
           </div>
         </div>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 };

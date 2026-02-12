@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineUploadFile } from "react-icons/md";
 import client from "../../../api/client";
 import logger from "../../../utils/logger";
+import AlertModal from "../../../components/ui/AlertModal";
 
 const Prescription = () => {
 
@@ -9,13 +10,14 @@ const Prescription = () => {
   const [history, setHistory] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" })
 
   useEffect(() => {
     logger.info("📝 Prescription component mounted");
     
     const limit = 1024 * 1024 * 5 // 5 mb limit
     if (prescription?.size > limit) {
-      alert("File size greater than 5mb not allowed")
+      setAlertModal({ open: true, title: "File Too Large", message: "File size greater than 5MB not allowed", type: "warning" });
       setPrescription()
     }
 
@@ -183,6 +185,14 @@ const Prescription = () => {
           </tbody>
         </table>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 };

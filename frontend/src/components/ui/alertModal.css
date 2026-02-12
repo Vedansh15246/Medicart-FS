@@ -1,0 +1,204 @@
+/* ===== ALERT MODAL OVERLAY ===== */
+.alert-modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal, 40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: alertFadeIn 0.25s ease-out;
+}
+
+/* ===== MODAL CONTAINER ===== */
+.alert-modal__container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.25rem 1.75rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: alertSlideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ===== ICON WRAPPER ===== */
+.alert-modal__icon-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.alert-modal__icon {
+  width: 64px;
+  height: 64px;
+}
+
+/* ===== ICON CIRCLE ===== */
+.alert-modal__icon-circle {
+  stroke-width: 2;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  animation: alertCircleDraw 0.6s ease-out 0.15s forwards;
+}
+
+.alert-modal__icon-circle--success {
+  stroke: #2fbf5d;
+}
+
+.alert-modal__icon-circle--error {
+  stroke: #e74c3c;
+}
+
+.alert-modal__icon-circle--info {
+  stroke: #3498db;
+}
+
+.alert-modal__icon-circle--warning {
+  stroke: #f39c12;
+}
+
+/* ===== ICON CHECK MARK ===== */
+.alert-modal__icon-check {
+  stroke: #2fbf5d;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 49;
+  stroke-dashoffset: 49;
+  animation: alertCheckDraw 0.4s ease-out 0.55s forwards;
+}
+
+/* ===== ICON CROSS ===== */
+.alert-modal__icon-cross {
+  stroke: #e74c3c;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 28;
+  stroke-dashoffset: 28;
+  animation: alertCheckDraw 0.4s ease-out 0.55s forwards;
+}
+
+/* ===== ICON INFO / WARNING TEXT ===== */
+.alert-modal__icon-info-text {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+  fill: #3498db;
+  opacity: 0;
+  animation: alertTextPop 0.3s ease-out 0.55s forwards;
+}
+
+.alert-modal__icon-warn-text {
+  font-size: 30px;
+  font-weight: 800;
+  font-family: 'Arial', sans-serif;
+  fill: #f39c12;
+  opacity: 0;
+  animation: alertTextPop 0.3s ease-out 0.55s forwards;
+}
+
+/* ===== TITLE ===== */
+.alert-modal__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.alert-modal__title--success { color: #21894b; }
+.alert-modal__title--error   { color: #c0392b; }
+.alert-modal__title--info    { color: #2980b9; }
+.alert-modal__title--warning { color: #d68910; }
+
+/* ===== MESSAGE ===== */
+.alert-modal__message {
+  font-size: 0.938rem;
+  color: #555;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+/* ===== BUTTON ===== */
+.alert-modal__btn {
+  display: inline-block;
+  padding: 0.625rem 2.5rem;
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  letter-spacing: 0.02em;
+}
+
+.alert-modal__btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.alert-modal__btn:active {
+  transform: translateY(0);
+}
+
+.alert-modal__btn--success {
+  background: linear-gradient(135deg, #2fbf5d, #21894b);
+  box-shadow: 0 4px 14px rgba(47, 191, 93, 0.35);
+}
+
+.alert-modal__btn--error {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  box-shadow: 0 4px 14px rgba(231, 76, 60, 0.35);
+}
+
+.alert-modal__btn--info {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  box-shadow: 0 4px 14px rgba(52, 152, 219, 0.35);
+}
+
+.alert-modal__btn--warning {
+  background: linear-gradient(135deg, #f39c12, #d68910);
+  box-shadow: 0 4px 14px rgba(243, 156, 18, 0.35);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes alertFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes alertSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes alertCircleDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes alertCheckDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes alertTextPop {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

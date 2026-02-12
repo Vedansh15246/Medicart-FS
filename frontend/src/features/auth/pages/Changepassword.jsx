@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router-dom";
 import client from "../../../api/client";
+import AlertModal from "../../../components/ui/AlertModal";
 
 const Changepassword = () => {
   const [eye, setEye] = useState(false);
@@ -11,6 +12,7 @@ const Changepassword = () => {
   const [serverMsg, setServerMsg] = useState(null);
   const [serverMsgType, setServerMsgType] = useState("info");
   const [submitting, setSubmitting] = useState(false);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -64,8 +66,13 @@ const Changepassword = () => {
       });
       setServerMsgType("success");
       setServerMsg("Password changed successfully!");
-      alert("✅ Password changed successfully!");
-      setTimeout(() => navigate("/auth/login"), 1500);
+      setAlertModal({
+        open: true,
+        title: "Password Changed",
+        message: "Your password has been changed successfully!",
+        type: "success",
+      });
+      setTimeout(() => navigate("/auth/login"), 2000);
     } catch (err) {
       setServerMsgType("danger");
       setServerMsg(err?.response?.data?.error || "Failed to reset password");
@@ -173,6 +180,14 @@ const Changepassword = () => {
           </form>
         </div>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 };

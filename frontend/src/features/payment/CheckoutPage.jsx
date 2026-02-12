@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { orderService } from "../../api/orderService";
 import { clearCart, fetchCart } from "../../components/cart/cartSlice";
+import AlertModal from '../../components/ui/AlertModal';
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const CheckoutPage = () => {
     const [selectedAddress, setSelectedAddress] = useState(null);
     const [addresses, setAddresses] = useState([]);
     const [loadingAddresses, setLoadingAddresses] = useState(true);
+    const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
     // ✅ Sync with DB on refresh if state is lost
     useEffect(() => {
@@ -53,7 +55,7 @@ const CheckoutPage = () => {
         e.preventDefault();
         
         if (!selectedAddress) {
-            alert("Please select a delivery address");
+            setAlertModal({ open: true, title: "No Address", message: "Please select a delivery address", type: "warning" });
             return;
         }
 
@@ -158,6 +160,14 @@ const CheckoutPage = () => {
             >
                 {`Proceed to Payment ₹${total.toFixed(2)}`}
             </button>
+
+            <AlertModal
+                isOpen={alertModal.open}
+                onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+                title={alertModal.title}
+                message={alertModal.message}
+                type={alertModal.type}
+            />
         </div>
     );
 };

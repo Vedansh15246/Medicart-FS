@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import authService from "../../../api/authService";
 import { addressService } from "../../../api/orderService";
+import AlertModal from "../../../components/ui/AlertModal";
 
 const Accounts = () => {
   const [data, setData] = useState({ 
@@ -11,6 +12,7 @@ const Accounts = () => {
     addressId: null   // Keep track of which address record we are editing
   });
   const [isChanged, setIsChanged] = useState(false);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   const handleOnChange = (e) => {
     setData({
@@ -85,10 +87,10 @@ const handleFormSubmit = async (e) => {
     }
 
     setIsChanged(false);
-    alert('Profile updated successfully');
+    setAlertModal({ open: true, title: "Success", message: "Profile updated successfully!", type: "success" });
   } catch (err) {
     console.error("Update failed:", err.response?.data || err.message);
-    alert('Failed to update profile');
+    setAlertModal({ open: true, title: "Error", message: "Failed to update profile", type: "error" });
   }
 };
 
@@ -138,6 +140,14 @@ const handleFormSubmit = async (e) => {
           </div>
         </form>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 }

@@ -3,10 +3,13 @@ import Auth from "../components/Auth";
 import authService from "../../../api/authService";
 import client from "../../../api/client";
 import { useNavigate } from "react-router-dom";
+import AlertModal from "../../../components/ui/AlertModal";
 
 const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
+  const [pendingUserData, setPendingUserData] = useState(null);
 
  const handleRegisterSubmit = async (_e, payload) => {
     console.log("1. Registration started for:", payload.email);
@@ -21,12 +24,19 @@ const Register = () => {
       // Step 2: Show OTP in alert (mocked email service)
       if (otpResponse.data.demoOtp) {
         console.log("4. Demo OTP:", otpResponse.data.demoOtp);
-        alert(`📧 OTP Sent!\n\nYour OTP: ${otpResponse.data.demoOtp}\n\n(Email service is mocked - OTP shown here)\n\nPlease enter this code on the next screen.`);
+        setAlertModal({
+          open: true,
+          title: "📧 OTP Sent!",
+          message: `Your OTP: ${otpResponse.data.demoOtp}\n\n(Email service is mocked - OTP shown here)\n\nPlease enter this code on the next screen.`,
+          type: "success",
+        });
+        setPendingUserData(payload);
+      } else {
+        // No demo OTP, navigate directly
+        navigate("/auth/otp", { state: { userData: payload } });
       }
       
-      // Step 3: Navigate to OTP verification page
-      navigate("/auth/otp", { state: { userData: payload } });
-      console.log("5. Navigating to OTP Verification Page...");
+      console.log("5. Proceeding to OTP Verification...");
       
     } catch (err) {
       console.error("Error:", err);
@@ -40,6 +50,20 @@ const Register = () => {
     <div className="container my-auto pt-5">
       {error && <div className="alert alert-danger mx-auto col-md-8">{error}</div>}
       <Auth type="Register" onSubmit={handleRegisterSubmit} />
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => {
+          setAlertModal((s) => ({ ...s, open: false }));
+          if (pendingUserData) {
+            navigate("/auth/otp", { state: { userData: pendingUserData } });
+          }
+        }}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+        buttonText="Continue"
+      />
     </div>
   );
 };

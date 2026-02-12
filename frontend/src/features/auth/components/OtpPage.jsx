@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import client from "../../../api/client";
 import { setUser } from "../authSlice";
 import { FiCheckCircle, FiAlertCircle, FiClock } from "react-icons/fi";
+import AlertModal from "../../../components/ui/AlertModal";
 
 const OTPPage = () => {
     const [otp, setOtp] = useState("");
@@ -12,6 +13,7 @@ const OTPPage = () => {
     const [loading, setLoading] = useState(false);
     const [timer, setTimer] = useState(300); // 5-minute timer
     const [canResend, setCanResend] = useState(false);
+    const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
     
     const location = useLocation();
     const navigate = useNavigate();
@@ -46,7 +48,12 @@ const OTPPage = () => {
             
             // Show demo OTP in alert (for evaluation purposes - mocked email service)
             if (response.data.demoOtp) {
-                alert(`📧 OTP for Demo Purposes:\n\n${response.data.demoOtp}\n\nNote: Email service is mocked - OTP shown here for evaluation.\nIn production, OTP would be sent via email.`);
+                setAlertModal({
+                  open: true,
+                  title: "📧 OTP for Demo",
+                  message: `${response.data.demoOtp}\n\nNote: Email service is mocked - OTP shown here for evaluation.\nIn production, OTP would be sent via email.`,
+                  type: "info",
+                });
             }
         } catch (err) {
             setError("Failed to resend OTP. Please try again.");
@@ -155,6 +162,7 @@ const handleVerify = async (e) => {
 };
 
     return (
+        <>
         <div style={{
             minHeight: "100vh",
             display: "flex",
@@ -376,6 +384,15 @@ const handleVerify = async (e) => {
                 }
             `}</style>
         </div>
+
+        <AlertModal
+          isOpen={alertModal.open}
+          onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+          title={alertModal.title}
+          message={alertModal.message}
+          type={alertModal.type}
+        />
+        </>
     );
 };
 

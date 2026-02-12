@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createMedicine, updateMedicine } from "./adminApi";
+import AlertModal from "../../components/ui/AlertModal";
 
 const EMPTY_FORM = {
   sku: "",
@@ -13,6 +14,7 @@ const EMPTY_FORM = {
 export default function ProductEditorModal({ product, onClose, onSaved }) {
   const isEdit = Boolean(product?.id);
   const [form, setForm] = useState(EMPTY_FORM);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   useEffect(() => {
     if (product && isEdit) {
@@ -49,7 +51,7 @@ export default function ProductEditorModal({ product, onClose, onSaved }) {
       onClose();
     } catch (error) {
       console.error("Error saving medicine:", error);
-      alert("Failed to save medicine. Check console for details.");
+      setAlertModal({ open: true, title: "Save Failed", message: "Failed to save medicine. Check console for details.", type: "error" });
     }
   };
 
@@ -113,6 +115,14 @@ export default function ProductEditorModal({ product, onClose, onSaved }) {
           </div>
         </form>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 }

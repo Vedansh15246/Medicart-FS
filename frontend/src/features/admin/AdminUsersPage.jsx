@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import authService from "../../api/authService";
 import UsersTable from "./UsersTable";
+import AlertModal from "../../components/ui/AlertModal";
 export default function AdminUsersPage() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   useEffect(() => {
     fetchUsers();
@@ -24,7 +26,7 @@ export default function AdminUsersPage() {
         // Update UI by filtering out the deleted user
         setUsers(users.filter(user => user.id !== userId));
       } catch (err) {
-        alert("Failed to delete user: " + (err.response?.data || err.message));
+        setAlertModal({ open: true, title: "Delete Failed", message: "Failed to delete user: " + (err.response?.data || err.message), type: "error" });
         console.log("Error deleting user", err);
       }
     }
@@ -44,6 +46,14 @@ export default function AdminUsersPage() {
       ) : (
         <UsersTable users={users} onDelete={handleDeleteUser} /> // Passing delete function
       )}
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 }

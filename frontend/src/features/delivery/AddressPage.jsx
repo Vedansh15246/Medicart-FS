@@ -4,12 +4,14 @@ import { addressService } from "../../api/orderService";
 import AddressForm from './AddressForm';
 import AddressList from './AddressList';
 import Navbar from '../../components/navbar/Navbar';
+import AlertModal from '../../components/ui/AlertModal';
 
 const AddressPage = () => {
   const [addresses, setAddresses] = useState([]);
   const [editing, setEditing] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
   const navigate = useNavigate();
 
   const fetchAddresses = async () => {
@@ -40,7 +42,7 @@ const AddressPage = () => {
       await addressService.updateAddress(id, { ...target, isDefault: true });
       fetchAddresses(); // Refresh to see changes
     } catch (err) {
-      alert("Failed to update default address");
+      setAlertModal({ open: true, title: "Error", message: "Failed to update default address", type: "error" });
     }
   };
 
@@ -59,7 +61,7 @@ const AddressPage = () => {
       fetchAddresses();
     } catch (err) {
       console.error("❌ Save failed:", err.response?.data || err.message);
-      alert("Save failed: " + (err.response?.data?.message || err.message));
+      setAlertModal({ open: true, title: "Save Failed", message: err.response?.data?.message || err.message, type: "error" });
     }
   };
 
@@ -69,7 +71,7 @@ const AddressPage = () => {
       await addressService.deleteAddress(id);
       fetchAddresses();
     } catch (err) {
-      alert("Delete failed");
+      setAlertModal({ open: true, title: "Error", message: "Failed to delete address", type: "error" });
     }
   };
 
@@ -117,6 +119,14 @@ const AddressPage = () => {
           </div>
         </div>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 };

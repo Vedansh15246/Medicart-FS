@@ -1,12 +1,15 @@
 import { FaCartPlus, FaTimes, FaPlus, FaMinus, FaPrescriptionBottleAlt } from "react-icons/fa";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart, incrementQty, decrementQty } from "../../components/cart/cartSlice";
+import AlertModal from "../ui/AlertModal";
 import "./medicineModal.css";
 
 export default function MedicineModal({ product, onClose }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
 
   const cartItem = useSelector((state) =>
     state.cart.items.find((i) => i.product.id === product?.id)
@@ -16,9 +19,7 @@ export default function MedicineModal({ product, onClose }) {
   const handleAction = (callback) => {
     const token = localStorage.getItem("accessToken");
     if (!token || token === "null" || token === "undefined") {
-      alert("Please login first to manage your cart!");
-      onClose(); 
-      navigate("auth/login");
+      setAlertModal({ open: true, title: "Login Required", message: "Please login first to manage your cart!", type: "warning" });
       return;
     }
     callback();
@@ -83,6 +84,18 @@ export default function MedicineModal({ product, onClose }) {
           </div>
         </div>
       </div>
+
+      <AlertModal
+        isOpen={alertModal.open}
+        onClose={() => {
+          setAlertModal((s) => ({ ...s, open: false }));
+          onClose();
+          navigate("auth/login");
+        }}
+        title={alertModal.title}
+        message={alertModal.message}
+        type={alertModal.type}
+      />
     </div>
   );
 }
