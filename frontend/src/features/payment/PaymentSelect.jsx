@@ -87,7 +87,7 @@ export default function PaymentSelect() {
       <div className="max-w-2xl mx-auto">
         {/* Back Button */}
         <button 
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/payment')}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6 font-medium"
         >
           <ChevronLeft size={20} /> Back to Checkout
