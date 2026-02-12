@@ -14,15 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SwaggerController {
 
     /**
-     * Redirect requests to /swagger-ui.html to the actual Swagger UI endpoint
-     * Returns redirect to /webjars/swagger-ui/index.html (standard location)
-     */
-    @GetMapping("/swagger-ui.html")
-    public String swaggerUiHtml() {
-        return "redirect:/webjars/swagger-ui/index.html";
-    }
-
-    /**
      * Redirect root to Swagger UI for convenience
      */
     @GetMapping("/")

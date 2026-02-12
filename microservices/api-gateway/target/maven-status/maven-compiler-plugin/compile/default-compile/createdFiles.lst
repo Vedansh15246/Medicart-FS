@@ -3,5 +3,7 @@ com\medicart\gateway\config\SecurityConfig.class
 com\medicart\gateway\controller\ApiDocsAggregatorController.class
 com\medicart\gateway\controller\ApiDocsAggregatorController$ServiceDoc.class
 com\medicart\gateway\filter\RequestLoggingFilter.class
+com\medicart\gateway\controller\SwaggerController.class
+com\medicart\gateway\config\GatewayConfig.class
 com\medicart\gateway\ApiGatewayApplication.class
 com\medicart\gateway\controller\SwaggerRedirectController.class
