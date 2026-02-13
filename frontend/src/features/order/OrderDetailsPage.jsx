@@ -7,6 +7,7 @@ function OrderDetailsPage() {
   const { orderId } = useParams();
   const navigate = useNavigate();
   const [order, setOrder] = useState(null);
+  const [medicineNames, setMedicineNames] = useState({});
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
@@ -19,6 +20,40 @@ function OrderDetailsPage() {
     };
     fetchOrderDetails();
   }, [orderId]);
+
+  // Fetch medicine names for items that only have medicineId
+  useEffect(() => {
+    const fetchMedicineName = async (medicineId) => {
+      try {
+        const response = await fetch(`/api/medicines/${medicineId}`);
+        if (response.ok) {
+          const medicine = await response.json();
+          return medicine.name || "Unknown Medicine";
+        }
+      } catch (error) {
+        console.error(`Error fetching medicine ${medicineId}:`, error);
+      }
+      return "Medicine Item";
+    };
+
+    const loadMedicineNames = async () => {
+      if (!order?.items || order.items.length === 0) return;
+      const ids = Array.from(
+        new Set(order.items.map((i) => i.medicineId).filter(Boolean))
+      );
+      if (ids.length === 0) return;
+      const namesMap = {};
+      await Promise.all(
+        ids.map(async (id) => {
+          const name = await fetchMedicineName(id);
+          namesMap[id] = name;
+        })
+      );
+      setMedicineNames(namesMap);
+    };
+
+    loadMedicineNames();
+  }, [order]);
 
   if (!order) return <div className="text-center mt-20">Finding order details...</div>;
 
@@ -58,9 +93,11 @@ function OrderDetailsPage() {
             {order.items?.map((item) => (
               <div key={item.id} className="flex justify-between items-center bg-gray-50 p-3 rounded">
                 <div>
-                  <p className="font-medium text-gray-800">{item.batch?.medicine?.name || "Unknown Medicine"}</p>
+                  <p className="font-medium text-gray-800">
+                    {item.medicineName || medicineNames[item.medicineId] || item.batch?.medicine?.name || "Medicine Item"}
+                  </p>
                   <p className="text-xs text-gray-500">
-                    Batch: {item.batch?.batchNumber} | Expiry: {item.batch?.expiryDate}
+                    Batch: {item.batchNo || item.batch?.batchNumber || "N/A"}
                   </p>
                 </div>
                 <div className="text-right">
