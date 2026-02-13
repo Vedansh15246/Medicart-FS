@@ -67,6 +67,12 @@ export const orderService = {
     return response.data;
   },
 
+  // Update order (admin - status + deliveryDate)
+  updateOrder: async (orderId, data) => {
+    const response = await client.put(`/api/orders/${orderId}`, data);
+    return response.data;
+  },
+
   // Cancel order
   cancelOrder: async (orderId) => {
     const response = await client.post(`/api/orders/${orderId}/cancel`);
@@ -129,9 +135,7 @@ export const addressService = {
 
   // Create new address
   createAddress: async (addressData) => {
-    console.log("Inside orederservicw",addressData);
     const response = await client.post("/api/address", addressData);
-    
     return response.data;
   },
 

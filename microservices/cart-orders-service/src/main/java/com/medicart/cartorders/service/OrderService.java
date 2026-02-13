@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.medicart.cartorders.client.AuthClient;
 import com.medicart.cartorders.client.MedicineClient;
 import com.medicart.cartorders.entity.CartItem;
 import com.medicart.cartorders.entity.Order;
@@ -17,10 +20,13 @@ import com.medicart.cartorders.repository.CartItemRepository;
 import com.medicart.cartorders.repository.OrderRepository;
 import com.medicart.common.dto.BatchDTO;
 import com.medicart.common.dto.OrderDTO;
+import com.medicart.common.dto.UserDTO;
 
 @Service
 @Transactional
 public class OrderService {
+    private static final Logger log = LoggerFactory.getLogger(OrderService.class);
+
     @Autowired
     private OrderRepository orderRepository;
 
@@ -29,6 +35,9 @@ public class OrderService {
 
     @Autowired
     private MedicineClient medicineClient;
+
+    @Autowired
+    private AuthClient authClient;
 
     /**
      * FIFO STOCK ALLOCATION ALGORITHM
@@ -124,6 +133,33 @@ public class OrderService {
     }
 
     /**
+     * Get ALL orders (admin only) — enriched with user info
+     */
+    public List<OrderDTO> getAllOrders() {
+        log.info("Fetching all orders for admin");
+        List<Order> allOrders = orderRepository.findAll();
+        return allOrders.stream()
+                .sorted((a, b) -> b.getOrderDate().compareTo(a.getOrderDate()))
+                .map(order -> {
+                    OrderDTO dto = convertToDTO(order);
+                    // Enrich with user info
+                    try {
+                        UserDTO user = authClient.getUserById(order.getUserId());
+                        dto.setUser(user);
+                    } catch (Exception e) {
+                        log.warn("Could not fetch user info for userId {}: {}", order.getUserId(), e.getMessage());
+                        dto.setUser(UserDTO.builder()
+                                .id(order.getUserId())
+                                .fullName("Unknown User")
+                                .email("N/A")
+                                .build());
+                    }
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Get order details
      */
     public OrderDTO getOrderById(Long orderId, Long userId) {
@@ -138,18 +174,34 @@ public class OrderService {
     }
 
     /**
-     * Update order status
+     * Update order status (admin can update any order)
      */
     public OrderDTO updateOrderStatus(Long orderId, String status, Long userId) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found"));
 
-        if (!order.getUserId().equals(userId)) {
-            throw new RuntimeException("Unauthorized to update this order");
-        }
-
         order.setStatus(status);
         order = orderRepository.save(order);
+        log.info("Order {} status updated to {} by user {}", orderId, status, userId);
+
+        return convertToDTO(order);
+    }
+
+    /**
+     * Update order (admin) — status + deliveryDate
+     */
+    public OrderDTO updateOrder(Long orderId, String status, String deliveryDate) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found"));
+
+        if (status != null && !status.isEmpty()) {
+            order.setStatus(status);
+        }
+        if (deliveryDate != null && !deliveryDate.isEmpty()) {
+            order.setDeliveryDate(LocalDateTime.parse(deliveryDate + "T00:00:00"));
+        }
+        order = orderRepository.save(order);
+        log.info("Order {} updated - status: {}, deliveryDate: {}", orderId, status, deliveryDate);
 
         return convertToDTO(order);
     }
@@ -178,9 +230,7 @@ public class OrderService {
                     // Call admin-catalogue-service to reduce batch quantity
                     medicineClient.reduceBatchQuantity(item.getBatchId(), item.getQuantity());
                 } catch (Exception e) {
-                    // Log warning but don't fail the transaction
-                    System.err.println("⚠️  Warning: Failed to reduce batch quantity for batch " + 
-                            item.getBatchId() + ": " + e.getMessage());
+                    log.warn("Failed to reduce batch quantity for batch {}: {}", item.getBatchId(), e.getMessage());
                 }
             }
         }
@@ -208,6 +258,7 @@ public class OrderService {
                 .totalAmount(order.getTotalAmount())
                 .status(order.getStatus())
                 .addressId(order.getAddressId())
+                .deliveryDate(order.getDeliveryDate())
                 .items(items)
                 .build();
     }

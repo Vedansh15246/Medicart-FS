@@ -26,27 +26,23 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
+                // Allow OpenAPI and Swagger UI endpoints (for aggregator and documentation)
+                .requestMatchers("/v3/api-docs", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**", "/webjars/**").permitAll()
                 .requestMatchers("/batches/**").hasRole("ADMIN")
                 .requestMatchers("/medicines/**").hasRole("ADMIN")
                 .requestMatchers("/auth/login", "/api/auth/login").permitAll()
                 .requestMatchers("/auth/register", "/api/auth/register").permitAll()
                 .requestMatchers("/auth/forgot-password", "/api/auth/forgot-password").permitAll()
+                .requestMatchers("/auth/forgot-password/**", "/api/auth/forgot-password/**").permitAll()
                 .requestMatchers("/auth/reset-password", "/api/auth/reset-password").permitAll()
                 .requestMatchers("/auth/validate", "/api/auth/validate").permitAll()
-                .requestMatchers(
-                    "/swagger-ui.html",
-                    "/swagger-ui/**",
-                    "/v3/api-docs/**",
-                    "/v2/api-docs/**",
-                    "/swagger-resources/**",
-                    "/webjars/**",
-                    "/favicon.ico"
-                ).permitAll()
                 .requestMatchers("/auth/health", "/api/auth/health").permitAll()
                 .requestMatchers("/auth/otp/**", "/api/auth/otp/**").permitAll()
                 .requestMatchers("GET", "/auth/me", "/api/auth/me").authenticated()
-                .requestMatchers("GET", "/auth/users/**", "/api/auth/users/**").authenticated()
+                .requestMatchers("GET", "/auth/users", "/api/auth/users").permitAll()
+                .requestMatchers("GET", "/auth/users/**", "/api/auth/users/**").permitAll()
                 .requestMatchers("PUT", "/auth/users/**", "/api/auth/users/**").authenticated()
+                .requestMatchers("DELETE", "/auth/users/**", "/api/auth/users/**").authenticated()
                 .requestMatchers("/prescriptions/**", "/api/prescriptions/**").authenticated()
                 .anyRequest().authenticated()
             )

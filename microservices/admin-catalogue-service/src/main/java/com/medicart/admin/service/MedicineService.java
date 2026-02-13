@@ -79,17 +79,10 @@ public class MedicineService {
     }
 
     private MedicineDTO convertToDTO(Medicine medicine) {
-        log.debug("🔄 Converting medicine {} to DTO", medicine.getId());
-        // Calculate stock status based on batches
         String stockStatus = calculateStockStatus(medicine.getId());
-        
-        // ✅ Calculate total quantity from all batches
         Integer totalQtyFromBatches = calculateTotalQuantityFromBatches(medicine.getId());
-        
-        log.debug("📊 Quantity calculation for medicine {}: medicineEntity={}, fromBatches={}", 
-                medicine.getId(), medicine.getTotalQuantity(), totalQtyFromBatches);
 
-        MedicineDTO dto = new MedicineDTO(
+        return new MedicineDTO(
                 medicine.getId(),
                 medicine.getName(),
                 medicine.getCategory(),
@@ -101,84 +94,42 @@ public class MedicineService {
                 stockStatus,
                 totalQtyFromBatches > 0 ? totalQtyFromBatches : medicine.getTotalQuantity()
         );
-        
-        log.debug("📦 DTO Created - Medicine: {}, StockStatus: {}, InStock: {}, TotalQty: {}", 
-                medicine.getName(), stockStatus, medicine.getInStock(), totalQtyFromBatches > 0 ? totalQtyFromBatches : medicine.getTotalQuantity());
-        
-        return dto;
     }
 
     private String calculateStockStatus(Long medicineId) {
         try {
-            log.debug("📊 Calculating stock status for medicineId: {}", medicineId);
-            
-            // Get all batches for this medicine
             List<Batch> batches = batchRepository.findByMedicineId(medicineId);
 
-            log.debug("  Found {} batches for medicineId: {}", batches == null ? 0 : batches.size(), medicineId);
-
-            // If no batches exist, out of stock
             if (batches == null || batches.isEmpty()) {
-                log.debug("  ❌ NO BATCHES FOUND - Returning OUT_OF_STOCK");
                 return "OUT_OF_STOCK";
             }
 
             LocalDate today = LocalDate.now();
-            log.debug("  Today's date: {}", today);
-
-            // Log all batches
-            batches.forEach(batch -> {
-                log.debug("    - Batch: {}, Expiry: {}, Qty: {}", 
-                        batch.getId(), batch.getExpiryDate(), batch.getQtyAvailable());
-            });
-
-            // Check if there's at least one unexpired batch
             boolean hasUnexpiredBatch = batches.stream()
                     .anyMatch(batch -> batch.getExpiryDate() != null && batch.getExpiryDate().isAfter(today));
 
-            log.debug("  Has unexpired batch: {}", hasUnexpiredBatch);
-
-            // If all batches are expired
-            if (!hasUnexpiredBatch) {
-                log.debug("  ❌ ALL BATCHES EXPIRED - Returning EXPIRED");
-                return "EXPIRED";
-            }
-
-            // If at least one unexpired batch exists
-            log.debug("  ✅ UNEXPIRED BATCH EXISTS - Returning IN_STOCK");
-            return "IN_STOCK";
+            return hasUnexpiredBatch ? "IN_STOCK" : "EXPIRED";
         } catch (Exception e) {
-            log.error("❌ Error calculating stock status for medicineId {}: {}", medicineId, e.getMessage(), e);
+            log.error("Error calculating stock status for medicineId {}: {}", medicineId, e.getMessage());
             return "IN_STOCK";
         }
     }
 
     private Integer calculateTotalQuantityFromBatches(Long medicineId) {
         try {
-            log.debug("📦 Calculating total quantity from batches for medicineId: {}", medicineId);
-            
-            // Get all batches for this medicine
             List<Batch> batches = batchRepository.findByMedicineId(medicineId);
 
             if (batches == null || batches.isEmpty()) {
-                log.debug("  ❌ NO BATCHES FOUND - Returning 0");
                 return 0;
             }
 
             LocalDate today = LocalDate.now();
-
-            // Sum quantities from unexpired batches only
-            Integer totalQty = batches.stream()
+            return batches.stream()
                     .filter(batch -> batch.getExpiryDate() != null && batch.getExpiryDate().isAfter(today))
                     .mapToInt(batch -> batch.getQtyAvailable() != null ? batch.getQtyAvailable() : 0)
                     .sum();
-
-            log.debug("  ✅ Total quantity from {} unexpired batches: {}", 
-                    batches.stream().filter(b -> b.getExpiryDate().isAfter(today)).count(), totalQty);
-            
-            return totalQty;
         } catch (Exception e) {
-            log.error("❌ Error calculating total quantity for medicineId {}: {}", medicineId, e.getMessage(), e);
+            log.error("Error calculating total quantity for medicineId {}: {}", medicineId, e.getMessage());
             return 0;
         }
     }

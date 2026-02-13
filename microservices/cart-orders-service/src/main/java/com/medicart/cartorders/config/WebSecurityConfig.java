@@ -6,6 +6,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Security config for cart-orders-service.
+ * JWT authentication is handled by the API Gateway.
+ * This service trusts all requests forwarded from the gateway.
+ */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
@@ -14,21 +19,12 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(authorize -> authorize
-                // Allow cart, order, and address endpoints (development mode)
-                .requestMatchers("/api/cart/**").permitAll()
-                .requestMatchers("/api/orders/**").permitAll()
-                .requestMatchers("/api/address/**").permitAll()
-
-                .requestMatchers("/health").permitAll()
-
-                // All other requests require authentication
-                .anyRequest().authenticated()
+            .authorizeHttpRequests(auth -> auth
+                .anyRequest().permitAll()
             )
             .httpBasic(basic -> basic.disable())
-            .formLogin(form -> form.disable())
-            .logout(logout -> logout.disable());
-            
+            .formLogin(form -> form.disable());
+
         return http.build();
     }
 }

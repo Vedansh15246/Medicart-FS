@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,8 @@ import com.medicart.payment.repository.TransactionRepository;
 
 @Service
 public class PaymentService {
+
+    private static final Logger log = LoggerFactory.getLogger(PaymentService.class);
 
     @Autowired
     private PaymentRepository paymentRepository;
@@ -85,19 +89,17 @@ public class PaymentService {
             payment.setPaymentStatus(Payment.PaymentStatus.SUCCESS);
             payment = paymentRepository.save(payment);
 
-            // ✅ Finalize payment: updates order status + reduces batch quantities
             try {
                 cartOrdersClient.finalizePayment(orderId, userId);
             } catch (Exception e) {
-                System.err.println("⚠️  Warning: Failed to finalize payment for order " + orderId + ": " + e.getMessage());
+                log.warn("Failed to finalize payment for order {}: {}", orderId, e.getMessage());
             }
 
-            // ✅ Clear cart after successful payment
+            // Clear cart after successful payment
             try {
                 cartOrdersClient.clearCart(userId);
             } catch (Exception e) {
-                // Log warning but don't fail payment if cart clearing fails
-                System.err.println("⚠️  Warning: Failed to clear cart for user " + userId + ": " + e.getMessage());
+                log.warn("Failed to clear cart for user {}: {}", userId, e.getMessage());
             }
 
             return payment;

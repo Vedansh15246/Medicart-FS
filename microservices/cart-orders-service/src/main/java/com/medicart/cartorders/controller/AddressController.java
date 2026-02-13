@@ -13,8 +13,12 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AddressController.class);
+
     @PostMapping
-    public ResponseEntity<AddressDTO> addAddress( @RequestHeader("X-User-Id") Long userId, @RequestBody AddressDTO addressDTO) {
+    public ResponseEntity<AddressDTO> addAddress(
+            @RequestHeader("X-User-Id") Long userId,
+            @RequestBody AddressDTO addressDTO) {
         try {
             // Validate required fields
             StringBuilder validationErrors = new StringBuilder();
@@ -27,36 +31,46 @@ public class AddressController {
             if (addressDTO.getPhone() == null || addressDTO.getPhone().trim().isEmpty()) validationErrors.append("phone is required. ");
 
             if (validationErrors.length() > 0) {
+                log.warn("Address validation failed for userId {}: {}", userId, validationErrors);
                 return ResponseEntity.badRequest().body(null);
             }
 
             AddressDTO newAddress = addressService.addAddress(userId, addressDTO);
             return ResponseEntity.ok(newAddress);
         } catch (Exception e) {
+            log.error("Failed to add address for userId {}: {}", userId, e.getMessage());
             return ResponseEntity.badRequest().build();
         }
     }
 
     @GetMapping
-    public ResponseEntity<List<AddressDTO>> getUserAddresses(@RequestHeader("X-User-Id") Long userId) {
+    public ResponseEntity<List<AddressDTO>> getUserAddresses(
+            @RequestHeader("X-User-Id") Long userId) {
         List<AddressDTO> addresses = addressService.getUserAddresses(userId);
         return ResponseEntity.ok(addresses);
     }
 
     @GetMapping("/{addressId}")
-    public ResponseEntity<AddressDTO> getAddressById(@PathVariable Long addressId, @RequestHeader("X-User-Id") Long userId) {
+    public ResponseEntity<AddressDTO> getAddressById(
+            @PathVariable Long addressId,
+            @RequestHeader("X-User-Id") Long userId) {
         AddressDTO address = addressService.getAddressById(addressId, userId);
         return ResponseEntity.ok(address);
     }
 
     @PutMapping("/{addressId}")
-    public ResponseEntity<AddressDTO> updateAddress(@PathVariable Long addressId,@RequestHeader("X-User-Id") Long userId, @RequestBody AddressDTO addressDTO) {
+    public ResponseEntity<AddressDTO> updateAddress(
+            @PathVariable Long addressId,
+            @RequestHeader("X-User-Id") Long userId,
+            @RequestBody AddressDTO addressDTO) {
         AddressDTO updatedAddress = addressService.updateAddress(addressId, addressDTO, userId);
         return ResponseEntity.ok(updatedAddress);
     }
 
     @DeleteMapping("/{addressId}")
-    public ResponseEntity<Void> deleteAddress(@PathVariable Long addressId, @RequestHeader("X-User-Id") Long userId) {
+    public ResponseEntity<Void> deleteAddress(
+            @PathVariable Long addressId,
+            @RequestHeader("X-User-Id") Long userId) {
         addressService.deleteAddress(addressId, userId);
         return ResponseEntity.noContent().build();
     }

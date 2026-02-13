@@ -1,5 +1,8 @@
-c:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\filter\RequestLoggingFilter.java
-c:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\GatewayConfig.java
-c:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\SecurityConfig.java
-c:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\WebSecurityConfig.java
-c:\Users\2460603\OneDrive - Cognizant\Desktop\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\ApiGatewayApplication.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\SecurityConfig.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\SwaggerConfig.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\controller\ApiDocsAggregatorController.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\GatewayConfig.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\filter\RequestLoggingFilter.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\ApiGatewayApplication.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\config\WebSecurityConfig.java
+C:\Users\2460618\Downloads\Takeit\Project work\microservices\api-gateway\src\main\java\com\medicart\gateway\filter\JwtAuthenticationFilter.java

@@ -31,30 +31,18 @@ public class OrderController {
             @RequestHeader(value = "X-User-Id", required = false) String userIdStr,
             @org.springframework.web.bind.annotation.RequestBody java.util.Map<String, Object> requestBody) {
         try {
-            logger.info("📍 /api/orders/place called");
-            logger.info("   X-User-Id header: '{}'", userIdStr);
-            logger.info("   Request body: {}", requestBody);
-            logger.info("   Request body type: {}", requestBody == null ? "NULL" : requestBody.getClass().getName());
-            
-            // Get addressId from request body
             String addressIdStr = null;
             if (requestBody != null && requestBody.containsKey("addressId")) {
                 Object addressId = requestBody.get("addressId");
                 addressIdStr = addressId != null ? addressId.toString() : null;
             }
-            logger.info("   addressId extracted: '{}' (type: {})", addressIdStr, 
-                requestBody != null && requestBody.get("addressId") != null ? 
-                requestBody.get("addressId").getClass().getName() : "NULL");
             
-            // ✅ EXPLICIT VALIDATION WITH ERROR DETAILS
             if (userIdStr == null || userIdStr.trim().isEmpty()) {
-                logger.error("❌ MISSING X-User-Id header");
                 return ResponseEntity.badRequest()
                     .body(java.util.Map.of("error", "Missing X-User-Id header", "status", "failed"));
             }
             
             if (addressIdStr == null || addressIdStr.trim().isEmpty()) {
-                logger.error("❌ MISSING addressId parameter");
                 return ResponseEntity.badRequest()
                     .body(java.util.Map.of("error", "Missing addressId parameter", "status", "failed"));
             }
@@ -65,23 +53,18 @@ public class OrderController {
                 userId = Long.parseLong(userIdStr.trim());
                 addressId = Long.parseLong(addressIdStr.trim());
             } catch (NumberFormatException e) {
-                logger.error("❌ Invalid format - userId: '{}', addressId: '{}'", userIdStr, addressIdStr);
                 return ResponseEntity.badRequest()
                     .body(java.util.Map.of(
                         "error", "Invalid userId or addressId format",
-                        "userId", userIdStr,
-                        "addressId", addressIdStr,
                         "status", "failed"
                     ));
             }
             
-            logger.info("✅ Parsed userId: {}, addressId: {}", userId, addressId);
-            
             OrderDTO order = orderService.placeOrder(userId, addressId);
-            logger.info("✅ Order created with ID: {}", order.getId());
+            logger.info("Order placed - orderId: {}, userId: {}", order.getId(), userId);
             return ResponseEntity.ok(order);
         } catch (Exception e) {
-            logger.error("❌ Exception while placing order: {}", e.getMessage(), e);
+            logger.error("Failed to place order: {}", e.getMessage());
             return ResponseEntity.badRequest()
                 .body(java.util.Map.of(
                     "error", e.getMessage(),
@@ -92,8 +75,14 @@ public class OrderController {
     }
 
     @GetMapping
-    public ResponseEntity<List<OrderDTO>> getUserOrders(
-            @RequestHeader("X-User-Id") Long userId) {
+    public ResponseEntity<List<OrderDTO>> getOrders(
+            @RequestHeader("X-User-Id") Long userId,
+            @RequestParam(value = "admin", required = false) Boolean admin) {
+        if (Boolean.TRUE.equals(admin)) {
+            logger.info("Admin request: fetching ALL orders");
+            List<OrderDTO> orders = orderService.getAllOrders();
+            return ResponseEntity.ok(orders);
+        }
         List<OrderDTO> orders = orderService.getUserOrders(userId);
         return ResponseEntity.ok(orders);
     }
@@ -109,9 +98,21 @@ public class OrderController {
     @PutMapping("/{orderId}/status")
     public ResponseEntity<OrderDTO> updateOrderStatus(
             @PathVariable Long orderId,
-            @RequestParam String status,
+            @org.springframework.web.bind.annotation.RequestBody java.util.Map<String, String> body,
             @RequestHeader("X-User-Id") Long userId) {
+        String status = body.get("status");
         OrderDTO order = orderService.updateOrderStatus(orderId, status, userId);
+        return ResponseEntity.ok(order);
+    }
+
+    @PutMapping("/{orderId}")
+    public ResponseEntity<OrderDTO> updateOrder(
+            @PathVariable Long orderId,
+            @org.springframework.web.bind.annotation.RequestBody java.util.Map<String, String> body,
+            @RequestHeader("X-User-Id") Long userId) {
+        String status = body.get("status");
+        String deliveryDate = body.get("deliveryDate");
+        OrderDTO order = orderService.updateOrder(orderId, status, deliveryDate);
         return ResponseEntity.ok(order);
     }
 
@@ -119,15 +120,11 @@ public class OrderController {
     public ResponseEntity<?> finalizePayment(
             @PathVariable Long orderId,
             @RequestHeader("X-User-Id") Long userId) {
-        logger.info("💳 [POST /api/orders/{}/finalize-payment] REQUEST RECEIVED - userId: {}", orderId, userId);
-        
         try {
-            // Update order status to CONFIRMED and reduce batch quantities
             orderService.finalizePayment(orderId, userId);
-            logger.info("✅ [POST /api/orders/{}/finalize-payment] SUCCESS - Order finalized", orderId);
             return ResponseEntity.ok(java.util.Map.of("status", "success", "message", "Payment finalized"));
         } catch (Exception e) {
-            logger.error("❌ [POST /api/orders/{}/finalize-payment] ERROR - {}", orderId, e.getMessage(), e);
+            logger.error("Failed to finalize payment - orderId: {}: {}", orderId, e.getMessage());
             return ResponseEntity.badRequest()
                 .body(java.util.Map.of("status", "failed", "error", e.getMessage()));
         }

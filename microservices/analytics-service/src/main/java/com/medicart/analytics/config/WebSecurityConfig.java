@@ -6,6 +6,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Security config for analytics-service.
+ * JWT authentication is handled by the API Gateway.
+ * This service trusts all requests forwarded from the gateway.
+ */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
@@ -14,19 +19,12 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(authorize -> authorize
-                // Analytics endpoints (permit all for development)
-                .requestMatchers("/api/analytics/**").permitAll()
-                .requestMatchers("/api/reports/**").permitAll()
-                .requestMatchers("/health").permitAll()
-
-                // All other requests require authentication
-                .anyRequest().authenticated()
+            .authorizeHttpRequests(auth -> auth
+                .anyRequest().permitAll()
             )
             .httpBasic(basic -> basic.disable())
-            .formLogin(form -> form.disable())
-            .logout(logout -> logout.disable());
-            
+            .formLogin(form -> form.disable());
+
         return http.build();
     }
 }

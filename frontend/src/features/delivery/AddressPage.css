@@ -1,16 +1,16 @@
 /* Address Page Styles - Professional Design */
-
+ 
 .address-page-container {
   min-height: 100vh;
   background: #f9fafb;
 }
-
+ 
 .address-page-content {
   padding: 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
-
+ 
 .page-header {
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
   padding-bottom: 16px;
   border-bottom: 1px solid #e5e7eb;
 }
-
+ 
 .page-title {
   font-size: 24px;
   font-weight: 600;
@@ -29,12 +29,12 @@
   gap: 10px;
   margin: 0;
 }
-
+ 
 .page-title-icon {
   font-size: 24px;
   opacity: 0.7;
 }
-
+ 
 .back-btn {
   display: flex;
   align-items: center;
@@ -49,22 +49,22 @@
   font-weight: 500;
   transition: all 0.2s ease;
 }
-
+ 
 .back-btn:hover {
   border-color: #2fbf5d;
   color: #2fbf5d;
 }
-
+ 
 .back-btn-icon {
   font-size: 14px;
 }
-
+ 
 .address-page-layout {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
+ 
 .form-section {
   background: #ffffff;
   border-radius: 8px;
@@ -72,7 +72,7 @@
   border: 1px solid #e5e7eb;
   width: 100%;
 }
-
+ 
 .section-heading {
   font-size: 16px;
   font-weight: 600;
@@ -84,12 +84,12 @@
   padding-bottom: 14px;
   border-bottom: 1px solid #e5e7eb;
 }
-
+ 
 .section-heading-icon {
   font-size: 16px;
   opacity: 0.7;
 }
-
+ 
 .list-section {
   background: #ffffff;
   border-radius: 8px;
@@ -97,7 +97,7 @@
   border: 1px solid #e5e7eb;
   width: 100%;
 }
-
+ 
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -106,23 +106,23 @@
   padding: 40px 20px;
   color: #6b7280;
 }
-
+ 
 .loading-spinner {
   font-size: 36px;
   animation: spin 1s linear infinite;
 }
-
+ 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+ 
 .loading-text {
   margin-top: 12px;
   font-size: 14px;
   color: #9ca3af;
 }
-
+ 
 .deliver-btn {
   margin-top: 16px;
   width: 100%;
@@ -140,58 +140,58 @@
   gap: 8px;
   transition: all 0.2s ease;
 }
-
+ 
 .deliver-btn:hover:not(:disabled) {
   background: #28a852;
 }
-
+ 
 .deliver-btn:active:not(:disabled) {
   transform: scale(0.98);
 }
-
+ 
 .deliver-btn:disabled {
   background: #e5e7eb;
   color: #9ca3af;
   cursor: not-allowed;
 }
-
+ 
 .deliver-btn-icon {
   font-size: 16px;
 }
-
+ 
 /* Tablet Responsive - iPad (768px to 1024px) */
 @media (max-width: 1024px) {
   .address-page-content {
     padding: 20px;
   }
-
+ 
   .address-page-layout {
     gap: 16px;
   }
-
+ 
   .form-section {
     padding: 18px;
   }
-
+ 
   .list-section {
     padding: 18px;
   }
-
+ 
   .page-title {
     font-size: 22px;
   }
-
+ 
   .section-heading {
     font-size: 15px;
   }
 }
-
+ 
 /* Mobile Responsive (below 768px) */
 @media (max-width: 768px) {
   .address-page-content {
     padding: 16px;
   }
-
+ 
   .page-header {
     flex-direction: column;
     align-items: flex-start;
@@ -199,72 +199,72 @@
     margin-bottom: 20px;
     padding-bottom: 12px;
   }
-
+ 
   .page-title {
     font-size: 20px;
   }
-
+ 
   .page-title-icon {
     font-size: 22px;
   }
-
+ 
   .back-btn {
     justify-content: center;
     padding: 10px 14px;
   }
-
+ 
   .address-page-layout {
     gap: 14px;
   }
-
+ 
   .form-section {
     padding: 16px;
   }
-
+ 
   .section-heading {
     font-size: 15px;
     margin-bottom: 16px;
     padding-bottom: 12px;
   }
-
+ 
   .list-section {
     padding: 16px;
   }
-
+ 
   .deliver-btn {
     padding: 12px;
     font-size: 14px;
     margin-top: 14px;
   }
 }
-
+ 
 /* Small Mobile (below 480px) */
 @media (max-width: 480px) {
   .address-page-content {
     padding: 12px;
   }
-
+ 
   .page-header {
     margin-bottom: 16px;
     padding-bottom: 10px;
   }
-
+ 
   .page-title {
     font-size: 18px;
   }
-
+ 
   .form-section {
     padding: 14px;
   }
-
+ 
   .section-heading {
     font-size: 14px;
   }
-
+ 
   .list-section {
     padding: 14px;
   }
-
+ 
   .deliver-btn {
     padding: 11px;
     font-size: 13px;

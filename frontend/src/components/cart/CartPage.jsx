@@ -87,35 +87,14 @@ export default function CartPage() {
     <div style={styles.page}>
       <Navbar />
       
-      <div style={{...styles.topBar, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-        <h1 style={styles.title}>Your Cart</h1>
+      <div style={styles.topBar}>
         <button
           onClick={() => navigate("/")}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            background: '#ffffff',
-            border: '1px solid #d1d5db',
-            color: '#6b7280',
-            padding: '8px 16px',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            fontSize: '13px',
-            fontWeight: '500',
-            transition: 'all 0.2s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.borderColor = '#2fbf5d';
-            e.target.style.color = '#2fbf5d';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.borderColor = '#d1d5db';
-            e.target.style.color = '#6b7280';
-          }}
+          className="text-green-700 border border-green-700 px-4 py-2 rounded hover:bg-green-50 transition mt-6 mb-6"
         >
           ← Back to Medicines
         </button>
+        <h1 style={styles.title}>Your Cart</h1>
       </div>
 
       <div style={styles.layout}>
@@ -187,7 +166,7 @@ export default function CartPage() {
 const styles = {
   page: { padding: '32px', fontFamily: 'system-ui, sans-serif', background: '#f9fafb', minHeight: '100vh' },
   topBar: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 6, marginTop: 24, marginBottom: 24 },
-  title: { color: '#111827', fontSize: '24px', fontWeight: 600, margin: 0 },
+  title: { color: '#2fbf5d', fontSize: '2rem', fontWeight: 700 },
   layout: { display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '28px' },
   left: { background: '#fff', border: '1px solid #eee', borderRadius: 10, padding: 20, boxShadow: '0 2px 6px rgba(0,0,0,0.05)' },
   right: { background: '#fff', border: '1px solid #eee', borderRadius: 10, padding: 20, height: 'fit-content', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' },

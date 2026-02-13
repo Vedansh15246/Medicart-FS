@@ -33,72 +33,52 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("════════════════════════════════════════════════════════════════");
-        log.info("🚀 [DataInitializer] Starting application data initialization...");
-        log.info("════════════════════════════════════════════════════════════════");
-
-        // ==================== INITIALIZE ROLES ====================
-        initializeRoles();
-
-        // ==================== INITIALIZE ADMIN USER ====================
-        initializeAdminUser();
-
-        log.info("════════════════════════════════════════════════════════════════");
-        log.info("✅ [DataInitializer] Application data initialization completed!");
-        log.info("════════════════════════════════════════════════════════════════");
+        try {
+            log.info("Starting application data initialization...");
+            initializeRoles();
+            initializeAdminUser();
+            log.info("Application data initialization completed.");
+        } catch (Exception e) {
+            log.warn("Data initialization skipped (may already exist): {}", e.getMessage());
+        }
     }
 
     private void initializeRoles() {
-        log.info("🔐 Initializing roles...");
-
-        // Create ROLE_USER if it doesn't exist
         if (roleRepository.findByName("ROLE_USER").isEmpty()) {
             Role userRole = Role.builder()
                     .name("ROLE_USER")
                     .description("Standard user role")
                     .build();
             roleRepository.save(userRole);
-            log.info("   ✅ Created ROLE_USER role");
-        } else {
-            log.info("   ℹ️  ROLE_USER role already exists");
+            log.info("Created ROLE_USER");
         }
 
-        // Create ROLE_ADMIN if it doesn't exist
         if (roleRepository.findByName("ROLE_ADMIN").isEmpty()) {
             Role adminRole = Role.builder()
                     .name("ROLE_ADMIN")
                     .description("Administrator role")
                     .build();
             roleRepository.save(adminRole);
-            log.info("   ✅ Created ROLE_ADMIN role");
-        } else {
-            log.info("   ℹ️  ROLE_ADMIN role already exists");
+            log.info("Created ROLE_ADMIN");
         }
     }
 
     private void initializeAdminUser() {
-        log.info("👤 Initializing admin user...");
-
         String adminEmail = "admin@medicart.com";
         String adminPassword = "admin123";
 
-        // Check if admin user already exists
         if (userRepository.findByEmail(adminEmail).isPresent()) {
-            log.info("   ℹ️  Admin user (admin@medicart.com) already exists in database");
+            log.info("Admin user already exists");
             return;
         }
 
         try {
-            // Get or create ROLE_ADMIN
             Role adminRole = roleRepository.findByName("ROLE_ADMIN")
                     .orElseThrow(() -> new RuntimeException("ROLE_ADMIN not found"));
 
-            // Create admin user with bcrypt-hashed password
-            String hashedPassword = passwordEncoder.encode(adminPassword);
-
             User adminUser = User.builder()
                     .email(adminEmail)
-                    .password(hashedPassword)
+                    .password(passwordEncoder.encode(adminPassword))
                     .fullName("Administrator")
                     .phone("9999999999")
                     .isActive(true)
@@ -106,15 +86,9 @@ public class DataInitializer implements CommandLineRunner {
                     .build();
 
             userRepository.save(adminUser);
-
-            log.info("   ✅ Created admin user successfully!");
-            log.info("      📧 Email: {}", adminEmail);
-            log.info("      🔑 Password: {} (bcrypt hashed)", adminPassword);
-            log.info("      👥 Role: ROLE_ADMIN");
-            log.info("      ✓ Active: true");
-
+            log.info("Created admin user: {}", adminEmail);
         } catch (Exception e) {
-            log.error("   ❌ Failed to create admin user: {}", e.getMessage(), e);
+            log.error("Failed to create admin user: {}", e.getMessage());
             throw new RuntimeException("Failed to initialize admin user", e);
         }
     }

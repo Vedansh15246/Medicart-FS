@@ -19,4 +19,6 @@ public class OrderDTO {
     private String status;
     private Long addressId;
     private List<OrderItemDTO> items;
+    private LocalDateTime deliveryDate;
+    private UserDTO user;
 }

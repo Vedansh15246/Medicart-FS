@@ -66,7 +66,6 @@ client.interceptors.request.use((config) => {
     // This handles case where userId = 0, which is falsy but valid!
     if (userId !== null && userId !== undefined) {
       config.headers["X-User-Id"] = String(userId);
-      console.log("👤 User ID added to request:", userId, "for URL:", config.url);
       logger.info("👤 User ID added to request", { userId, url: config.url });
     } else {
       delete config.headers["X-User-Id"];

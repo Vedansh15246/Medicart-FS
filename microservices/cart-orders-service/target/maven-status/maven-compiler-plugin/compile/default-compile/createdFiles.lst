@@ -1,10 +1,8 @@
 com\medicart\cartorders\entity\OrderItem.class
 com\medicart\cartorders\entity\CartItem$CartItemBuilder.class
 com\medicart\cartorders\service\CartService.class
-com\medicart\cartorders\controller\OrderController.class
 com\medicart\cartorders\client\MedicineClient.class
 com\medicart\cartorders\entity\OrderItem$OrderItemBuilder.class
-com\medicart\cartorders\service\OrderService.class
 com\medicart\cartorders\service\AddressService.class
 com\medicart\cartorders\entity\Order$OrderBuilder.class
 com\medicart\cartorders\client\AuthClient.class

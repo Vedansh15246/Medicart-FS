@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AddressForm.css';
-
+ 
 const initial = {
   name: '',
   streetAddress: '',
@@ -13,18 +13,18 @@ const initial = {
   country: 'India',
   isDefault: false,
 };
-
+ 
 const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
   const [form, setForm] = useState(initial);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
-
+ 
   useEffect(() => {
     setForm(initialValues ? { ...initial, ...initialValues } : initial);
     setErrors({});
     setTouched({});
   }, [initialValues]);
-
+ 
   const validate = () => {
     const e = {};
     if (!form.name.trim()) e.name = 'Full name is required';
@@ -37,7 +37,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
     setErrors(e);
     return Object.keys(e).length === 0;
   };
-
+ 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
     if (touched[field]) {
@@ -47,17 +47,17 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
       setErrors(tempErrors);
     }
   };
-
+ 
   const handleBlur = (field) => {
     setTouched(prev => ({ ...prev, [field]: true }));
   };
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     const payload = { ...form, isDefault: !!form.isDefault };
     console.log("This",payload);
-    
+   
     onSubmit && onSubmit(payload);
     // Reset only if you're adding a new address (not editing)
     if (!initialValues) {
@@ -65,14 +65,14 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
       setTouched({});
     }
   };
-
+ 
   return (
     <form onSubmit={handleSubmit} className="address-form" noValidate>
       <div className="form-section">
         <h4 className="section-title">
           Personal Information
         </h4>
-        
+       
         <div className="form-row">
           <div className="form-field">
             <label htmlFor="name" className="form-label">
@@ -90,7 +90,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             />
             {errors.name && <span className="error-message">{errors.name}</span>}
           </div>
-
+ 
           <div className="form-field">
             <label htmlFor="phone" className="form-label">
               Phone Number <span className="required">*</span>
@@ -109,12 +109,12 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
           </div>
         </div>
       </div>
-
+ 
       <div className="form-section">
         <h4 className="section-title">
           Address Details
         </h4>
-        
+       
         <div className="form-row">
           <div className="form-field full-width">
             <label htmlFor="streetAddress" className="form-label">
@@ -133,7 +133,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             {errors.streetAddress && <span className="error-message">{errors.streetAddress}</span>}
           </div>
         </div>
-
+ 
         <div className="form-row">
           <div className="form-field">
             <label htmlFor="addressLine1" className="form-label">
@@ -151,7 +151,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             />
             {errors.addressLine1 && <span className="error-message">{errors.addressLine1}</span>}
           </div>
-
+ 
           <div className="form-field">
             <label htmlFor="addressLine2" className="form-label">
               Address Line 2 <span className="optional">(Optional)</span>
@@ -167,7 +167,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             />
           </div>
         </div>
-
+ 
         <div className="form-row">
           <div className="form-field">
             <label htmlFor="city" className="form-label">
@@ -185,7 +185,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             />
             {errors.city && <span className="error-message">{errors.city}</span>}
           </div>
-
+ 
           <div className="form-field">
             <label htmlFor="state" className="form-label">
               State <span className="required">*</span>
@@ -202,7 +202,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             />
             {errors.state && <span className="error-message">{errors.state}</span>}
           </div>
-
+ 
           <div className="form-field">
             <label htmlFor="postalCode" className="form-label">
               PIN Code <span className="required">*</span>
@@ -221,7 +221,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
             {errors.postalCode && <span className="error-message">{errors.postalCode}</span>}
           </div>
         </div>
-
+ 
         <div className="form-row">
           <div className="form-field">
             <label htmlFor="country" className="form-label">
@@ -237,7 +237,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
               className="form-input"
             />
           </div>
-
+ 
           <div className="form-field checkbox-field">
             <label htmlFor="isDefault" className="checkbox-label">
               <input
@@ -254,7 +254,7 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
           </div>
         </div>
       </div>
-
+ 
       <div className="form-actions">
         {onCancel && (
           <button type="button" className="btn btn-secondary" onClick={onCancel}>
@@ -268,5 +268,5 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
     </form>
   );
 };
-
+ 
 export default AddressForm;

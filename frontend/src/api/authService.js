@@ -63,16 +63,25 @@ export const authService = {
     return response.data;
   },
 
-  // Forgot password
+  // Forgot password - check email & send OTP
   forgotPassword: async (email) => {
     const response = await client.post("/auth/forgot-password", { email });
     return response.data;
   },
 
-  // Reset password with token
-  resetPassword: async (token, newPassword) => {
+  // Verify forgot-password OTP
+  verifyForgotPasswordOtp: async (email, otp) => {
+    const response = await client.post("/auth/forgot-password/verify-otp", {
+      email,
+      otp,
+    });
+    return response.data;
+  },
+
+  // Reset password with email + new password
+  resetPassword: async (email, newPassword) => {
     const response = await client.post("/auth/reset-password", {
-      token,
+      email,
       newPassword,
     });
     return response.data;

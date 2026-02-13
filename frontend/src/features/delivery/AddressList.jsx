@@ -1,6 +1,6 @@
 import React from 'react';
 import './AddressList.css';
-
+ 
 export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete, onSetDefault }) => {
   if (!addresses || addresses.length === 0) {
     return (
@@ -10,12 +10,12 @@ export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete,
       </div>
     );
   }
-
+ 
   return (
     <div className="address-list">
       {addresses.map(a => (
-        <div 
-          key={a.id} 
+        <div
+          key={a.id}
           className={`address-card ${selectedId === a.id ? 'selected' : ''}`}
           onClick={() => onSelect(a.id)}
         >
@@ -31,7 +31,7 @@ export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete,
               )}
             </div>
           </div>
-
+ 
           <div className="card-body">
             <div className="info-row">
               <div className="info-item">
@@ -68,25 +68,25 @@ export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete,
               </div>
             </div>
           </div>
-
+ 
           <div className="card-actions" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="action-btn edit" 
+            <button
+              className="action-btn edit"
               onClick={() => onEdit(a.id)}
               title="Edit this address"
             >
               Edit
             </button>
-            <button 
-              className="action-btn delete" 
+            <button
+              className="action-btn delete"
               onClick={() => onDelete(a.id)}
               title="Delete this address"
             >
               Delete
             </button>
             {!a.isDefault && (
-              <button 
-                className="action-btn default" 
+              <button
+                className="action-btn default"
                 onClick={() => onSetDefault(a.id)}
                 title="Set as default address"
               >
@@ -99,5 +99,5 @@ export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete,
     </div>
   );
 };
-
+ 
 export default AddressList;

@@ -5,7 +5,7 @@ import AddressForm from './AddressForm';
 import AddressList from './AddressList';
 import Navbar from '../../components/navbar/Navbar';
 import './AddressPage.css';
-
+ 
 const AddressPage = () => {
   const [addresses, setAddresses] = useState([]);
   const [editing, setEditing] = useState(null);
@@ -13,13 +13,13 @@ const AddressPage = () => {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
-
+ 
   const fetchAddresses = async () => {
     setLoading(true);
     try {
       const data = await addressService.getAddresses();
       setAddresses(data);
-      
+     
       // Select the default address automatically
       const def = data.find(a => a.isDefault === true);
       if (def) setSelectedId(def.id);
@@ -30,11 +30,11 @@ const AddressPage = () => {
       setLoading(false);
     }
   };
-
+ 
   useEffect(() => {
     fetchAddresses();
   }, []);
-
+ 
   const handleSetDefault = async (id) => {
     try {
       // We call a specific endpoint or PUT the whole object
@@ -45,7 +45,7 @@ const AddressPage = () => {
       alert("Failed to update default address");
     }
   };
-
+ 
   const handleSave = async (payload) => {
     try {
       console.log("📍 Address payload being sent:", payload);
@@ -65,7 +65,7 @@ const AddressPage = () => {
       alert("Save failed: " + (err.response?.data?.message || err.message));
     }
   };
-
+ 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this address?")) return;
     try {
@@ -75,7 +75,7 @@ const AddressPage = () => {
       alert("Delete failed");
     }
   };
-
+ 
   const handleEdit = (id) => {
     setEditing(id)
     setShowForm(true);
@@ -83,7 +83,7 @@ const AddressPage = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-
+ 
   return (
     <div className="address-page-container">
       <Navbar />
@@ -96,7 +96,7 @@ const AddressPage = () => {
             ← Back to Cart
           </button>
         </div>
-        
+       
         <div className="address-page-layout">
           {/* SAVED ADDRESSES SECTION - NOW FIRST */}
           <div className="list-section">
@@ -110,7 +110,7 @@ const AddressPage = () => {
               </div>
             ) : (
               <>
-                <AddressList 
+                <AddressList
                   addresses={addresses}
                   selectedId={selectedId}
                   onSelect={setSelectedId}
@@ -118,10 +118,10 @@ const AddressPage = () => {
                   onDelete={handleDelete}
                   onSetDefault={handleSetDefault}
                 />
-                
+               
                 {/* Add New Address Button */}
                 {!showForm && (
-                  <button 
+                  <button
                     onClick={() => setShowForm(true)}
                     className="add-address-btn"
                     style={{
@@ -147,33 +147,33 @@ const AddressPage = () => {
                     + Add New Address
                   </button>
                 )}
-                
-                <button 
-                  disabled={!selectedId} 
+               
+                <button
+                  disabled={!selectedId}
                   onClick={() => navigate('/payment')}
                   className="deliver-btn"
                 >
-                  {selectedId 
-                    ? 'Continue to Payment' 
+                  {selectedId
+                    ? 'Continue to Payment'
                     : 'Select an Address'}
                 </button>
               </>
             )}
           </div>
-
+ 
           {/* ADD/EDIT ADDRESS FORM - NOW SECOND, CONDITIONALLY SHOWN */}
           {showForm && (
             <div className="form-section">
               <h3 className="section-heading">
                 {editing ? 'Edit Address' : 'Add New Address'}
               </h3>
-              <AddressForm 
-                initialValues={addresses.find(a => a.id === editing)} 
-                onSubmit={handleSave} 
+              <AddressForm
+                initialValues={addresses.find(a => a.id === editing)}
+                onSubmit={handleSave}
                 onCancel={() => {
                   setEditing(null);
                   setShowForm(false);
-                }} 
+                }}
               />
             </div>
           )}
@@ -182,5 +182,5 @@ const AddressPage = () => {
     </div>
   );
 };
-
+ 
 export default AddressPage;

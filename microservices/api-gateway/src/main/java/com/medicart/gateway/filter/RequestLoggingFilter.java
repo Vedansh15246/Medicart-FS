@@ -16,16 +16,7 @@ public class RequestLoggingFilter implements GlobalFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        String method = exchange.getRequest().getMethod().toString();
-        String path = exchange.getRequest().getPath().toString();
-        String query = exchange.getRequest().getQueryParams().toString();
-        
-        logger.info("📍 API Gateway receiving request:");
-        logger.info("   Method: {}", method);
-        logger.info("   Path: {}", path);
-        logger.info("   Query Params: {}", query);
-        logger.info("   Headers: {}", exchange.getRequest().getHeaders().keySet());
-        
+        logger.debug("Gateway → {} {}", exchange.getRequest().getMethod(), exchange.getRequest().getPath());
         return chain.filter(exchange);
     }
 }

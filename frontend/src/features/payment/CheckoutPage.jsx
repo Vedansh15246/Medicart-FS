@@ -82,51 +82,7 @@ const CheckoutPage = () => {
 
     return (
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded">
-            {/* Header with Title and Back Button */}
-            <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '24px',
-                paddingBottom: '16px',
-                borderBottom: '1px solid #e5e7eb'
-            }}>
-                <h2 style={{
-                    fontSize: '24px',
-                    fontWeight: 600,
-                    color: '#111827',
-                    margin: 0
-                }}>
-                    Order Summary
-                </h2>
-                <button
-                    onClick={() => navigate('/address')}
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        background: '#ffffff',
-                        border: '1px solid #d1d5db',
-                        color: '#6b7280',
-                        padding: '8px 16px',
-                        borderRadius: '6px',
-                        cursor: 'pointer',
-                        fontSize: '13px',
-                        fontWeight: '500',
-                        transition: 'all 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                        e.target.style.borderColor = '#2fbf5d';
-                        e.target.style.color = '#2fbf5d';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.target.style.borderColor = '#d1d5db';
-                        e.target.style.color = '#6b7280';
-                    }}
-                >
-                    ← Back to Address
-                </button>
-            </div>
+            <h2 className="text-2xl font-bold mb-6 border-b pb-3">Order Summary</h2>
             
             {/* Delivery Address Section */}
             {loadingAddresses ? (
