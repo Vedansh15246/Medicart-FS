@@ -95,9 +95,11 @@ export default function NetBankingPayment() {
       logger.info('✅ Net Banking Payment processed', { paymentId: response.paymentId, orderId });
  
       // STEP 4: Clear cart and navigate to success
+      // replace: true removes the payment page from history so back button won't return here
       dispatch(clearCart());
      
       navigate('/payment/success', {
+        replace: true,
         state: {
           paymentId: response.paymentId,
           transactionId: response.transactionId,

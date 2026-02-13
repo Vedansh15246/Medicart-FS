@@ -121,9 +121,11 @@ export default function CardPayment() {
       });
  
       // STEP 4: Clear cart and navigate to success
+      // replace: true removes the payment page from history so back button won't return here
       dispatch(clearCart());
      
       navigate('/payment/success', {
+        replace: true,
         state: {
           paymentId: paymentResponse.paymentId,
           transactionId: paymentResponse.transactionId,

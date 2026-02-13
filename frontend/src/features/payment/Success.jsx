@@ -16,12 +16,23 @@ export default function Success() {
     const paymentData = location.state;
     if (!paymentData) {
       logger.warn('⚠️ No payment data found, redirecting to home');
-      navigate('/');
+      navigate('/', { replace: true });
       return;
     }
  
     setOrderDetails(paymentData);
     setLoading(false);
+
+    // Push home page into history stack so back button goes to "/" 
+    // instead of the payment page (which was already replaced via navigate replace:true)
+    window.history.pushState(null, '', '/payment/success');
+
+    const handlePopState = () => {
+      navigate('/', { replace: true });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, [location, navigate]);
  
   if (loading) {
