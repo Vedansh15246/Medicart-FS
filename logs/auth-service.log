@@ -1004,3 +1004,950 @@ This generated password is for development use only. Your security configuration
 2026-02-13 15:20:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
 2026-02-13 15:20:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
 2026-02-13 15:20:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:20:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:20:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:20:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:20:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:20:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:20:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:20:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:21:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:21:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:21:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:21:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:21:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:21:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:21:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:21:29 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:21:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:21:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:21:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:21:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:21:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:21:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:21:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:22:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:22:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:22:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:22:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:22:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:22:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:22:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:22:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:22:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:22:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:22:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:22:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:22:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:22:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:23:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:23:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:23:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:23:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:23:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:23:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:23:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:23:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:23:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:23:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:23:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:23:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:23:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:23:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:24:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:24:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:24:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:24:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:24:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:24:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:24:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:24:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:24:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:24:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:24:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:24:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:24:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:24:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:25:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:25:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:25:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:25:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:25:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:25:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:25:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:25:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:25:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:25:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:25:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:25:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:25:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:25:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:26:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:26:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:26:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:26:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:26:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:26:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:26:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:26:30 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:26:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:26:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:26:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:26:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:26:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:26:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:26:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:27:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:27:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:27:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:27:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:27:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:27:02 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:27:02 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:27:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:27:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:27:32 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:27:32 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:27:33 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:27:33 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:27:33 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:28:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:28:03 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:28:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:28:03 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:28:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:28:03 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:28:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:28:33 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:28:33 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:28:33 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:28:33 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:28:33 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:28:33 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:28:33 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:29:03 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:29:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:29:03 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:29:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:29:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:29:03 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:29:03 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:33:06 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m10s249ms392µs800ns).
+2026-02-13 15:33:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:33:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:33:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:33:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:33:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:33:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:33:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:33:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:33:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:33:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:33:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:33:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:33:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:33:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/otp/send
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/otp/send
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/otp/send
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - POST "/auth/otp/send", parameters={}
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.OtpController#sendOtp(Map)
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{email=har@gmail.com}]
+2026-02-13 15:33:49 [http-nio-8081-exec-5] INFO  c.m.auth.controller.OtpController - Sending OTP to email: har@gmail.com
+2026-02-13 15:33:49 [http-nio-8081-exec-5] WARN  c.medicart.auth.service.OtpService - ============================================================
+2026-02-13 15:33:49 [http-nio-8081-exec-5] WARN  c.medicart.auth.service.OtpService - 🔐 OTP Generated for Email: har@gmail.com
+2026-02-13 15:33:49 [http-nio-8081-exec-5] WARN  c.medicart.auth.service.OtpService - 📱 OTP Code: 265587
+2026-02-13 15:33:49 [http-nio-8081-exec-5] WARN  c.medicart.auth.service.OtpService - ⏱️  Expires in: 10 minutes
+2026-02-13 15:33:49 [http-nio-8081-exec-5] WARN  c.medicart.auth.service.OtpService - ============================================================
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{note=Email service is mocked. OTP shown here for demo purposes., expiryMinutes=10, demoOtp=265587,  (truncated)...]
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:33:49 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-13 15:34:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:34:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:34:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:34:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:34:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:34:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:34:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/otp/verify
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/otp/verify
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/otp/verify
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/auth/otp/verify", parameters={}
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.OtpController#verifyOtp(Map)
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{email=har@gmail.com, otp=265587, fullName=Harshit, phone=1234567899, password=Admin@123}]
+2026-02-13 15:34:16 [http-nio-8081-exec-6] INFO  c.m.auth.controller.OtpController - Verifying OTP for email: har@gmail.com
+2026-02-13 15:34:16 [http-nio-8081-exec-6] INFO  c.medicart.auth.service.OtpService - ✅ OTP verified successfully for email: har@gmail.com
+2026-02-13 15:34:16 [http-nio-8081-exec-6] INFO  c.m.auth.controller.OtpController - OTP verified successfully for email: har@gmail.com
+2026-02-13 15:34:16 [http-nio-8081-exec-6] INFO  c.m.auth.controller.OtpController - Processing registration for email: har@gmail.com
+2026-02-13 15:34:16 [http-nio-8081-exec-6] INFO  c.medicart.auth.service.AuthService - Registration attempt for email: har@gmail.com
+2026-02-13 15:34:16 [http-nio-8081-exec-6] INFO  c.medicart.auth.service.AuthService - User registered successfully - userId: 13
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse(userId=13, email=har@gmail.com, fullName=Harshit, token=eyJhbGciOiJIUzM4NCJ9.eyJzY29wZ (truncated)...]
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:34:16 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-13 15:34:20 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-13 15:34:20 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 15:34:20 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-13 15:34:20 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-13 15:34:21 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-13 15:34:21 [http-nio-8081-exec-8] DEBUG c.m.a.c.PrescriptionController - Returning 0 prescriptions for userId: 13
+2026-02-13 15:34:21 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:34:21 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-02-13 15:34:21 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG c.m.a.c.PrescriptionController - Returning 0 prescriptions for userId: 13
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-02-13 15:34:21 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 15:34:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 15:34:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:34:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:34:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:34:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:34:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:34:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:34:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:34:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:35:10 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:35:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:35:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:35:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:35:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:35:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:35:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:35:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:35:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:35:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:35:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:35:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:35:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:35:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:35:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:36:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:36:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:36:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:36:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:36:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:36:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:36:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:36:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:36:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:36:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:36:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:36:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:36:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:36:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:37:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:37:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:37:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:37:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:37:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:37:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:37:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:37:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:37:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:37:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:37:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:37:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:37:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:37:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:38:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:38:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:38:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:38:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:38:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:38:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:38:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:38:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:38:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:38:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:38:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:38:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:38:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:38:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:39:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:39:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:39:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:39:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:39:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:39:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:39:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:39:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:39:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:39:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:39:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:39:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:39:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:39:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:40:10 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:40:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:40:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:40:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:40:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:40:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:40:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:40:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:40:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:40:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:40:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:40:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:40:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:40:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:40:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:41:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:41:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:41:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:41:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:41:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:41:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:41:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:41:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:41:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:41:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:41:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:41:43 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:41:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:41:43 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:42:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:42:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:42:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:42:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:42:13 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:42:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:42:13 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 15:44:12 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 15:44:12 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 15:44:14 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m8s728ms636µs900ns).
+2026-02-13 15:44:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:44:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:44:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:44:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:44:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:44:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:44:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:44:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:44:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:44:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:44:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:44:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:44:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:44:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:45:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:45:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:45:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:45:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:45:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:45:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:45:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:45:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:45:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:45:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:45:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:45:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:45:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:45:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:46:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:46:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:46:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:46:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:46:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:46:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:46:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:46:49 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:46:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:46:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:46:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:46:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:46:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:46:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:46:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:47:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:47:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:47:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:47:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:47:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:47:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:47:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:47:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:47:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:47:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:47:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:47:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:47:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:47:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:48:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:48:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:48:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:48:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:48:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:48:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:48:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:48:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:48:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:48:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:48:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:48:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:48:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:48:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:49:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:49:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:49:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:49:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:49:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:49:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:49:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:49:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:49:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:49:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:49:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:49:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:49:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:49:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:50:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:50:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:50:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:50:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:50:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:50:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:50:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:50:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:50:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:50:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:50:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:50:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:50:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:50:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:51:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:51:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:51:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:51:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:51:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:51:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:51:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:51:49 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:51:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:51:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:51:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:51:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:51:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:51:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:51:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:52:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:52:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:52:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:52:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:52:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:52:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:52:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:52:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:52:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:52:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:52:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:52:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:52:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:52:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:53:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:53:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:53:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:53:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:53:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:53:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:53:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:53:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:53:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:53:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:53:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:53:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:53:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:53:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:54:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:54:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:54:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:54:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:54:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:54:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:54:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:54:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:54:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:54:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:54:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:54:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:54:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:54:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:55:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:55:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:55:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:55:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:55:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:55:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:55:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:55:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:55:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:55:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:55:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:55:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:55:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:55:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:56:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:56:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:56:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:56:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:56:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:56:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:56:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:56:49 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 15:56:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:56:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:56:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:56:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:56:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:56:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:56:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:57:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:57:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:57:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:57:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:57:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:57:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:57:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:57:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:57:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:57:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:57:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:57:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:57:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:57:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:58:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:58:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:58:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:58:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:58:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:58:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:58:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:58:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:58:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:58:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:58:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:58:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:58:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:58:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:59:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:59:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:59:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:59:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:59:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:59:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:59:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 15:59:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 15:59:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 15:59:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:59:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 15:59:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:59:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 15:59:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:00:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:00:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:00:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:00:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:00:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:00:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:00:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:00:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:00:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:00:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:00:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:00:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:00:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:00:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:01:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:01:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:01:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:01:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:01:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:01:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:01:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:01:49 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 16:01:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:01:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:01:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:01:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:01:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:01:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:01:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:02:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:02:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:02:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:02:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:02:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:02:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:02:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:02:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:02:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:02:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:02:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:02:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:02:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:02:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:03:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:03:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:03:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:03:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:03:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:03:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:03:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:03:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:03:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:03:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:03:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:03:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:03:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:03:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:04:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:04:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:04:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:04:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:04:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:04:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:04:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:04:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:04:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:04:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:04:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:04:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:04:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:04:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:05:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:05:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:05:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:05:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:05:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:05:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:05:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:05:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:05:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:05:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:05:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:05:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:05:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:05:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:06:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:06:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:06:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:06:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:06:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:06:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:06:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:06:49 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-13 16:06:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:06:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:06:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:06:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:06:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:06:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:06:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:07:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:07:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:07:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:07:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:07:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:07:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:07:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:07:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:07:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:07:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:07:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:07:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:07:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:07:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:08:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:08:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:08:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:08:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:08:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:08:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:08:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:08:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:08:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:08:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:08:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:08:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:08:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:08:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:09:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:09:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:09:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:09:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:09:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:09:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:40 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:40 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:43 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:43 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:44 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:44 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:44 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:09:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:09:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:09:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:09:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:09:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:09:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:54 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:54 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:55 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:55 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:56 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:56 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:57 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:58 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:58 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:58 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:58 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:09:58 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:10:00 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:10:00 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:10:01 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:10:01 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:10:01 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/me, email: har@gmail.com, role: ROLE_USER, userId: 13
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/me
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/me", parameters={}
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#getCurrentUser(Long)
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [UserDTO(id=13, email=har@gmail.com, fullName=Harshit, phone=1234567899, isActive=true, role=ROLE_USE (truncated)...]
+2026-02-13 16:10:01 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-13 16:10:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-13 16:10:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1770974490622
+2026-02-13 16:10:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:10:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-13 16:10:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:10:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-13 16:10:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
