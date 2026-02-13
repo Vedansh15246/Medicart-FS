@@ -4,6 +4,7 @@ import { addressService } from "../../api/orderService";
 import AddressForm from './AddressForm';
 import AddressList from './AddressList';
 import Navbar from '../../components/navbar/Navbar';
+import { useToast } from '../../components/ui/Toast';
 import './AddressPage.css';
  
 const AddressPage = () => {
@@ -13,6 +14,7 @@ const AddressPage = () => {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
+  const { showToast, showConfirm } = useToast();
  
   const fetchAddresses = async () => {
     setLoading(true);
@@ -42,7 +44,7 @@ const AddressPage = () => {
       await addressService.updateAddress(id, { ...target, isDefault: true });
       fetchAddresses(); // Refresh to see changes
     } catch (err) {
-      alert("Failed to update default address");
+      showToast("Failed to update default address", "error");
     }
   };
  
@@ -62,17 +64,23 @@ const AddressPage = () => {
       fetchAddresses()
     } catch (err) {
       console.error("❌ Save failed:", err.response?.data || err.message);
-      alert("Save failed: " + (err.response?.data?.message || err.message));
+      showToast("Save failed: " + (err.response?.data?.message || err.message), "error");
     }
   };
  
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this address?")) return;
+    const confirmed = await showConfirm(
+      "Delete Address",
+      "Are you sure you want to delete this address?",
+      { variant: "danger", okText: "Delete", cancelText: "Cancel" }
+    );
+    if (!confirmed) return;
     try {
       await addressService.deleteAddress(id);
+      showToast("Address deleted successfully", "success");
       fetchAddresses();
     } catch (err) {
-      alert("Delete failed");
+      showToast("Delete failed", "error");
     }
   };
  

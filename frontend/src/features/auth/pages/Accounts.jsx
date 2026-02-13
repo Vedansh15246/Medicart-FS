@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import authService from "../../../api/authService";
 import AlertModal from "../../../components/ui/AlertModal";
+import { useToast } from '../../../components/ui/Toast';
 
 const Accounts = () => {
   const [data, setData] = useState({ 
@@ -10,6 +11,7 @@ const Accounts = () => {
   });
   const [isChanged, setIsChanged] = useState(false);
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
+  const { showToast } = useToast();
 
   const handleOnChange = (e) => {
     setData({
@@ -57,9 +59,11 @@ const handleFormSubmit = async (e) => {
     await authService.updateProfile(userId, profilePayload);
 
     setIsChanged(false);
+    showToast("Profile updated successfully!", "success");
     setAlertModal({ open: true, title: "Success", message: "Profile updated successfully!", type: "success" });
   } catch (err) {
     console.error("Update failed:", err.response?.data || err.message);
+    showToast("Failed to update profile", "error");
     setAlertModal({ open: true, title: "Error", message: "Failed to update profile", type: "error" });
   }
 };

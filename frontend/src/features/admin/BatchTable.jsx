@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaSearch } from "react-icons/fa";
+import { useToast } from '../../components/ui/Toast';
 
 export default function BatchTable({ batches, onEdit, onDelete }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [searchTerm, setSearchTerm] = useState(""); 
   const itemsPerPage = 5;
+  const { showConfirm } = useToast();
 
   // ✅ FIX: Ensure we are always filtering an ARRAY
   // This handles both direct lists [] and Spring Boot Page objects { content: [] }
@@ -43,8 +45,13 @@ export default function BatchTable({ batches, onEdit, onDelete }) {
     return "active";
   };
 
-  const handleDeleteClick = (id) => {
-    if (window.confirm("Are you sure you want to delete this batch?")) {
+  const handleDeleteClick = async (id) => {
+    const confirmed = await showConfirm(
+      "Delete Batch",
+      "Are you sure you want to delete this batch?",
+      { variant: "danger", okText: "Delete", cancelText: "Cancel" }
+    );
+    if (confirmed) {
       onDelete(id);
     }
   };

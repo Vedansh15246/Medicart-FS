@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { orderService } from "../../api/orderService";
 import AlertModal from "../../components/ui/AlertModal";
+import { useToast } from '../../components/ui/Toast';
 
 export default function OrderStatusModal({ order, onClose, onSaved }) {
   const [form, setForm] = useState({
@@ -8,6 +9,7 @@ export default function OrderStatusModal({ order, onClose, onSaved }) {
     deliveryDate: ""
   });
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
+  const { showToast } = useToast();
 
   useEffect(() => {
     if (order) {
@@ -21,12 +23,12 @@ export default function OrderStatusModal({ order, onClose, onSaved }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Endpoint to update order status/date
       await orderService.updateOrder(order.id, form);
+      showToast("Order updated successfully", "success");
       onSaved();
       onClose();
     } catch (error) {
-      setAlertModal({ open: true, title: "Error", message: "Failed to update order", type: "error" });
+      showToast("Failed to update order", "error", "Update Error");
     }
   };
 

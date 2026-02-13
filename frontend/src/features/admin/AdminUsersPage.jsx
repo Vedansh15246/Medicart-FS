@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import authService from "../../api/authService";
 import UsersTable from "./UsersTable";
 import AlertModal from "../../components/ui/AlertModal";
+import { useToast } from '../../components/ui/Toast';
+
 export default function AdminUsersPage() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
+  const { showToast, showConfirm } = useToast();
 
   useEffect(() => {
     fetchUsers();
@@ -20,13 +23,18 @@ export default function AdminUsersPage() {
 
   // --- NEW DELETE LOGIC ---
   const handleDeleteUser = async (userId) => {
-    if (window.confirm("Are you sure you want to delete this user? This action cannot be undone.")) {
+    const confirmed = await showConfirm(
+      "Delete User",
+      "Are you sure you want to delete this user? This action cannot be undone.",
+      { variant: "danger", okText: "Delete", cancelText: "Cancel" }
+    );
+    if (confirmed) {
       try {
         await authService.deleteUser(userId);
-        // Update UI by filtering out the deleted user
         setUsers(users.filter(user => user.id !== userId));
+        showToast("User deleted successfully", "success");
       } catch (err) {
-        setAlertModal({ open: true, title: "Delete Failed", message: "Failed to delete user: " + (err.response?.data || err.message), type: "error" });
+        showToast("Failed to delete user: " + (err.response?.data || err.message), "error", "Delete Failed");
         console.log("Error deleting user", err);
       }
     }

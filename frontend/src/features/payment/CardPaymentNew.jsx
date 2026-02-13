@@ -7,11 +7,13 @@ import { clearCart } from '../../components/cart/cartSlice';
 import { fetchCart } from '../../components/cart/cartSlice';
 import logger from '../../utils/logger';
 import { ChevronLeft } from 'lucide-react';
+import { useToast } from '../../components/ui/Toast';
  
 export default function CardPayment() {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
+  const { showToast } = useToast();
  
   // ✅ Get cart data and auth from Redux
   const cart = useSelector((state) => state.cart);
@@ -123,6 +125,7 @@ export default function CardPayment() {
       // STEP 4: Clear cart and navigate to success
       // replace: true removes the payment page from history so back button won't return here
       dispatch(clearCart());
+      showToast('Order placed successfully! 🎉', 'success', 'Payment Complete', 5000);
      
       navigate('/payment/success', {
         replace: true,
@@ -138,7 +141,9 @@ export default function CardPayment() {
       });
     } catch (err) {
       logger.error('❌ Payment processing failed', err);
-      setError(err.response?.data?.error || err.message || 'Payment processing failed. Please try again.');
+      const errMsg = err.response?.data?.error || err.message || 'Payment processing failed. Please try again.';
+      setError(errMsg);
+      showToast(errMsg, 'error', 'Payment Failed');
     } finally {
       setLoading(false);
     }

@@ -3,10 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { orderService } from "../../api/orderService";
 import { clearCart, fetchCart } from "../../components/cart/cartSlice";
+import { useToast } from '../../components/ui/Toast';
  
 const CheckoutPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { showToast } = useToast();
     const cart = useSelector((state) => state.cart);
     const auth = useSelector((state) => state.auth);
    
@@ -53,7 +55,7 @@ const CheckoutPage = () => {
         e.preventDefault();
        
         if (!selectedAddress) {
-            alert("Please select a delivery address");
+            showToast("Please select a delivery address", "warning");
             return;
         }
  

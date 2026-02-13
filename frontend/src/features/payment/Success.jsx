@@ -3,10 +3,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { CheckCircle, Download, Home, ShoppingBag } from 'lucide-react';
 import logger from '../../utils/logger';
 import jsPDF from 'jspdf';
+import { useToast } from '../../components/ui/Toast';
  
 export default function Success() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { showToast } = useToast();
   const [orderDetails, setOrderDetails] = useState(null);
   const [loading, setLoading] = useState(true);
  
@@ -256,7 +258,7 @@ export default function Success() {
       logger.info('✅ PDF receipt downloaded successfully');
     } catch (error) {
       logger.error('❌ Error generating PDF:', error);
-      alert('Failed to download receipt. Error: ' + error.message);
+      showToast('Failed to download receipt: ' + error.message, 'error', 'Download Error');
     }
   };
  

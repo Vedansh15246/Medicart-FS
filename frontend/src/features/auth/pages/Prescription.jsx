@@ -3,6 +3,7 @@ import { MdOutlineUploadFile } from "react-icons/md";
 import client from "../../../api/client";
 import logger from "../../../utils/logger";
 import AlertModal from "../../../components/ui/AlertModal";
+import { useToast } from '../../../components/ui/Toast';
 
 const Prescription = () => {
 
@@ -11,6 +12,7 @@ const Prescription = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" })
+  const { showToast } = useToast()
 
   useEffect(() => {
     logger.info("📝 Prescription component mounted");
@@ -58,6 +60,7 @@ const Prescription = () => {
       
       const res = await client.post('/api/prescriptions', fd)
       logger.info("✅ Prescription uploaded successfully", { fileName: prescription.name });
+      showToast("Prescription uploaded successfully!", "success")
       
       // refresh list
       const list = await client.get('/api/prescriptions')
@@ -69,7 +72,9 @@ const Prescription = () => {
         message: err.message,
         data: err.response?.data
       });
-      setError(err?.response?.data?.message || 'Upload failed')
+      const errMsg = err?.response?.data?.message || 'Upload failed'
+      setError(errMsg)
+      showToast(errMsg, "error", "Upload Failed")
     } finally {
       setLoading(false)
     }

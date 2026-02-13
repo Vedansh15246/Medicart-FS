@@ -7,11 +7,13 @@ import { clearCart } from '../../components/cart/cartSlice';
 import { fetchCart } from '../../components/cart/cartSlice';
 import logger from '../../utils/logger';
 import { ChevronLeft, Smartphone } from 'lucide-react';
+import { useToast } from '../../components/ui/Toast';
  
 export default function UPIPayment() {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
+  const { showToast } = useToast();
  
   const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
@@ -95,6 +97,7 @@ export default function UPIPayment() {
       // STEP 4: Clear cart and navigate to success
       // replace: true removes the payment page from history so back button won't return here
       dispatch(clearCart());
+      showToast('Order placed successfully! 🎉', 'success', 'Payment Complete', 5000);
      
       navigate('/payment/success', {
         replace: true,
@@ -111,7 +114,9 @@ export default function UPIPayment() {
       });
     } catch (err) {
       logger.error('❌ UPI Payment failed', err);
-      setError(err.response?.data?.error || err.message || 'Payment processing failed. Please try again.');
+      const errMsg = err.response?.data?.error || err.message || 'Payment processing failed. Please try again.';
+      setError(errMsg);
+      showToast(errMsg, 'error', 'Payment Failed');
     } finally {
       setLoading(false);
     }

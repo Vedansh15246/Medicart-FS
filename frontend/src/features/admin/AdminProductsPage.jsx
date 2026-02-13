@@ -6,12 +6,14 @@ import {
 } from "./adminApi";
 import ProductsTable from "./ProductsTable";
 import ProductEditorModal from "./ProductEditorModal";
+import { useToast } from '../../components/ui/Toast';
 import "./admin.css";
 import "./batch.css"
 
 export default function AdminProductsPage() {
   const [editingProduct, setEditingProduct] = useState(null);
   const [search, setSearch] = useState("");
+  const { showToast, showConfirm } = useToast();
 
   const {
     data: rawData, // Rename to rawData for safety check
@@ -31,13 +33,19 @@ export default function AdminProductsPage() {
   );
 
   const handleDelete = async (product) => {
-    if (
-      window.confirm(
-        `Are you sure you want to delete "${product.name}"?`
-      )
-    ) {
-      await deleteMedicine(product.id);
-      refetch();
+    const confirmed = await showConfirm(
+      "Delete Medicine",
+      `Are you sure you want to delete "${product.name}"?`,
+      { variant: "danger", okText: "Delete", cancelText: "Cancel" }
+    );
+    if (confirmed) {
+      try {
+        await deleteMedicine(product.id);
+        showToast(`"${product.name}" deleted successfully`, "success");
+        refetch();
+      } catch (err) {
+        showToast("Failed to delete medicine", "error");
+      }
     }
   };
 

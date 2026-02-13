@@ -4,12 +4,14 @@ import { fetchBatches, fetchMedicines, deleteBatch } from "./batchApi";
 import BatchTable from "./BatchTable";
 import BatchEditorModal from "./BatchEditorModal";
 import AlertModal from "../../components/ui/AlertModal";
+import { useToast } from '../../components/ui/Toast';
 import "./batch.css";
 import "./admin.css";
 
 export default function AdminBatchPage() {
   const [editingBatch, setEditingBatch] = useState(null);
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
+  const { showToast } = useToast();
 
   const { data: batches = [], refetch } = useQuery({
     queryKey: ["batches"],
@@ -24,10 +26,11 @@ export default function AdminBatchPage() {
   const handleDeleteBatch = async (id) => {
     try {
       await deleteBatch(id);
+      showToast("Batch deleted successfully", "success");
       refetch();
     } catch (error) {
       console.error("Error deleting batch:", error);
-      setAlertModal({ open: true, title: "Error", message: "Failed to delete batch", type: "error" });
+      showToast("Failed to delete batch", "error", "Delete Error");
     }
   };
 

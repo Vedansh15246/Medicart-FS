@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createMedicine, updateMedicine } from "./adminApi";
 import AlertModal from "../../components/ui/AlertModal";
+import { useToast } from '../../components/ui/Toast';
 
 const EMPTY_FORM = {
   sku: "",
@@ -15,6 +16,7 @@ export default function ProductEditorModal({ product, onClose, onSaved }) {
   const isEdit = Boolean(product?.id);
   const [form, setForm] = useState(EMPTY_FORM);
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
+  const { showToast } = useToast();
 
   useEffect(() => {
     if (product && isEdit) {
@@ -47,11 +49,12 @@ export default function ProductEditorModal({ product, onClose, onSaved }) {
       } else {
         await createMedicine(payload);
       }
+      showToast(isEdit ? "Medicine updated successfully" : "Medicine added successfully", "success");
       onSaved();
       onClose();
     } catch (error) {
       console.error("Error saving medicine:", error);
-      setAlertModal({ open: true, title: "Save Failed", message: "Failed to save medicine. Check console for details.", type: "error" });
+      showToast("Failed to save medicine. Check console for details.", "error", "Save Failed");
     }
   };
 
