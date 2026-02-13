@@ -54,11 +54,12 @@ const AdminLoginPage = () => {
 
     } catch (err) {
       console.error("❌ Admin Login Error:", err);
-      setError(
+      console.log("📌 Response data:", err.response?.data);
+      const errorMsg =
+        err.response?.data?.error ||
         err.response?.data?.message ||
-        err.message ||
-        "Invalid admin credentials"
-      );
+        "Invalid admin credentials";
+      setError(errorMsg);
       setLoading(false);
     }
   };

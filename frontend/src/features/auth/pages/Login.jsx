@@ -2,9 +2,18 @@ import Auth from "../components/Auth";
 import authService from "../../../api/authService";
 import client from "../../../api/client";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import ErrorBanner from "../../../components/ui/ErrorBanner";
 
 const Login = () => {
   const [error, setError] = useState(null);
+
+  // If user is already logged in, redirect away from login page
+  const token = localStorage.getItem("accessToken");
+  if (token && token !== "null" && token !== "undefined") {
+    const role = localStorage.getItem("userRole");
+    return <Navigate to={role === "ADMIN" || role === "ROLE_ADMIN" ? "/admin/dashboard" : "/"} replace />;
+  }
 
 const handleLoginSubmit = async (_e, payload) => {
   setError(null);
@@ -36,17 +45,14 @@ const handleLoginSubmit = async (_e, payload) => {
     window.location.href = redirectTo;
   } catch (err) {
     console.error("❌ Login error:", err);
-    setError(err.response?.data?.message || err.message || "Invalid email or password.");
+    const msg = err.response?.data?.error || err.response?.data?.message || "Invalid email or password.";
+    setError(msg);
   }
 };
   return (
     <>
+      <ErrorBanner message={error} onClose={() => setError(null)} />
       <div className="container my-auto">
-        {error && (
-          <div className="alert alert-danger" role="alert">
-            {error}
-          </div>
-        )}
         <Auth type="Login" onSubmit={handleLoginSubmit} />
       </div>
     </>

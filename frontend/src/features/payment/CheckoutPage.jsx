@@ -3,26 +3,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { orderService } from "../../api/orderService";
 import { clearCart, fetchCart } from "../../components/cart/cartSlice";
-import AlertModal from '../../components/ui/AlertModal';
-
+ 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const cart = useSelector((state) => state.cart);
     const auth = useSelector((state) => state.auth);
-    
+   
     const [selectedAddress, setSelectedAddress] = useState(null);
     const [addresses, setAddresses] = useState([]);
     const [loadingAddresses, setLoadingAddresses] = useState(true);
-    const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
-
+ 
     // ✅ Sync with DB on refresh if state is lost
     useEffect(() => {
         if (cart.status === 'idle') {
             dispatch(fetchCart());
         }
     }, [dispatch, cart.status]);
-
+ 
     // ✅ Load user addresses
     useEffect(() => {
         const loadAddresses = async () => {
@@ -41,24 +39,24 @@ const CheckoutPage = () => {
         };
         loadAddresses();
     }, []);
-
+ 
     const subtotal = cart.items.reduce((acc, item) => {
         const price = item.product?.price || 0;
         return acc + (price * item.qty);
     }, 0);
-
+ 
     const tax = Math.round(subtotal * 0.18); // 18% GST
     const delivery = subtotal > 500 ? 0 : 40; // Free delivery for orders > 500
     const total = subtotal + tax + delivery;
-
+ 
     const handlePlaceOrder = async (e) => {
         e.preventDefault();
-        
+       
         if (!selectedAddress) {
-            setAlertModal({ open: true, title: "No Address", message: "Please select a delivery address", type: "warning" });
+            alert("Please select a delivery address");
             return;
         }
-
+ 
         // ✅ UPDATED FLOW: Don't create order yet, just pass addressId to payment
         // Order will be created during payment processing (after selecting payment method)
         navigate('/payment/select', {
@@ -73,19 +71,19 @@ const CheckoutPage = () => {
             }
         });
     };
-
+ 
     if (cart.status === 'loading') {
         return <div className="p-6 text-center text-gray-500">Syncing your cart...</div>;
     }
-
+ 
     if (!auth?.user) {
         return <div className="p-6 text-center text-red-500">Please login to continue</div>;
     }
-
+ 
     return (
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded">
             <h2 className="text-2xl font-bold mb-6 border-b pb-3">Order Summary</h2>
-            
+           
             {/* Delivery Address Section */}
             {loadingAddresses ? (
                 <div className="mb-6 p-4 bg-blue-50 rounded">Loading addresses...</div>
@@ -95,21 +93,21 @@ const CheckoutPage = () => {
                     {addresses.length === 0 ? (
                         <p className="text-gray-600">No addresses saved. Please add one in your profile.</p>
                     ) : (
-                        <select 
-                            value={selectedAddress || ''} 
+                        <select
+                            value={selectedAddress || ''}
                             onChange={(e) => setSelectedAddress(parseInt(e.target.value))}
                             className="w-full p-2 border rounded"
                         >
                             {addresses.map(addr => (
                                 <option key={addr.id} value={addr.id}>
-                                    {addr.street}, {addr.city} - {addr.pincode}
+                                    {addr.streetAddress}
                                 </option>
                             ))}
                         </select>
                     )}
                 </div>
             )}
-
+ 
             {/* Cart Items */}
             {cart.items.length === 0 ? (
                 <p className="text-center py-8 text-gray-500 text-lg">Your cart is empty</p>
@@ -126,7 +124,7 @@ const CheckoutPage = () => {
                             ))}
                         </div>
                     </div>
-                    
+                   
                     {/* Price Breakdown */}
                     <div className="mt-6 pt-4 border-t space-y-2">
                         <div className="flex justify-between">
@@ -148,28 +146,20 @@ const CheckoutPage = () => {
                     </div>
                 </>
             )}
-
-            <button 
+ 
+            <button
                 onClick={handlePlaceOrder}
                 disabled={cart.items.length === 0 || !selectedAddress}
                 className={`w-full mt-6 py-3 text-white rounded font-bold transition text-lg ${
                     cart.items.length === 0 || !selectedAddress
-                    ? 'bg-gray-400 cursor-not-allowed' 
+                    ? 'bg-gray-400 cursor-not-allowed'
                     : 'bg-emerald-600 hover:bg-emerald-700'
                 }`}
             >
                 {`Proceed to Payment ₹${total.toFixed(2)}`}
             </button>
-
-            <AlertModal
-                isOpen={alertModal.open}
-                onClose={() => setAlertModal((s) => ({ ...s, open: false }))}
-                title={alertModal.title}
-                message={alertModal.message}
-                type={alertModal.type}
-            />
         </div>
     );
 };
-
+ 
 export default CheckoutPage;

@@ -7,22 +7,22 @@ import { clearCart } from '../../components/cart/cartSlice';
 import { fetchCart } from '../../components/cart/cartSlice';
 import logger from '../../utils/logger';
 import { ChevronLeft, Banknote } from 'lucide-react';
-
+ 
 export default function NetBankingPayment() {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  
+ 
   const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
-
+ 
   const [selectedBank, setSelectedBank] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+ 
   // Get address from location state or redirect
   const selectedAddress = location.state?.selectedAddressId;
-
+ 
   // ✅ Sync cart from backend on page load (handles refresh case)
   useEffect(() => {
     if (cart.items.length === 0 || cart.status === 'idle') {
@@ -30,17 +30,17 @@ export default function NetBankingPayment() {
       dispatch(fetchCart());
     }
   }, []);
-
+ 
   // Calculate totals
   const subtotal = cart.items.reduce((acc, item) => {
     const price = item.product?.price || 0;
     return acc + (price * item.qty);
   }, 0);
-
+ 
   const tax = Math.round(subtotal * 0.18);
   const delivery = subtotal > 500 ? 0 : 40;
   const total = subtotal + tax + delivery;
-
+ 
   const banks = [
     { id: 'hdfc', name: 'HDFC Bank', icon: '🏦' },
     { id: 'icici', name: 'ICICI Bank', icon: '🏦' },
@@ -51,39 +51,39 @@ export default function NetBankingPayment() {
     { id: 'kotak', name: 'Kotak Mahindra Bank', icon: '🏦' },
     { id: 'idbi', name: 'IDBI Bank', icon: '🏦' },
   ];
-
+ 
   const handleNetBankingPayment = async (e) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
-
+ 
     try {
       if (!selectedBank) {
         throw new Error('Please select a bank');
       }
-
+ 
       // Validate address
       if (!selectedAddress) {
         throw new Error('Please select a delivery address');
       }
-
+ 
       logger.info('💳 Processing Net Banking payment', { bank: selectedBank, amount: total, addressId: selectedAddress });
-
+ 
       // STEP 1: Create order first
       logger.info("📍 Step 1: Creating order");
       const orderResponse = await orderService.placeOrder(selectedAddress);
       const orderId = orderResponse.id;
-      
+     
       logger.info("✅ Order created", { orderId, orderNumber: orderResponse.orderNumber });
-
+ 
       // STEP 2: Create payment data
       const paymentData = {
         bankCode: selectedBank,
         paymentMethod: 'NET_BANKING'
       };
-
+ 
       logger.info("📤 Step 2: Processing payment for order", { orderId });
-
+ 
       // STEP 3: Process payment with orderId
       const response = await paymentService.processPayment(
         orderId,
@@ -91,12 +91,12 @@ export default function NetBankingPayment() {
         'NET_BANKING',
         paymentData
       );
-
+ 
       logger.info('✅ Net Banking Payment processed', { paymentId: response.paymentId, orderId });
-
+ 
       // STEP 4: Clear cart and navigate to success
       dispatch(clearCart());
-      
+     
       navigate('/payment/success', {
         state: {
           paymentId: response.paymentId,
@@ -116,18 +116,18 @@ export default function NetBankingPayment() {
       setLoading(false);
     }
   };
-
+ 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-2xl mx-auto">
         {/* Back Button */}
-        <button 
+        <button
           onClick={() => navigate('/payment/select')}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6 font-medium"
         >
           <ChevronLeft size={20} /> Back to Payment Methods
         </button>
-
+ 
         {/* Header */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-6">
           <div className="flex items-center gap-3 mb-2">
@@ -140,7 +140,7 @@ export default function NetBankingPayment() {
             </div>
           </div>
         </div>
-
+ 
         {/* Order Summary */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-6">
           <div className="space-y-3">
@@ -164,7 +164,7 @@ export default function NetBankingPayment() {
             </div>
           </div>
         </div>
-
+ 
         {/* Net Banking Form */}
         <form onSubmit={handleNetBankingPayment} className="bg-white rounded-xl shadow-md p-6 space-y-6">
           {error && (
@@ -172,7 +172,7 @@ export default function NetBankingPayment() {
               <p className="text-red-700 text-sm">{error}</p>
             </div>
           )}
-
+ 
           <div>
             <label className="block text-gray-700 font-semibold mb-4">Select Your Bank</label>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -194,7 +194,7 @@ export default function NetBankingPayment() {
               ))}
             </div>
           </div>
-
+ 
           {/* Security Info */}
           <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
             <h3 className="font-semibold text-orange-800 mb-2">ℹ️ How Net Banking Works</h3>
@@ -205,7 +205,7 @@ export default function NetBankingPayment() {
               <li>✓ You'll be redirected back with confirmation</li>
             </ul>
           </div>
-
+ 
           <button
             type="submit"
             disabled={loading || !selectedBank}
@@ -213,7 +213,7 @@ export default function NetBankingPayment() {
           >
             {loading ? 'Processing...' : `Pay ₹ ${total.toFixed(2)} via Net Banking`}
           </button>
-
+ 
           <div className="text-center text-sm text-gray-600">
             <p>🔒 Secure & encrypted payment</p>
           </div>
@@ -222,3 +222,4 @@ export default function NetBankingPayment() {
     </div>
   );
 }
+ 

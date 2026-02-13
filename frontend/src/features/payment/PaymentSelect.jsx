@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ChevronLeft, CreditCard, Smartphone, Banknote } from 'lucide-react';
 import { fetchCart } from '../../components/cart/cartSlice';
 import logger from '../../utils/logger';
-
+ 
 export default function PaymentSelect() {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-
+ 
   // ✅ Sync cart from backend on page load (handles refresh case)
   useEffect(() => {
     if (cart.items.length === 0 || cart.status === 'idle') {
@@ -18,20 +18,20 @@ export default function PaymentSelect() {
       dispatch(fetchCart());
     }
   }, []);
-
+ 
   // Get selected address from location state
   const selectedAddressId = location.state?.selectedAddressId;
-
+ 
   // Calculate totals from Redux cart
   const subtotal = cart.items.reduce((acc, item) => {
     const price = item.product?.price || 0;
     return acc + (price * item.qty);
   }, 0);
-
+ 
   const tax = Math.round(subtotal * 0.18);
   const delivery = subtotal > 500 ? 0 : 40;
   const total = subtotal + tax + delivery;
-
+ 
   const paymentMethods = [
     {
       id: 'credit_card',
@@ -66,7 +66,7 @@ export default function PaymentSelect() {
       color: 'bg-orange-500 hover:bg-orange-600'
     }
   ];
-
+ 
   const handlePaymentMethodSelect = (method) => {
     logger.info(`💳 Selected payment method: ${method.name}`);
     navigate(method.path, {
@@ -81,24 +81,24 @@ export default function PaymentSelect() {
       }
     });
   };
-
+ 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-2xl mx-auto">
         {/* Back Button */}
-        <button 
-          onClick={() => navigate(-1)}
+        <button
+          onClick={() => navigate('/payment')}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6 font-medium"
         >
           <ChevronLeft size={20} /> Back to Checkout
         </button>
-
+ 
         {/* Header */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Select Payment Method</h1>
           <p className="text-gray-600">Choose how you want to pay for your order</p>
         </div>
-
+ 
         {/* Order Summary */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-6">
           <div className="space-y-3">
@@ -122,7 +122,7 @@ export default function PaymentSelect() {
             </div>
           </div>
         </div>
-
+ 
         {/* Payment Methods Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {paymentMethods.map((method) => {
@@ -146,7 +146,7 @@ export default function PaymentSelect() {
             );
           })}
         </div>
-
+ 
         {/* Security & Info */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -173,7 +173,7 @@ export default function PaymentSelect() {
             </div>
           </div>
         </div>
-
+ 
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-gray-600">
           <p>Need help? <a href="#" className="text-emerald-600 font-semibold hover:underline">Contact Support</a></p>
@@ -182,3 +182,5 @@ export default function PaymentSelect() {
     </div>
   );
 }
+ 
+ 

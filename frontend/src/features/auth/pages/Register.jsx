@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import Auth from "../components/Auth";
 import authService from "../../../api/authService";
 import client from "../../../api/client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import AlertModal from "../../../components/ui/AlertModal";
+import ErrorBanner from "../../../components/ui/ErrorBanner";
 
 const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" });
   const [pendingUserData, setPendingUserData] = useState(null);
+
+  // If user is already logged in, redirect away from register page
+  const token = localStorage.getItem("accessToken");
+  if (token && token !== "null" && token !== "undefined") {
+    return <Navigate to="/" replace />;
+  }
 
  const handleRegisterSubmit = async (_e, payload) => {
     console.log("1. Registration started for:", payload.email);
@@ -48,7 +55,7 @@ const Register = () => {
 
   return (
     <div className="container my-auto pt-5">
-      {error && <div className="alert alert-danger mx-auto col-md-8">{error}</div>}
+      <ErrorBanner message={error} onClose={() => setError(null)} />
       <Auth type="Register" onSubmit={handleRegisterSubmit} />
 
       <AlertModal

@@ -7,16 +7,16 @@ import { clearCart } from '../../components/cart/cartSlice';
 import { fetchCart } from '../../components/cart/cartSlice';
 import logger from '../../utils/logger';
 import { ChevronLeft } from 'lucide-react';
-
+ 
 export default function CardPayment() {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  
+ 
   // ✅ Get cart data and auth from Redux
   const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
-
+ 
   const [cardNumber, setCardNumber] = useState('');
   const [expiryMonth, setExpiryMonth] = useState('');
   const [expiryYear, setExpiryYear] = useState('');
@@ -24,10 +24,10 @@ export default function CardPayment() {
   const [cardholderName, setCardholderName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+ 
   // Get address from location state or redirect
   const selectedAddress = location.state?.selectedAddressId;
-
+ 
   // ✅ Sync cart from backend on page load (handles refresh case)
   useEffect(() => {
     if (cart.items.length === 0 || cart.status === 'idle') {
@@ -35,65 +35,65 @@ export default function CardPayment() {
       dispatch(fetchCart());
     }
   }, []);
-
+ 
   // Calculate totals from Redux cart
   const subtotal = cart.items.reduce((acc, item) => {
     const price = item.product?.price || 0;
     return acc + (price * item.qty);
   }, 0);
-
+ 
   const tax = Math.round(subtotal * 0.18);
   const delivery = subtotal > 500 ? 0 : 40;
   const total = subtotal + tax + delivery;
-
+ 
   const handleFinalPay = async (e) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
-
+ 
     try {
-      logger.info("💳 Processing card payment", { 
-        amount: total, 
+      logger.info("💳 Processing card payment", {
+        amount: total,
         cardholder: cardholderName,
         addressId: selectedAddress
       });
-
+ 
       if (!cardNumber || !expiryMonth || !expiryYear || !cvv || !cardholderName) {
         throw new Error('Please fill all card details');
       }
-
+ 
       // Validate address
       if (!selectedAddress) {
         throw new Error('Please select a delivery address');
       }
-
+ 
       // Validate card number
       if (cardNumber.replace(/\s/g, '').length < 13) {
         throw new Error('Invalid card number (minimum 13 digits required)');
       }
-
+ 
       // Validate CVV
       if (cvv.length < 3 || cvv.length > 4) {
         throw new Error('Invalid CVV (3-4 digits required)');
       }
-
+ 
       // Validate expiry
       const currentYear = new Date().getFullYear() % 100;
       const currentMonth = new Date().getMonth() + 1;
-      
-      if (parseInt(expiryYear) < currentYear || 
+     
+      if (parseInt(expiryYear) < currentYear ||
           (parseInt(expiryYear) === currentYear && parseInt(expiryMonth) < currentMonth)) {
         throw new Error('Card has expired');
       }
-
+ 
       logger.info("📍 Step 1: Creating order");
-
+ 
       // STEP 1: Create order first
       const orderResponse = await orderService.placeOrder(selectedAddress);
       const orderId = orderResponse.id;
-      
+     
       logger.info("✅ Order created", { orderId, orderNumber: orderResponse.orderNumber });
-
+ 
       // STEP 2: Create payment object with card details
       const paymentData = {
         method: 'CREDIT_CARD',
@@ -103,9 +103,9 @@ export default function CardPayment() {
         cvv,
         cardholderName
       };
-
+ 
       logger.info("📤 Step 2: Processing payment for order", { orderId });
-
+ 
       // STEP 3: Process payment with the orderId
       const paymentResponse = await paymentService.processPayment(
         orderId,
@@ -113,16 +113,16 @@ export default function CardPayment() {
         'CREDIT_CARD',
         paymentData
       );
-
-      logger.info("✅ Payment processed successfully", { 
+ 
+      logger.info("✅ Payment processed successfully", {
         paymentId: paymentResponse.paymentId,
         orderId: orderId,
         status: paymentResponse.status
       });
-
+ 
       // STEP 4: Clear cart and navigate to success
       dispatch(clearCart());
-      
+     
       navigate('/payment/success', {
         state: {
           paymentId: paymentResponse.paymentId,
@@ -141,22 +141,22 @@ export default function CardPayment() {
       setLoading(false);
     }
   };
-
+ 
   const formatCardNumber = (value) => {
     return value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim();
   };
-
+ 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-md mx-auto">
         {/* Back Button */}
-        <button 
+        <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6 font-medium"
         >
           <ChevronLeft size={20} /> Back to Payment Options
         </button>
-
+ 
         {/* Card */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           {/* Header */}
@@ -164,7 +164,7 @@ export default function CardPayment() {
             <h2 className="text-2xl font-bold mb-2">Credit Card Payment</h2>
             <p className="text-emerald-100">Secure payment gateway</p>
           </div>
-
+ 
           {/* Form */}
           <form onSubmit={handleFinalPay} className="p-6 space-y-4">
             {/* Amount Display */}
@@ -174,7 +174,7 @@ export default function CardPayment() {
                 <span className="text-2xl font-bold text-emerald-600">₹ {total.toFixed(2)}</span>
               </div>
             </div>
-
+ 
             {/* Error Message */}
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg text-sm flex items-start gap-3">
@@ -182,7 +182,7 @@ export default function CardPayment() {
                 <span>{error}</span>
               </div>
             )}
-
+ 
             {/* Cardholder Name */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Cardholder Name</label>
@@ -195,7 +195,7 @@ export default function CardPayment() {
                 required
               />
             </div>
-
+ 
             {/* Card Number */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Card Number</label>
@@ -210,7 +210,7 @@ export default function CardPayment() {
               />
               <p className="text-xs text-gray-500 mt-1">💳 16-digit card number</p>
             </div>
-
+ 
             {/* Expiry and CVV */}
             <div className="grid grid-cols-3 gap-3">
               <div>
@@ -255,20 +255,20 @@ export default function CardPayment() {
                 />
               </div>
             </div>
-
+ 
             {/* Security Notice */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 flex items-start gap-2 text-sm text-blue-700">
               <span className="text-lg mt-0.5">🔒</span>
               <span>Your payment information is encrypted and secure. We never store full card details.</span>
             </div>
-
+ 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
               className={`w-full py-3 rounded-lg font-bold text-white text-lg transition-all mt-6 ${
-                loading 
-                  ? 'bg-gray-400 cursor-not-allowed' 
+                loading
+                  ? 'bg-gray-400 cursor-not-allowed'
                   : 'bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 active:scale-95'
               }`}
             >
@@ -280,7 +280,7 @@ export default function CardPayment() {
                 `Pay ₹ ${total.toFixed(2)} Securely`
               )}
             </button>
-
+ 
             {/* Test Card Info */}
             <div className="text-xs text-gray-500 text-center mt-4 pt-4 border-t border-gray-200">
               💡 Test Card: 4532 1234 5678 9010 | MM/YY: 12/25 | CVV: 123
