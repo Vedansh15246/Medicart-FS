@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 16px;
   right: 16px;
+  left: auto;
   background: #2fbf5d;
   color: white;
   padding: 12px 16px;
@@ -9,8 +10,15 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 2000;
+  font-size: 1rem;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+.cart-summary span {
+  white-space: nowrap;
 }
 
 .cart-summary button {
@@ -21,4 +29,45 @@
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cart-summary button:hover {
+  background: #e8fbe8;
+}
+
+.cart-summary button:active {
+  transform: scale(0.96);
+}
+
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  .cart-summary {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    max-width: none;
+  }
+
+  .cart-summary button {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ── Tablets / medium screens (481px – 768px) ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .cart-summary {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 18px;
+    gap: 14px;
+    font-size: 0.95rem;
+  }
 }

@@ -7,6 +7,8 @@ export default function ReportFilters({
 	setReportType,
 	onGenerate,
 }) {
+	const today = new Date().toISOString().split("T")[0]; // e.g. "2026-02-16"
+
 	return (
 		<div className="bg-white rounded-2xl shadow p-6 mb-6">
 			<div className="flex flex-wrap items-end gap-4">
@@ -29,6 +31,7 @@ export default function ReportFilters({
 						type="date"
 						className="border rounded-lg px-3 py-2 text-sm"
 						value={startDate}
+						max={endDate || today}
 						onChange={(e) => setStartDate(e.target.value)}
 					/>
 				</div>
@@ -39,6 +42,8 @@ export default function ReportFilters({
 						type="date"
 						className="border rounded-lg px-3 py-2 text-sm"
 						value={endDate}
+						min={startDate || undefined}
+						max={today}
 						onChange={(e) => setEndDate(e.target.value)}
 					/>
 				</div>
