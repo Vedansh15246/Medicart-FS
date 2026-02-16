@@ -12,6 +12,19 @@ import com.medicart.auth.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableMethodSecurity
+/**
+ * Security configuration for the auth-service.
+ *
+ * Purpose of the key rules below:
+ * - Allow unauthenticated access to OpenAPI and Swagger UI endpoints so the
+ *   API Gateway (aggregator) and developers can fetch documentation at
+ *   /v3/api-docs without requiring a JWT.
+ * - Keep public auth endpoints (login/register/forgot-password) open.
+ * - Protect user-management and prescription endpoints as appropriate.
+ *
+ * Note: We also register a WebSecurityCustomizer that ignores static
+ * swagger resources; this is a convenience for the embedded swagger UI.
+ */
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtFilter;
@@ -28,9 +41,9 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 // Allow OpenAPI and Swagger UI endpoints (for aggregator and documentation)
-                .requestMatchers("/v3/api-docs", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**", "/webjars/**").permitAll()
-                .requestMatchers("/batches/**").hasRole("ADMIN")
-                .requestMatchers("/medicines/**").hasRole("ADMIN")
+                .requestMatchers("/v3/api-docs", "/v3/api-docs/**", "/v3/api-docs.yaml",
+                        "/swagger-ui.html", "/swagger-ui/**", "/swagger-resources/**", "/webjars/**").permitAll()
+                // Public auth endpoints
                 .requestMatchers("/auth/login", "/api/auth/login").permitAll()
                 .requestMatchers("/auth/register", "/api/auth/register").permitAll()
                 .requestMatchers("/auth/forgot-password", "/api/auth/forgot-password").permitAll()
@@ -55,10 +68,16 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
+        // Exclude swagger/OpenAPI static resources from Spring Security filters.
+        // This helps the gateway and local requests access documentation resources
+        // without being blocked by security filter chains.
         return (web) -> web.ignoring().requestMatchers(
+            "/v3/api-docs",
             "/v3/api-docs/**",
+            "/v3/api-docs.yaml",
             "/swagger-ui/**",
             "/swagger-ui.html",
+            "/swagger-resources/**",
             "/webjars/**"
         );
     }

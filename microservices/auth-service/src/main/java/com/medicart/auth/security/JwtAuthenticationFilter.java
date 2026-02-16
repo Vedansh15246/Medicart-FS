@@ -24,6 +24,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
+/**
+ * Filter that validates JWT tokens on incoming requests.
+ *
+ * Behavior notes:
+ * - The filter will skip OpenAPI and Swagger-related requests (see shouldNotFilter)
+ *   so that documentation endpoints remain accessible to the gateway and
+ *   developers without a bearer token.
+ * - When a Bearer token is present the filter attempts to validate it and
+ *   populate the SecurityContext with a UsernamePasswordAuthenticationToken.
+ * - Validation failures clear the SecurityContext but do not throw — this
+ *   allows endpoints configured as permitAll to continue to work.
+ */
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 
@@ -31,7 +43,21 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private String secret;
 
     private SecretKey getSigningKey() {
+        // Ensure the configured jwt.secret is sufficiently long for HS256.
+        // Keys.hmacShaKeyFor requires a minimum key length appropriate for the
+        // chosen algorithm; using a 256-bit (32+ byte) secret is recommended.
         return Keys.hmacShaKeyFor(secret.getBytes());
+    }
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getRequestURI();
+        // Keep OpenAPI/swagger endpoints unauthenticated so the gateway's
+        // aggregator can call /v3/api-docs and so the embedded UI loads.
+        return path.startsWith("/v3/api-docs")
+            || path.startsWith("/swagger-ui")
+            || path.startsWith("/swagger-resources")
+            || path.startsWith("/webjars/");
     }
 
     @Override
