@@ -18,8 +18,8 @@ import Prescription from "./features/auth/pages/Prescription";
 import Accounts from "./features/auth/pages/Accounts";
 import General from "./features/auth/layout/General";
 import ClientDashboard from "./features/auth/layout/ClientDashboard";
-import Dashboard from "./features/admin/analyticsSecction/Dashboard.jsx";
-import Reports from "./features/admin/analyticsSecction/Reports.jsx";
+import Dashboard from "./features/admin/analyticsSection/pages/Dashboard.jsx";
+import Reports from "./features/admin/analyticsSection/pages/Reports.jsx";
 import CartPage from "./components/cart/CartPage.jsx";
 import ProtectedRoute from "./features/auth/ProtectedRoute"; // The Gatekeeper
 import AdminOrdersPage from "./features/admin/AdminOrdersPage.jsx";

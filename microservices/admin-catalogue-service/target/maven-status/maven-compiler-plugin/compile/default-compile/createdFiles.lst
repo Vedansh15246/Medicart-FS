@@ -1,3 +1,4 @@
+com\medicart\admin\controller\AnalyticsController.class
 com\medicart\admin\controller\PrescriptionController.class
 com\medicart\admin\repository\BatchRepository.class
 com\medicart\admin\entity\Medicine$MedicineBuilder.class
@@ -5,6 +6,7 @@ com\medicart\admin\entity\Batch$BatchBuilder.class
 com\medicart\admin\repository\MedicineRepository.class
 com\medicart\admin\controller\MedicineController.class
 com\medicart\admin\config\JwtAuthenticationFilter.class
+com\medicart\admin\service\AnalyticsService.class
 com\medicart\admin\controller\BatchController.class
 com\medicart\admin\entity\Batch.class
 com\medicart\admin\config\WebSecurityConfig.class

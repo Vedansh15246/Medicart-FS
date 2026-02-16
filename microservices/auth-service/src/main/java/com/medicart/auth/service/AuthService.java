@@ -2,7 +2,11 @@ package com.medicart.auth.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 import java.util.stream.Collectors;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -161,5 +165,27 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
         log.info("Password reset successfully for email: {}", email);
+    }
+
+    public Map<String, Long> getUserCounts() {
+        LocalDate today = LocalDate.now();
+        LocalDateTime startOfToday = today.atStartOfDay();
+        LocalDateTime startOfWeek = today.with(DayOfWeek.MONDAY).atStartOfDay();
+        LocalDateTime startOfMonth = today.withDayOfMonth(1).atStartOfDay();
+        LocalDateTime startOfYear = today.withDayOfYear(1).atStartOfDay();
+
+        long totalUsers = userRepository.count();
+        long usersToday = userRepository.countByCreatedAtAfter(startOfToday);
+        long usersThisWeek = userRepository.countByCreatedAtAfter(startOfWeek);
+        long usersThisMonth = userRepository.countByCreatedAtAfter(startOfMonth);
+        long usersThisYear = userRepository.countByCreatedAtAfter(startOfYear);
+
+        return Map.of(
+                "totalUsers", totalUsers,
+                "usersToday", usersToday,
+                "usersThisWeek", usersThisWeek,
+                "usersThisMonth", usersThisMonth,
+                "usersThisYear", usersThisYear
+        );
     }
 }

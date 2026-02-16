@@ -82,13 +82,25 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
         // Extract Authorization header
         String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
 
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        if (authHeader == null || authHeader.isBlank()) {
             log.warn("Missing or invalid Authorization header for {} {}", method, path);
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
             return exchange.getResponse().setComplete();
         }
 
-        String token = authHeader.substring(7);
+        String token;
+        if (authHeader.regionMatches(true, 0, "Bearer ", 0, 7)) {
+            token = authHeader.substring(7);
+        } else {
+            // Accept raw tokens without the Bearer prefix to be more tolerant of clients.
+            token = authHeader;
+        }
+
+        if (token.isBlank()) {
+            log.warn("Missing JWT token value for {} {}", method, path);
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+            return exchange.getResponse().setComplete();
+        }
 
         try {
             Claims claims = Jwts.parser()

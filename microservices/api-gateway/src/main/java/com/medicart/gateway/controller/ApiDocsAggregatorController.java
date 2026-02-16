@@ -106,21 +106,11 @@ public class ApiDocsAggregatorController {
                             JsonNode operationNode = pathItem.get(op);
                             if (operationNode != null && operationNode.isObject()) {
                                 ObjectNode opObj = (ObjectNode) operationNode;
-                                // ensure tags array contains the service/module name
-                                ArrayNode tagNode;
-                                if (opObj.has("tags") && opObj.get("tags").isArray()) {
-                                    tagNode = (ArrayNode) opObj.get("tags");
-                                } else {
-                                    tagNode = objectMapper.createArrayNode();
-                                    opObj.set("tags", tagNode);
-                                }
-                                // add service as tag if not present
+                                // replace tags with service/module name only (hide controller tags)
+                                ArrayNode tagNode = objectMapper.createArrayNode();
                                 String tagName = sd.service;
-                                boolean exists = false;
-                                for (JsonNode tn : tagNode) {
-                                    if (tn.asText().equalsIgnoreCase(tagName)) { exists = true; break; }
-                                }
-                                if (!exists) tagNode.add(tagName);
+                                tagNode.add(tagName);
+                                opObj.set("tags", tagNode);
                                 // register tag in root tags array
                                 if (!addedTags.contains(tagName)) {
                                     ObjectNode tagObj = objectMapper.createObjectNode();

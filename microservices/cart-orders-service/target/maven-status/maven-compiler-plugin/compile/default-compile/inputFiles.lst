@@ -1,18 +1,20 @@
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\OrderRepository.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\OrderItemRepository.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\CartController.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\OrderItem.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\OrderService.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\config\WebSecurityConfig.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\AddressRepository.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\CartOrdersServiceApplication.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\AddressController.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\OrderController.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\client\MedicineClient.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\client\AuthClient.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\Address.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\CartItem.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\AddressService.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\CartService.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\Order.java
-C:\Project\Project work\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\CartItemRepository.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\OrderRepository.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\config\WebSecurityConfig.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\client\AuthClient.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\OrderItem.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\AddressController.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\CartService.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\OrderItemRepository.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\OrderAnalyticsService.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\OrderController.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\Address.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\OrderService.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\CartOrdersServiceApplication.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\CartItemRepository.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\CartItem.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\client\MedicineClient.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\AnalyticsController.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\controller\CartController.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\entity\Order.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\repository\AddressRepository.java
+C:\workspace\Medicart-FS\microservices\cart-orders-service\src\main\java\com\medicart\cartorders\service\AddressService.java

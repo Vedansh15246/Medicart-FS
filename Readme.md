@@ -1,5 +1,8 @@
 # Authentication & Authorization — MediCart (microservices)
 
+Related docs
+- Analytics & Dashboard end-to-end flow: [`docs/ANALYTICS_DASHBOARD_FLOW.md`](docs/ANALYTICS_DASHBOARD_FLOW.md)
+
 This document explains, with examples and concrete references to the code in this workspace, how authentication and authorization are implemented end-to-end for the MediCart project. It covers the login flow, JWT issuance, validation by downstream services, the API Gateway role, how role-based access control (RBAC) is enforced, and recommended secure storage/refresh practices.
 
 Important workspace references

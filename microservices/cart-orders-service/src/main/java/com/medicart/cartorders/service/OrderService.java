@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.medicart.cartorders.client.AuthClient;
 import com.medicart.cartorders.client.MedicineClient;
 import com.medicart.cartorders.entity.CartItem;
 import com.medicart.cartorders.entity.Order;
@@ -20,7 +19,6 @@ import com.medicart.cartorders.repository.CartItemRepository;
 import com.medicart.cartorders.repository.OrderRepository;
 import com.medicart.common.dto.BatchDTO;
 import com.medicart.common.dto.OrderDTO;
-import com.medicart.common.dto.UserDTO;
 
 @Service
 @Transactional
@@ -36,8 +34,6 @@ public class OrderService {
     @Autowired
     private MedicineClient medicineClient;
 
-    @Autowired
-    private AuthClient authClient;
 
     /**
      * FIFO STOCK ALLOCATION ALGORITHM
@@ -142,18 +138,6 @@ public class OrderService {
                 .sorted((a, b) -> b.getOrderDate().compareTo(a.getOrderDate()))
                 .map(order -> {
                     OrderDTO dto = convertToDTO(order);
-                    // Enrich with user info
-                    try {
-                        UserDTO user = authClient.getUserById(order.getUserId());
-                        dto.setUser(user);
-                    } catch (Exception e) {
-                        log.warn("Could not fetch user info for userId {}: {}", order.getUserId(), e.getMessage());
-                        dto.setUser(UserDTO.builder()
-                                .id(order.getUserId())
-                                .fullName("Unknown User")
-                                .email("N/A")
-                                .build());
-                    }
                     return dto;
                 })
                 .collect(Collectors.toList());
@@ -258,7 +242,6 @@ public class OrderService {
                 .totalAmount(order.getTotalAmount())
                 .status(order.getStatus())
                 .addressId(order.getAddressId())
-                .deliveryDate(order.getDeliveryDate())
                 .items(items)
                 .build();
     }

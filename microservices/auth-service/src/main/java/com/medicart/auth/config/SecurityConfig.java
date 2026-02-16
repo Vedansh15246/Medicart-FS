@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -38,6 +39,7 @@ public class SecurityConfig {
                 .requestMatchers("/auth/validate", "/api/auth/validate").permitAll()
                 .requestMatchers("/auth/health", "/api/auth/health").permitAll()
                 .requestMatchers("/auth/otp/**", "/api/auth/otp/**").permitAll()
+                .requestMatchers("/auth/analytics/**", "/api/auth/analytics/**").permitAll()
                 .requestMatchers("GET", "/auth/me", "/api/auth/me").authenticated()
                 .requestMatchers("GET", "/auth/users", "/api/auth/users").permitAll()
                 .requestMatchers("GET", "/auth/users/**", "/api/auth/users/**").permitAll()
@@ -49,5 +51,15 @@ public class SecurityConfig {
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring().requestMatchers(
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/swagger-ui.html",
+            "/webjars/**"
+        );
     }
 }

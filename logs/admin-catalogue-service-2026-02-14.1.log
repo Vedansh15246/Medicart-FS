@@ -1,0 +1,282 @@
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:57:59 [http-nio-8082-exec-8] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/1", parameters={}
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:57:59 [http-nio-8082-exec-8] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 1
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=1, name=Paracetamol, category=Tablet, price=12.0, sku=PCM, requiresRx=false, descript (truncated)...]
+2026-02-14 23:57:59 [http-nio-8082-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-14 23:58:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:58:07 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/ADMIN-CATALOGUE-SERVICE/LTIN656883.cts.com:admin-catalogue-service:8082?status=UP&lastDirtyTimestamp=1771084016153
+2026-02-14 23:58:07 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:58:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:58:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-14 23:58:07 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /api/analytics/sales-by-category
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-2] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/analytics/sales-by-category", parameters={}
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.AnalyticsController#getSalesByCategory()
+2026-02-14 23:58:17 [http-nio-8082-exec-2] INFO  c.m.a.controller.AnalyticsController - GET /api/analytics/sales-by-category
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/2
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-6] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/2", parameters={}
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:58:17 [http-nio-8082-exec-6] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 2
+2026-02-14 23:58:17 [http-nio-8082-exec-2] INFO  c.m.admin.service.AnalyticsService - Computed sales-by-category for 2 categories
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{totalRevenue=0.0, category=Tablet}, {totalRevenue=0.0, category=Syrup}]]
+2026-02-14 23:58:17 [http-nio-8082-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=2, name=Benidril, category=Syrup, price=52.0, sku=BDRL, requiresRx=false, description (truncated)...]
+2026-02-14 23:58:17 [http-nio-8082-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/3
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-9] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/3", parameters={}
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:58:17 [http-nio-8082-exec-9] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 3
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=3, name=Dolo, category=Tablet, price=4.0, sku=TMC, requiresRx=false, description=Mild (truncated)...]
+2026-02-14 23:58:17 [http-nio-8082-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/1
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-5] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/1", parameters={}
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:58:17 [http-nio-8082-exec-5] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 1
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=1, name=Paracetamol, category=Tablet, price=12.0, sku=PCM, requiresRx=false, descript (truncated)...]
+2026-02-14 23:58:17 [http-nio-8082-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /api/analytics/sales-by-category
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-10] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/analytics/sales-by-category", parameters={}
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.AnalyticsController#getSalesByCategory()
+2026-02-14 23:58:32 [http-nio-8082-exec-10] INFO  c.m.a.controller.AnalyticsController - GET /api/analytics/sales-by-category
+2026-02-14 23:58:32 [http-nio-8082-exec-10] INFO  c.m.admin.service.AnalyticsService - Computed sales-by-category for 2 categories
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{totalRevenue=0.0, category=Tablet}, {totalRevenue=0.0, category=Syrup}]]
+2026-02-14 23:58:32 [http-nio-8082-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/2
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-7] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/2", parameters={}
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:58:32 [http-nio-8082-exec-7] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 2
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=2, name=Benidril, category=Syrup, price=52.0, sku=BDRL, requiresRx=false, description (truncated)...]
+2026-02-14 23:58:32 [http-nio-8082-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/3
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-3] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/3", parameters={}
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:58:32 [http-nio-8082-exec-3] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 3
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=3, name=Dolo, category=Tablet, price=4.0, sku=TMC, requiresRx=false, description=Mild (truncated)...]
+2026-02-14 23:58:32 [http-nio-8082-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/1
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-1] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/1", parameters={}
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:58:32 [http-nio-8082-exec-1] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 1
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=1, name=Paracetamol, category=Tablet, price=12.0, sku=PCM, requiresRx=false, descript (truncated)...]
+2026-02-14 23:58:32 [http-nio-8082-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:58:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-14 23:58:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:58:37 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/ADMIN-CATALOGUE-SERVICE/LTIN656883.cts.com:admin-catalogue-service:8082?status=UP&lastDirtyTimestamp=1771084016153
+2026-02-14 23:58:37 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:58:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:58:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-14 23:58:37 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /api/analytics/sales-by-category
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/2
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-8] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/2", parameters={}
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:59:03 [http-nio-8082-exec-8] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 2
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=2, name=Benidril, category=Syrup, price=52.0, sku=BDRL, requiresRx=false, description (truncated)...]
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-4] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:03 [http-nio-8082-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/analytics/sales-by-category", parameters={}
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.AnalyticsController#getSalesByCategory()
+2026-02-14 23:59:03 [http-nio-8082-exec-4] INFO  c.m.a.controller.AnalyticsController - GET /api/analytics/sales-by-category
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/3
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:03 [http-nio-8082-exec-4] INFO  c.m.admin.service.AnalyticsService - Computed sales-by-category for 2 categories
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{totalRevenue=0.0, category=Tablet}, {totalRevenue=0.0, category=Syrup}]]
+2026-02-14 23:59:03 [http-nio-8082-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:03 [http-nio-8082-exec-2] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/3", parameters={}
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:59:03 [http-nio-8082-exec-2] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 3
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=3, name=Dolo, category=Tablet, price=4.0, sku=TMC, requiresRx=false, description=Mild (truncated)...]
+2026-02-14 23:59:03 [http-nio-8082-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/1
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-6] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/1", parameters={}
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:59:03 [http-nio-8082-exec-6] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 1
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=1, name=Paracetamol, category=Tablet, price=12.0, sku=PCM, requiresRx=false, descript (truncated)...]
+2026-02-14 23:59:03 [http-nio-8082-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-14 23:59:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:59:07 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/ADMIN-CATALOGUE-SERVICE/LTIN656883.cts.com:admin-catalogue-service:8082?status=UP&lastDirtyTimestamp=1771084016153
+2026-02-14 23:59:07 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:59:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:59:07 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-14 23:59:07 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /api/analytics/sales-by-category
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-9] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/analytics/sales-by-category", parameters={}
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.AnalyticsController#getSalesByCategory()
+2026-02-14 23:59:33 [http-nio-8082-exec-9] INFO  c.m.a.controller.AnalyticsController - GET /api/analytics/sales-by-category
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/2
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-5] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/2", parameters={}
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:59:33 [http-nio-8082-exec-5] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 2
+2026-02-14 23:59:33 [http-nio-8082-exec-9] INFO  c.m.admin.service.AnalyticsService - Computed sales-by-category for 2 categories
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{totalRevenue=0.0, category=Tablet}, {totalRevenue=0.0, category=Syrup}]]
+2026-02-14 23:59:33 [http-nio-8082-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=2, name=Benidril, category=Syrup, price=52.0, sku=BDRL, requiresRx=false, description (truncated)...]
+2026-02-14 23:59:33 [http-nio-8082-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/3
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-10] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/3", parameters={}
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:59:33 [http-nio-8082-exec-10] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 3
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=3, name=Dolo, category=Tablet, price=4.0, sku=TMC, requiresRx=false, description=Mild (truncated)...]
+2026-02-14 23:59:33 [http-nio-8082-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - 📍 [JWT FILTER] START
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - METHOD: GET | URI: /medicines/1
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - Remote Address: 127.0.0.1
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - ════════════════════════════════════════════════════════════════
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - 🔍 [JWT FILTER] Reading Authorization header
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - 📋 Header value: NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-7] WARN  c.m.a.config.JwtAuthenticationFilter - ⚠️  [JWT FILTER] Authorization header is NULL
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG c.m.a.config.JwtAuthenticationFilter - → Passing request to next filter WITHOUT authentication
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/medicines/1", parameters={}
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.admin.controller.MedicineController#getMedicineById(Long)
+2026-02-14 23:59:33 [http-nio-8082-exec-7] INFO  c.m.admin.service.MedicineService - 🔍 Fetching medicine with id: 1
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MedicineDTO(id=1, name=Paracetamol, category=Tablet, price=12.0, sku=PCM, requiresRx=false, descript (truncated)...]
+2026-02-14 23:59:33 [http-nio-8082-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-14 23:59:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-14 23:59:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:59:37 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/ADMIN-CATALOGUE-SERVICE/LTIN656883.cts.com:admin-catalogue-service:8082?status=UP&lastDirtyTimestamp=1771084016153
+2026-02-14 23:59:37 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-14 23:59:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-14 23:59:37 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-14 23:59:37 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
