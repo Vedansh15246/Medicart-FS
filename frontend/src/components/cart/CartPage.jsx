@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Navbar from '../../components/navbar/Navbar';
 import { fetchCart, incrementQty, decrementQty } from './cartSlice';
+import './CartPage.css';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -23,10 +24,13 @@ export default function CartPage() {
   }, [dispatch, token]);
 
   // 3. Calculate Totals with Optional Chaining for safety
-  const total = items.reduce(
+  const subtotal = items.reduce(
     (sum, item) => sum + (item.product?.price || 0) * item.qty, 
     0
   );
+  const gst = Math.round(subtotal * 0.18); // 18% GST
+  const delivery = subtotal > 500 ? 0 : 40; // Free delivery for orders > 500
+  const total = subtotal + gst + delivery;
 
   // --- RENDER LOGIC ---
 
@@ -84,7 +88,7 @@ export default function CartPage() {
 
   // D. Main Cart UI
   return (
-    <div style={styles.page}>
+    <div className="cart-page">
       <Navbar />
       
       <div style={styles.topBar}>
@@ -97,20 +101,20 @@ export default function CartPage() {
         <h1 style={styles.title}>Your Cart</h1>
       </div>
 
-      <div style={styles.layout}>
+      <div className="cart-layout">
         {/* LEFT SIDE: ITEMS */}
-        <div style={styles.left}>
+        <div className="cart-left">
           <h2 style={styles.sectionTitle}>Cart Items ({items.length})</h2>
           <div style={styles.list}>
             {items.map((item) => (
-              <div key={item.product?.id || Math.random()} style={styles.card}>
+              <div key={item.product?.id || Math.random()} className="cart-card">
                 <div style={styles.itemInfo}>
                   <strong>{item.product?.name || "Medicine Name Not Available"}</strong>
                   <span>₹{item.product?.price || 0}</span>
                   {item.product?.sku && <small style={{color: '#888'}}>SKU: {item.product.sku}</small>}
                 </div>
                 
-                <div style={styles.itemActions}>
+                <div className="cart-item-actions" style={styles.itemActions}>
                   <div style={styles.qtyControls}>
                     <button 
                       style={styles.qtyBtn} 
@@ -133,16 +137,20 @@ export default function CartPage() {
         </div>
 
         {/* RIGHT SIDE: SUMMARY */}
-        <div style={styles.right}>
+        <div className="cart-right">
           <h2 style={styles.sectionTitle}>Summary</h2>
           <div style={styles.summary}>
             <div style={styles.summaryRow}>
               <span>Subtotal</span>
-              <span>₹{total.toFixed(2)}</span>
+              <span>₹{subtotal.toFixed(2)}</span>
             </div>
             <div style={styles.summaryRow}>
-              <span>Shipping</span>
-              <span style={{color: '#2fbf5d'}}>FREE</span>
+              <span>GST (18%)</span>
+              <span>₹{gst.toFixed(2)}</span>
+            </div>
+            <div style={styles.summaryRow}>
+              <span>Delivery Charge</span>
+              <span style={delivery === 0 ? {color: '#2fbf5d'} : {}}>{delivery === 0 ? 'FREE' : `₹${delivery.toFixed(2)}`}</span>
             </div>
             <div style={{ ...styles.summaryRow, fontWeight: 700, borderTop: '1px solid #eee', paddingTop: 10, marginTop: 10 }}>
               <span>Total Amount</span>
@@ -154,7 +162,7 @@ export default function CartPage() {
               style={styles.primary}
               onClick={() => navigate("/address")}
             >
-              Proceed to Address
+              Proceed to Address — ₹{total.toFixed(2)}
             </button>
           </div>
         </div>
@@ -164,15 +172,10 @@ export default function CartPage() {
 }
 
 const styles = {
-  page: { padding: '32px', fontFamily: 'system-ui, sans-serif', background: '#f9fafb', minHeight: '100vh' },
   topBar: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 6, marginTop: 24, marginBottom: 24 },
   title: { color: '#2fbf5d', fontSize: '2rem', fontWeight: 700 },
-  layout: { display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '28px' },
-  left: { background: '#fff', border: '1px solid #eee', borderRadius: 10, padding: 20, boxShadow: '0 2px 6px rgba(0,0,0,0.05)' },
-  right: { background: '#fff', border: '1px solid #eee', borderRadius: 10, padding: 20, height: 'fit-content', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' },
   sectionTitle: { fontSize: '1.3rem', marginBottom: 16, fontWeight: 600 },
   list: { display: 'flex', flexDirection: 'column', gap: 12 },
-  card: { border: '1px solid #eee', borderRadius: 8, padding: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
   itemInfo: { display: 'flex', flexDirection: 'column', gap: 4 },
   itemActions: { display: 'flex', gap: 10, alignItems: 'center' },
   qtyControls: { display: 'flex', alignItems: 'center', gap: 10, border: '1px solid #ddd', borderRadius: 6, padding: '2px 8px' },

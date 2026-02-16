@@ -41,7 +41,14 @@ export default function MyOrdersPage() {
           <p className="text-gray-500">You haven't placed any orders yet.</p>
         ) : (
           <div className="space-y-6">
-            {orders.map(order => (
+            {orders.map(order => {
+              // Calculate price breakdown (same logic as checkout)
+              const subtotal = order.items?.reduce((acc, item) => acc + (item.priceAtPurchase * item.quantity), 0) || 0;
+              const gst = Math.round(subtotal * 0.18); // 18% GST
+              const delivery = subtotal > 500 ? 0 : 40; // Free delivery for orders > 500
+              const total = subtotal + gst + delivery;
+
+              return (
               <div key={order.id} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                 <div className="flex justify-between border-b pb-3 mb-4">
                   <div>
@@ -50,7 +57,10 @@ export default function MyOrdersPage() {
                       {order.orderDate ? new Date(order.orderDate).toLocaleString() : "Date N/A"}
                     </p>
                   </div>
-                  <p className="text-green-700 font-bold text-xl">₹{order.totalAmount?.toFixed(2)}</p>
+                  <div className="text-right">
+                    <p className="text-green-700 font-bold text-xl">₹{total.toFixed(2)}</p>
+                    <p className="text-xs text-gray-500">Incl. GST & Delivery</p>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
@@ -65,6 +75,22 @@ export default function MyOrdersPage() {
                     </div>
                   ))}
                 </div>
+
+                {/* Price Breakdown */}
+                <div className="mt-3 pt-3 border-t space-y-1 text-sm text-gray-600">
+                  <div className="flex justify-between">
+                    <span>Subtotal:</span>
+                    <span>₹{subtotal.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>GST (18%):</span>
+                    <span>₹{gst.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Delivery:</span>
+                    <span>{delivery === 0 ? <span className="text-green-600">Free</span> : `₹${delivery.toFixed(2)}`}</span>
+                  </div>
+                </div>
                 
                 <button 
                   onClick={() => navigate(`/orders/${order.id}`)}
@@ -73,7 +99,8 @@ export default function MyOrdersPage() {
                   View Order Details
                 </button>
               </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

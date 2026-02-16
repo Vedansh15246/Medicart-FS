@@ -9,6 +9,7 @@ import {
 import ReportHeader from "../components/ReportHeader";
 import ReportFilters from "../components/ReportFilters";
 import ReportPreview from "../components/ReportPreview";
+import { useToast } from "../../../../components/ui/Toast";
 
 const REPORT_TYPES = {
   SALES: { label: "Sales", color: "bg-emerald-50 text-emerald-700 border-emerald-100" },
@@ -25,6 +26,7 @@ export default function ReportsPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [pendingDelete, setPendingDelete] = useState(null);
+  const { showToast } = useToast();
 
   // --- 1. LOGIC: PARSING & PREVIEW ---
   const parseReportPayload = useCallback((data) => {
@@ -119,6 +121,7 @@ export default function ReportsPage() {
     const needsDates = reportType === "Sales" || reportType === "User Activity";
     if (needsDates && (!startDate || !endDate)) {
       setErrorMessage("Please select both start and end dates.");
+      showToast("Please select both start and end dates.", "warning");
       return;
     }
     setErrorMessage("");
@@ -131,8 +134,10 @@ export default function ReportsPage() {
 
       setPreview(buildPreview(reportType, data));
       await loadReports();
+      showToast(`${reportType} report generated successfully! 📊`, "success", "Report Ready");
     } catch (error) {
       setErrorMessage("Failed to generate report. Check connection.");
+      showToast("Failed to generate report. Please try again.", "error", "Report Failed");
     } finally {
       setLoading(false);
     }

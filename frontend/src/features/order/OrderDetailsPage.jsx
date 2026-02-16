@@ -56,7 +56,13 @@ function OrderDetailsPage() {
   }, [order]);
  
   if (!order) return <div className="text-center mt-20">Finding order details...</div>;
- 
+
+  // Calculate price breakdown (same logic as checkout)
+  const subtotal = order.items?.reduce((acc, item) => acc + (item.priceAtPurchase * item.quantity), 0) || 0;
+  const gst = Math.round(subtotal * 0.18); // 18% GST
+  const delivery = subtotal > 500 ? 0 : 40; // Free delivery for orders > 500
+  const total = subtotal + gst + delivery;
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
@@ -84,8 +90,6 @@ function OrderDetailsPage() {
                 : "TBD (To be decided)"
               }
             </p>
- 
-            <p className="text-xl font-bold text-green-700">Total: ₹{order.totalAmount?.toFixed(2)}</p>
           </div>
  
           <h3 className="text-lg font-semibold text-gray-800 mb-3 border-b pb-2">Purchased Items</h3>
@@ -106,6 +110,26 @@ function OrderDetailsPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Price Breakdown */}
+          <div className="mt-6 pt-4 border-t space-y-2">
+            <div className="flex justify-between text-gray-700">
+              <span>Subtotal:</span>
+              <span>₹{subtotal.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between text-gray-700">
+              <span>GST (18%):</span>
+              <span>₹{gst.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between text-gray-700">
+              <span>Delivery Charge:</span>
+              <span>{delivery === 0 ? <span className="text-green-600">Free</span> : `₹${delivery.toFixed(2)}`}</span>
+            </div>
+            <div className="flex justify-between font-bold text-xl text-green-700 border-t pt-2 mt-2">
+              <span>Total Amount:</span>
+              <span>₹{total.toFixed(2)}</span>
+            </div>
           </div>
         </div>
       </div>

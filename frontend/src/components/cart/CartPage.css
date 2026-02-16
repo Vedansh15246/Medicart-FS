@@ -1,0 +1,80 @@
+.cart-page {
+  padding: 32px;
+  font-family: system-ui, sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+}
+
+.cart-left {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cart-right {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cart-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ── Mobile (≤ 768px): stack vertically ── */
+@media (max-width: 768px) {
+  .cart-page {
+    padding: 16px;
+  }
+
+  .cart-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cart-left,
+  .cart-right {
+    padding: 16px;
+  }
+
+  .cart-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cart-card .cart-item-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  .cart-page {
+    padding: 10px;
+  }
+
+  .cart-left,
+  .cart-right {
+    padding: 12px;
+    border-radius: 8px;
+  }
+}
