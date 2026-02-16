@@ -10,7 +10,7 @@ export default function ReportPreview({ preview, onExportCSV, onClear }) {
 
 	return (
 		<div className="bg-white/80 rounded-xl shadow p-6">
-			<h2 className="text-lg font-semibold mb-4">Report Preview (Top 5)</h2>
+			<h2 className="text-lg font-semibold mb-4">Report Preview</h2>
 
 			{preview.summary && (
 				<div className="flex gap-4 mb-4">
