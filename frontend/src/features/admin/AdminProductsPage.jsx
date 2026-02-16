@@ -58,7 +58,7 @@ export default function AdminProductsPage() {
         </div>
 
         <button
-          className="btn-Primary"
+          className="btn-primary"
           onClick={() => setEditingProduct({})}
         >
           + Add Medicine

@@ -42,7 +42,7 @@ export default function AdminBatchPage() {
           <p>Manage stock, expiry & batch tracking</p>
         </div>
 
-        <button className="btn-Primary" onClick={() => setEditingBatch({})}>
+        <button className="btn-primary" onClick={() => setEditingBatch({})}>
           + Add Batch
         </button>
       </div>

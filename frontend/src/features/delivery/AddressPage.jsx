@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { addressService } from "../../api/orderService";
 import AddressForm from './AddressForm';
 import AddressList from './AddressList';
@@ -15,6 +16,9 @@ const AddressPage = () => {
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
   const { showToast, showConfirm } = useToast();
+  
+  // Get cart items to check for prescription requirements
+  const cartItems = useSelector((state) => state.cart.items);
  
   const fetchAddresses = async () => {
     setLoading(true);
@@ -91,6 +95,32 @@ const AddressPage = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  // Check if any cart item requires prescription
+  const hasPrescriptionRequired = () => {
+    return cartItems.some(item => item.product?.requiresRx === true);
+  };
+
+  // Handle continue to payment with prescription check
+  const handleContinueToPayment = () => {
+    if (!selectedId) {
+      showToast("Please select a delivery address", "warning");
+      return;
+    }
+
+    // Check if any medicine requires prescription
+    if (hasPrescriptionRequired()) {
+      // Store selected address in sessionStorage to resume after prescription upload
+      sessionStorage.setItem('selectedAddressId', selectedId);
+      sessionStorage.setItem('redirectAfterPrescription', 'payment');
+      
+      showToast("Some medicines require prescription. Please upload your prescription.", "info");
+      navigate('/dashboard_client/prescription');
+    } else {
+      // No prescription required, go directly to payment
+      navigate('/payment');
+    }
+  };
  
   return (
     <div className="address-page-container">
@@ -158,11 +188,13 @@ const AddressPage = () => {
                
                 <button
                   disabled={!selectedId}
-                  onClick={() => navigate('/payment')}
+                  onClick={handleContinueToPayment}
                   className="deliver-btn"
                 >
                   {selectedId
-                    ? 'Continue to Payment'
+                    ? hasPrescriptionRequired() 
+                      ? 'Continue to Prescription' 
+                      : 'Continue to Payment'
                     : 'Select an Address'}
                 </button>
               </>

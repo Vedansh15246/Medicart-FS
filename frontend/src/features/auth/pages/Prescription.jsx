@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MdOutlineUploadFile } from "react-icons/md";
 import client from "../../../api/client";
 import logger from "../../../utils/logger";
@@ -6,7 +7,7 @@ import AlertModal from "../../../components/ui/AlertModal";
 import { useToast } from '../../../components/ui/Toast';
 
 const Prescription = () => {
-
+  const navigate = useNavigate();
   const [prescription, setPrescription] = useState()
   const [history, setHistory] = useState([])
   const [loading, setLoading] = useState(false)
@@ -66,6 +67,18 @@ const Prescription = () => {
       const list = await client.get('/api/prescriptions')
       setHistory(list.data || [])
       setPrescription()
+      
+      // Check if user came from address page and needs to redirect to payment
+      const redirectTo = sessionStorage.getItem('redirectAfterPrescription');
+      if (redirectTo === 'payment') {
+        sessionStorage.removeItem('redirectAfterPrescription');
+        logger.info("🔄 Redirecting to payment after prescription upload");
+        
+        // Show success message and redirect after a short delay
+        setTimeout(() => {
+          navigate('/payment');
+        }, 1500);
+      }
     } catch (err) {
       logger.error('Upload failed', {
         status: err.response?.status,
