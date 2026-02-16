@@ -5842,3 +5842,1148 @@ java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdvi
 2026-02-16 12:52:27 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771221503465
 2026-02-16 12:52:27 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
 2026-02-16 12:52:27 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 15:57:48 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-02-16 15:57:49 [main] INFO  c.m.auth.AuthServiceApplication - Starting AuthServiceApplication using Java 21.0.6 with PID 16412 (C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\auth-service\target\classes started by 2460680 in C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack)
+2026-02-16 15:57:49 [main] DEBUG c.m.auth.AuthServiceApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-02-16 15:57:49 [main] INFO  c.m.auth.AuthServiceApplication - The following 1 profile is active: "dev"
+2026-02-16 15:57:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 15:57:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 495 ms. Found 2 JPA repository interfaces.
+2026-02-16 15:57:53 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=193c5db6-45af-3b98-a341-2e46375129a6
+2026-02-16 15:57:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-16 15:57:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-16 15:57:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 15:57:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-02-16 15:57:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 15:57:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6460 ms
+2026-02-16 15:57:55 [main] DEBUG c.m.a.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-16 15:57:56 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 15:57:56 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-02-16 15:57:56 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-16 15:57:57 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-16 15:57:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-16 15:57:58 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22ee7fdc
+2026-02-16 15:57:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-16 15:57:58 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-16 15:57:58 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-02-16 15:57:58 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-16 15:58:00 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-16 15:58:00 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 15:58:02 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 15:58:02 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 78881006-11fa-48b7-bf31-bd24dc7cf4dd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-16 15:58:02 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-16 15:58:03 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 25 mappings in 'requestMappingHandlerMapping'
+2026-02-16 15:58:03 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-02-16 15:58:03 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/me, /api/auth/me] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:58:03 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/users, /api/auth/users] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:58:03 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:58:03 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [PUT, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:58:03 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [DELETE, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:58:03 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-02-16 15:58:03 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-16 15:58:04 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs'], Ant [pattern='/v3/api-docs']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/v3/api-docs'], Ant [pattern='/v3/api-docs']]
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs.yaml'], Ant [pattern='/v3/api-docs.yaml']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/v3/api-docs.yaml'], Ant [pattern='/v3/api-docs.yaml']]
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]
+2026-02-16 15:58:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:58:04 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]
+2026-02-16 15:58:04 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-02-16 15:58:05 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-16 15:58:05 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-02-16 15:58:05 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-02-16 15:58:05 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-02-16 15:58:05 [main] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/
+2026-02-16 15:58:06 [main] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:58:06 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 15:58:06 [main] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-02-16 15:58:06 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1771237686330 with initial instances count: 5
+2026-02-16 15:58:06 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application AUTH-SERVICE with eureka with status UP
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1771237686341, current=UP, previous=STARTING]
+2026-02-16 15:58:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081: registering service...
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8761/eureka/apps/AUTH-SERVICE
+2026-02-16 15:58:06 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application AUTH-SERVICE with eureka with status DOWN
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1771237686359, current=DOWN, previous=UP]
+2026-02-16 15:58:06 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:58:06 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 15:58:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-16 15:58:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Writing [InstanceInfo [instanceId = auth-service:8081, appName = AUTH-SERVICE, hostName = localhost, status = DOWN, ipAddr = 10.96.254.147, port = 8081, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@37ddb835] as "application/json"
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Response 204 NO_CONTENT
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - registration status: 204
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081: registering service...
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8761/eureka/apps/AUTH-SERVICE
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Writing [InstanceInfo [instanceId = auth-service:8081, appName = AUTH-SERVICE, hostName = localhost, status = DOWN, ipAddr = 10.96.254.147, port = 8081, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@37ddb835] as "application/json"
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Response 204 NO_CONTENT
+2026-02-16 15:58:06 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - registration status: 204
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-02-16 15:58:06 [main] DEBUG o.s.web.client.RestTemplate - HTTP DELETE http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081
+2026-02-16 15:58:06 [main] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:58:06 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - deregister  status: 200
+2026-02-16 15:58:06 [main] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-02-16 15:58:06 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-16 15:58:06 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2026-02-16 15:59:07 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-02-16 15:59:07 [main] INFO  c.m.auth.AuthServiceApplication - Starting AuthServiceApplication using Java 21.0.6 with PID 18544 (C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\auth-service\target\classes started by 2460680 in C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack)
+2026-02-16 15:59:07 [main] DEBUG c.m.auth.AuthServiceApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-02-16 15:59:07 [main] INFO  c.m.auth.AuthServiceApplication - The following 1 profile is active: "dev"
+2026-02-16 15:59:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 15:59:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 316 ms. Found 2 JPA repository interfaces.
+2026-02-16 15:59:11 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=193c5db6-45af-3b98-a341-2e46375129a6
+2026-02-16 15:59:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-16 15:59:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-16 15:59:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 15:59:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-02-16 15:59:12 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 15:59:12 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4649 ms
+2026-02-16 15:59:12 [main] DEBUG c.m.a.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-16 15:59:13 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 15:59:13 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-02-16 15:59:13 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-16 15:59:14 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-16 15:59:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-16 15:59:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1736273c
+2026-02-16 15:59:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-16 15:59:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-16 15:59:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-02-16 15:59:15 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-16 15:59:17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-16 15:59:17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 15:59:18 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 15:59:18 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 32666bbb-f97a-43d5-bf1d-b24ac3df044d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-16 15:59:18 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-16 15:59:19 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 25 mappings in 'requestMappingHandlerMapping'
+2026-02-16 15:59:19 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-02-16 15:59:19 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/me, /api/auth/me] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:59:19 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/users, /api/auth/users] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:59:19 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [GET, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:59:19 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [PUT, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:59:19 [main] WARN  o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [DELETE, /auth/users/**, /api/auth/users/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-02-16 15:59:19 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-02-16 15:59:19 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-16 15:59:20 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs'], Ant [pattern='/v3/api-docs']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/v3/api-docs'], Ant [pattern='/v3/api-docs']]
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs.yaml'], Ant [pattern='/v3/api-docs.yaml']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/v3/api-docs.yaml'], Ant [pattern='/v3/api-docs.yaml']]
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]
+2026-02-16 15:59:20 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2026-02-16 15:59:20 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will not secure Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]
+2026-02-16 15:59:21 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-02-16 15:59:21 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-16 15:59:21 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-02-16 15:59:21 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-02-16 15:59:21 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-02-16 15:59:21 [main] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/
+2026-02-16 15:59:21 [main] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:59:22 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 15:59:22 [main] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 15:59:22 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-02-16 15:59:22 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-02-16 15:59:22 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-02-16 15:59:22 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1771237762122 with initial instances count: 0
+2026-02-16 15:59:22 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application AUTH-SERVICE with eureka with status UP
+2026-02-16 15:59:22 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1771237762132, current=UP, previous=STARTING]
+2026-02-16 15:59:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-16 15:59:22 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081: registering service...
+2026-02-16 15:59:22 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8761/eureka/apps/AUTH-SERVICE
+2026-02-16 15:59:22 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:59:22 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Writing [InstanceInfo [instanceId = auth-service:8081, appName = AUTH-SERVICE, hostName = localhost, status = UP, ipAddr = 10.96.254.147, port = 8081, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@3d28c0af] as "application/json"
+2026-02-16 15:59:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-16 15:59:22 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-02-16 15:59:22 [main] INFO  c.m.auth.AuthServiceApplication - Started AuthServiceApplication in 15.796 seconds (process running for 17.466)
+2026-02-16 15:59:22 [DiscoveryClient-InstanceInfoReplicator-%d] DEBUG o.s.web.client.RestTemplate - Response 204 NO_CONTENT
+2026-02-16 15:59:22 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-SERVICE/auth-service:8081 - registration status: 204
+2026-02-16 15:59:22 [main] INFO  c.m.auth.config.DataInitializer - Starting application data initialization...
+2026-02-16 15:59:22 [main] INFO  c.m.auth.config.DataInitializer - Admin user already exists
+2026-02-16 15:59:22 [main] INFO  c.m.auth.config.DataInitializer - Application data initialization completed.
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-02-16 15:59:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:59:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 15:59:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 15:59:52 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-02-16 15:59:56 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-16 15:59:56 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7d440378
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2ccfd2cb
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-02-16 15:59:56 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-02-16 15:59:56 [http-nio-8081-exec-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 455 ms
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 49, 46, 48, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-02-16 15:59:56 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:00:06 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-02-16 16:00:06 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-02-16 16:00:06 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-02-16 16:00:06 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 49, 46, 48, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-02-16 16:00:06 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:00:07 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-02-16 16:00:07 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-02-16 16:00:07 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-02-16 16:00:07 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 49, 46, 48, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-02-16 16:00:07 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:00:15 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-02-16 16:00:15 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-02-16 16:00:15 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-02-16 16:00:15 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 49, 46, 48, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-02-16 16:00:15 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:00:16 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2026-02-16 16:00:16 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-02-16 16:00:16 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-02-16 16:00:16 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 49, 46, 48, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-02-16 16:00:16 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:00:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:00:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:00:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:00:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:00:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:00:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:00:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:00:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:00:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:00:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:00:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:00:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:00:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:00:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:01:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:01:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:01:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:01:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:01:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:01:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:01:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:01:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:01:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:01:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:01:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:01:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:01:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:01:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:02:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:02:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:02:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:02:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:02:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:02:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:02:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:02:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:02:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:02:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:02:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:02:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:02:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:02:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:03:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:03:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:03:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:03:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:03:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:03:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:03:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/login
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/auth/login", parameters={}
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#login(LoginRequest)
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest(email=rohinrajsingh009@gmail.com, password=Rohin@123)]
+2026-02-16 16:03:52 [http-nio-8081-exec-7] INFO  c.medicart.auth.service.AuthService - Login attempt for email: rohinrajsingh009@gmail.com
+2026-02-16 16:03:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:03:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:03:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:03:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:03:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:03:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:03:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:03:52 [http-nio-8081-exec-7] INFO  c.medicart.auth.service.AuthService - Login successful - userId: 3, role: ROLE_USER
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse(userId=3, email=rohinrajsingh009@gmail.com, fullName=Shahid, token=eyJhbGciOiJIUzM4NCJ (truncated)...]
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:03:52 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:04:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 16:04:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:04:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:04:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:04:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:04:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:04:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:04:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /auth/login, email: rohinrajsingh009@gmail.com, role: ROLE_USER, userId: 3
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/auth/login", parameters={}
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthController#login(LoginRequest)
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [LoginRequest(email=admin@medicart.com, password=admin123)]
+2026-02-16 16:04:31 [http-nio-8081-exec-8] INFO  c.medicart.auth.service.AuthService - Login attempt for email: admin@medicart.com
+2026-02-16 16:04:31 [http-nio-8081-exec-8] INFO  c.medicart.auth.service.AuthService - Login successful - userId: 4, role: ROLE_ADMIN
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [LoginResponse(userId=4, email=admin@medicart.com, fullName=Administrator, token=eyJhbGciOiJIUzM4NCJ9 (truncated)...]
+2026-02-16 16:04:31 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:04:32 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:04:32 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:04:32 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:04:32 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:04:32 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:04:32 [http-nio-8081-exec-9] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:04:33 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:04:33 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:04:33 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:04:33 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:04:51 [http-nio-8081-exec-10] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:04:51 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:04:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:04:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:04:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:04:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:04:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:04:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:04:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG c.m.a.c.PrescriptionController - Returning 0 prescriptions for userId: 4
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-02-16 16:05:03 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG c.m.a.c.PrescriptionController - Returning 0 prescriptions for userId: 4
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-02-16 16:05:03 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG c.m.a.c.PrescriptionController - Returning 0 prescriptions for userId: 4
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-02-16 16:05:16 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/prescriptions
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/prescriptions
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/prescriptions", parameters={multipart}
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#uploadPrescription(MultipartFile, Long)
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG c.m.a.c.PrescriptionController - uploadPrescription called - userId: 4, request content-type (multipart file): image/png
+2026-02-16 16:05:18 [http-nio-8081-exec-4] INFO  c.m.a.c.PrescriptionController - Prescription uploaded - userId: 4, prescriptionId: 7445ba12-ddfd-47a6-a632-58f59f40d215
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{uploadedDate=2026-02-16T16:05:18.3328021, fileName=circle.png, id=7445ba12-ddfd-47a6-a632-58f59f40d (truncated)...]
+2026-02-16 16:05:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG c.m.a.c.PrescriptionController - Returning 1 prescriptions for userId: 4
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:05:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG c.m.a.c.PrescriptionController - Returning 1 prescriptions for userId: 4
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:05:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:05:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:05:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:05:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:05:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:05:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:05:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:05:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:05:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:05:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:05:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:05:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:05:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:05:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:05:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:06:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:06:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:06:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:06:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:06:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:06:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:06:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:06:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:06:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:06:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:06:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:06:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:06:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:06:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:07:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:07:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:07:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:07:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:07:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:07:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:07:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:07:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:07:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:07:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:07:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:07:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:07:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:07:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG c.m.a.c.PrescriptionController - Returning 1 prescriptions for userId: 4
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:08:12 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG c.m.a.c.PrescriptionController - Returning 1 prescriptions for userId: 4
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:08:12 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:08:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:08:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:08:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:08:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:08:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:08:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:08:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG c.m.a.c.PrescriptionController - Returning 1 prescriptions for userId: 4
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:08:48 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/prescriptions
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/prescriptions
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/prescriptions", parameters={multipart}
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#uploadPrescription(MultipartFile, Long)
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG c.m.a.c.PrescriptionController - uploadPrescription called - userId: 4, request content-type (multipart file): image/png
+2026-02-16 16:08:49 [http-nio-8081-exec-1] INFO  c.m.a.c.PrescriptionController - Prescription uploaded - userId: 4, prescriptionId: 673a064b-346c-4fef-90c0-77e8f4aae902
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{uploadedDate=2026-02-16T16:08:49.6925491, fileName=online-shopping.png, id=673a064b-346c-4fef-90c0- (truncated)...]
+2026-02-16 16:08:49 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG c.m.a.c.PrescriptionController - Returning 2 prescriptions for userId: 4
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:08:49 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/prescriptions
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - JWT valid - path: /api/prescriptions, email: admin@medicart.com, role: ROLE_ADMIN, userId: 4
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/prescriptions
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/prescriptions", parameters={}
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.PrescriptionController#getPrescriptions(Long)
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG c.m.a.c.PrescriptionController - Returning 2 prescriptions for userId: 4
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[{fileName=circle.png, fileSize=16077, id=7445ba12-ddfd-47a6-a632-58f59f40d215, uploadedDate=2026-02 (truncated)...]
+2026-02-16 16:08:49 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:08:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:08:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:08:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:08:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:08:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:08:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:08:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:09:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 16:09:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:09:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:09:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:09:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:09:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:09:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:09:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:09:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:09:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:09:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:09:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:09:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:09:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:09:52 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:10:01 [http-nio-8081-exec-5] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:10:01 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:10:13 [http-nio-8081-exec-6] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:10:13 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:10:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:10:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:10:22 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:10:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:10:22 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:10:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:10:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:10:31 [http-nio-8081-exec-7] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:10:31 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:10:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:10:52 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:10:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:10:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:10:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:10:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:10:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:11:01 [http-nio-8081-exec-8] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:11:01 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:11:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:11:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:11:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:11:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:11:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:11:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:11:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:11:31 [http-nio-8081-exec-9] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:11:31 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:11:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:11:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:11:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:11:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:11:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:11:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:11:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:12:01 [http-nio-8081-exec-10] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:12:01 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:12:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:12:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:12:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:12:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:12:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:12:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:12:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:12:31 [http-nio-8081-exec-1] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:12:31 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:12:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:12:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:12:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:12:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:12:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:12:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:12:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:13:01 [http-nio-8081-exec-2] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:13:01 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:13:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:13:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:13:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:13:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:13:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:13:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:13:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:13:31 [http-nio-8081-exec-3] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:13:31 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:13:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:13:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:13:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:13:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:13:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:13:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:13:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:14:01 [http-nio-8081-exec-4] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:14:01 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:14:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 16:14:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:14:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:14:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:14:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:14:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:14:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:14:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:14:32 [http-nio-8081-exec-5] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:14:32 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:14:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:14:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:14:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:14:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:14:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:14:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:14:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:15:02 [http-nio-8081-exec-6] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:15:02 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:15:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:15:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:15:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:15:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:15:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:15:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:15:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:15:38 [http-nio-8081-exec-7] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:15:38 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:15:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:15:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:15:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:15:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:15:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:15:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:15:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:16:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:16:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:16:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:16:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:16:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:16:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:16:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:16:24 [http-nio-8081-exec-8] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:16:24 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:16:30 [http-nio-8081-exec-9] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:16:30 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:16:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:16:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:16:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:16:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:16:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:16:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:16:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:17:00 [http-nio-8081-exec-10] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:17:00 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:17:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:17:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:17:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:17:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:17:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:17:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:17:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:17:30 [http-nio-8081-exec-1] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:17:30 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:17:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:17:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:17:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:17:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:17:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:17:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:17:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:18:00 [http-nio-8081-exec-2] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:18:00 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:18:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:18:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:18:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:18:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:18:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:18:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:18:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:18:30 [http-nio-8081-exec-3] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:18:30 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:18:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:18:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:18:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:18:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:18:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:18:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:18:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:19:00 [http-nio-8081-exec-4] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:19:00 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:19:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 16:19:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:19:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:19:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:19:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:19:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:19:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:19:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:19:30 [http-nio-8081-exec-5] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:19:30 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:19:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:19:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:19:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:19:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:19:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:19:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:19:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:20:00 [http-nio-8081-exec-6] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:20:00 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:20:07 [http-nio-8081-exec-7] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:20:07 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:20:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:20:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:20:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:20:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:20:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:20:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:20:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:20:37 [http-nio-8081-exec-8] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:20:37 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:20:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:20:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:20:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:20:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:20:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:20:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:20:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:20:57 [http-nio-8081-exec-9] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:20:57 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:21:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:21:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:21:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:21:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:21:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:21:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:21:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:21:27 [http-nio-8081-exec-10] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:21:27 [http-nio-8081-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:21:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:21:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:21:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:21:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:21:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:21:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:21:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:21:57 [http-nio-8081-exec-1] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:21:57 [http-nio-8081-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:22:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:22:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:22:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:22:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:22:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:22:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:22:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:22:27 [http-nio-8081-exec-2] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:22:27 [http-nio-8081-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:22:34 [http-nio-8081-exec-3] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:22:34 [http-nio-8081-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:22:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:22:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:22:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:22:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:22:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:22:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:22:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:23:03 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:23:03 [http-nio-8081-exec-4] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:23:03 [http-nio-8081-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:23:03 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:23:03 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:23:03 [http-nio-8081-exec-4] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:23:04 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:23:04 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:23:04 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:23:04 [http-nio-8081-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:23:13 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:23:13 [http-nio-8081-exec-5] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:23:13 [http-nio-8081-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:23:13 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:23:13 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:23:14 [http-nio-8081-exec-5] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:23:14 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:23:14 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:23:14 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:23:14 [http-nio-8081-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:23:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:23:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:23:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:23:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:23:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:23:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:23:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:23:43 [http-nio-8081-exec-6] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:23:43 [http-nio-8081-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:23:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:23:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:23:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:23:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:23:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:23:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:23:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:24:14 [http-nio-8081-exec-7] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:24:14 [http-nio-8081-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:24:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-02-16 16:24:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:24:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:24:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:24:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:24:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:24:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:24:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:24:44 [http-nio-8081-exec-8] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:24:44 [http-nio-8081-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:24:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:24:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:24:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:24:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:24:53 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:24:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:24:53 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /auth/analytics/user-counts
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG c.m.a.s.JwtAuthenticationFilter - No Authorization header present for request /auth/analytics/user-counts
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /auth/analytics/user-counts
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/auth/analytics/user-counts", parameters={}
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.medicart.auth.controller.AuthAnalyticsController#getUserCounts()
+2026-02-16 16:25:14 [http-nio-8081-exec-9] INFO  c.m.a.c.AuthAnalyticsController - GET /auth/analytics/user-counts
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{usersThisYear=3, usersThisMonth=3, usersThisWeek=0, totalUsers=3, usersToday=0}]
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-16 16:25:14 [http-nio-8081-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-02-16 16:25:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP PUT http://localhost:8761/eureka/apps/AUTH-SERVICE/auth-service:8081?status=UP&lastDirtyTimestamp=1771237762132
+2026-02-16 16:25:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:25:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8761/eureka/apps/delta
+2026-02-16 16:25:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/yaml, application/*+json]
+2026-02-16 16:25:23 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:25:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-16 16:25:23 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]

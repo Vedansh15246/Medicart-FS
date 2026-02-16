@@ -39,3 +39,17 @@ button {
   border: 1px solid transparent;
   transition: all 0.2s;
 }
+
+/* Remove focus outlines on Recharts elements */
+.recharts-wrapper:focus,
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus,
+.recharts-surface:focus-visible,
+.recharts-wrapper *:focus,
+.recharts-wrapper *:focus-visible,
+svg.recharts-surface[tabindex]:focus,
+svg.recharts-surface[tabindex]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

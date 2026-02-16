@@ -654,3 +654,29 @@ html, body {
     font-size: 16px !important; /* Easy to tap */
   }
 }
+
+/* ===========================
+   RECHARTS - Remove focus borders
+=========================== */
+.recharts-wrapper,
+.recharts-wrapper *,
+.recharts-surface,
+.recharts-layer,
+.recharts-bar-rectangle,
+.recharts-rectangle {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.recharts-wrapper:focus,
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus,
+.recharts-surface:focus-visible,
+svg[tabindex]:focus,
+svg[tabindex]:focus-visible,
+g[tabindex]:focus,
+g[tabindex]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
