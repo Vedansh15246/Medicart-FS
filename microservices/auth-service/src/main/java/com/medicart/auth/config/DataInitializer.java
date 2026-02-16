@@ -67,8 +67,19 @@ public class DataInitializer implements CommandLineRunner {
         String adminEmail = "admin@medicart.com";
         String adminPassword = "admin123";
 
+        // If admin already exists, re-hash the password to ensure it is always
+        // a valid BCrypt hash matching "admin123". This guards against stale or
+        // plain-text passwords that may have been inserted manually into the DB.
         if (userRepository.findByEmail(adminEmail).isPresent()) {
-            log.info("Admin user already exists");
+            User existing = userRepository.findByEmail(adminEmail).get();
+            String freshHash = passwordEncoder.encode(adminPassword);
+            if (!passwordEncoder.matches(adminPassword, existing.getPassword())) {
+                existing.setPassword(freshHash);
+                userRepository.save(existing);
+                log.info("Admin user password was out of sync — re-hashed successfully");
+            } else {
+                log.info("Admin user already exists with correct password");
+            }
             return;
         }
 
