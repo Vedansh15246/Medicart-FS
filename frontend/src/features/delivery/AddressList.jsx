@@ -1,4 +1,3 @@
-import React from 'react';
 import './AddressList.css';
  
 export const AddressList = ({ addresses, selectedId, onSelect, onEdit, onDelete, onSetDefault }) => {

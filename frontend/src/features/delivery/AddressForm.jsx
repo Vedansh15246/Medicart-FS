@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
+import { getAllStates, getCitiesForState, lookupPincode } from '../../utils/indianLocations';
 import './AddressForm.css';
  
 const initial = {
@@ -18,12 +19,58 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
   const [form, setForm] = useState(initial);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
- 
+  const [pincodeStatus, setPincodeStatus] = useState(''); // 'success' | 'error' | ''
+  const [stateSearch, setStateSearch] = useState('');
+  const [citySearch, setCitySearch] = useState('');
+  const [showStateDropdown, setShowStateDropdown] = useState(false);
+  const [showCityDropdown, setShowCityDropdown] = useState(false);
+
+  const allStates = useMemo(() => getAllStates(), []);
+
+
   useEffect(() => {
     setForm(initialValues ? { ...initial, ...initialValues } : initial);
     setErrors({});
     setTouched({});
+    setPincodeStatus('');
+    setStateSearch('');
+    setCitySearch('');
   }, [initialValues]);
+
+  // Auto-detect state & city from pincode using India Post API
+  const [pincodeLoading, setPincodeLoading] = useState(false);
+
+  const detectFromPincode = async (pin) => {
+    if (!/^\d{6}$/.test(pin)) return;
+    setPincodeLoading(true);
+    setPincodeStatus('');
+    try {
+      const result = await lookupPincode(pin);
+      if (result && result.state) {
+        setForm(prev => ({
+          ...prev,
+          state: result.state,
+          city: result.city || prev.city,
+        }));
+        setStateSearch('');
+        setCitySearch('');
+        setErrors(prev => {
+          const updated = { ...prev };
+          delete updated.state;
+          if (result.city) delete updated.city;
+          return updated;
+        });
+        setPincodeStatus('success');
+      } else {
+        setPincodeStatus('error');
+      }
+    } catch (err) {
+      console.error('Pincode detection failed:', err);
+      setPincodeStatus('error');
+    } finally {
+      setPincodeLoading(false);
+    }
+  };
  
   const validate = () => {
     const e = {};
@@ -45,6 +92,13 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
       const tempErrors = { ...errors };
       delete tempErrors[field];
       setErrors(tempErrors);
+    }
+    // Auto-detect state & city when a valid 6-digit pincode is entered
+    if (field === 'postalCode' && /^\d{6}$/.test(value)) {
+      detectFromPincode(value);
+    }
+    if (field === 'postalCode' && value.length < 6) {
+      setPincodeStatus('');
     }
   };
  
@@ -168,57 +222,170 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
           </div>
         </div>
  
-        <div className="form-row">
-          <div className="form-field">
-            <label htmlFor="city" className="form-label">
-              City <span className="required">*</span>
-            </label>
-            <input
-              id="city"
-              type="text"
-              value={form.city}
-              onChange={e => handleChange('city', e.target.value)}
-              onBlur={() => handleBlur('city')}
-              placeholder="e.g., Mumbai"
-              autoComplete="address-level2"
-              className={`form-input ${errors.city ? 'error' : ''}`}
-            />
-            {errors.city && <span className="error-message">{errors.city}</span>}
-          </div>
- 
-          <div className="form-field">
-            <label htmlFor="state" className="form-label">
-              State <span className="required">*</span>
-            </label>
-            <input
-              id="state"
-              type="text"
-              value={form.state}
-              onChange={e => handleChange('state', e.target.value)}
-              onBlur={() => handleBlur('state')}
-              placeholder="e.g., Maharashtra"
-              autoComplete="address-level1"
-              className={`form-input ${errors.state ? 'error' : ''}`}
-            />
-            {errors.state && <span className="error-message">{errors.state}</span>}
-          </div>
- 
+        <div className="form-row three-col">
           <div className="form-field">
             <label htmlFor="postalCode" className="form-label">
               PIN Code <span className="required">*</span>
             </label>
-            <input
-              id="postalCode"
-              type="text"
-              inputMode="numeric"
-              value={form.postalCode}
-              onChange={e => handleChange('postalCode', e.target.value)}
-              onBlur={() => handleBlur('postalCode')}
-              placeholder="6-digit PIN"
-              autoComplete="postal-code"
-              className={`form-input ${errors.postalCode ? 'error' : ''}`}
-            />
+            <div className="pincode-input-wrapper">
+              <input
+                id="postalCode"
+                type="text"
+                inputMode="numeric"
+                maxLength={6}
+                value={form.postalCode}
+                onChange={e => handleChange('postalCode', e.target.value.replace(/\D/g, ''))}
+                onBlur={() => handleBlur('postalCode')}
+                placeholder="6-digit PIN"
+                autoComplete="postal-code"
+                className={`form-input ${errors.postalCode ? 'error' : ''}`}
+              />
+              {pincodeLoading && <span className="pincode-spinner">⏳</span>}
+              {pincodeStatus === 'success' && !pincodeLoading && <span className="pincode-success">✅</span>}
+              {pincodeStatus === 'error' && !pincodeLoading && <span className="pincode-error">❌</span>}
+            </div>
             {errors.postalCode && <span className="error-message">{errors.postalCode}</span>}
+            {pincodeStatus === 'success' && !pincodeLoading && (
+              <span className="pincode-hint success">City & State auto-detected!</span>
+            )}
+            {pincodeStatus === 'error' && !pincodeLoading && (
+              <span className="pincode-hint error">Could not detect. Select manually.</span>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="state" className="form-label">
+              State <span className="required">*</span>
+              {pincodeStatus === 'success' && <span className="auto-filled-badge">Auto-detected</span>}
+            </label>
+            <div className="searchable-select">
+              <input
+                id="state"
+                type="text"
+                value={showStateDropdown ? stateSearch : form.state}
+                onChange={e => {
+                  setStateSearch(e.target.value);
+                  setShowStateDropdown(true);
+                }}
+                onFocus={() => {
+                  setShowStateDropdown(true);
+                  setStateSearch('');
+                }}
+                onBlur={() => {
+                  // Delay to allow click on option
+                  setTimeout(() => setShowStateDropdown(false), 200);
+                  handleBlur('state');
+                }}
+                placeholder="Search or select state"
+                autoComplete="off"
+                className={`form-input ${errors.state ? 'error' : ''} ${pincodeStatus === 'success' ? 'auto-filled' : ''}`}
+              />
+              <span className="select-arrow">▾</span>
+              {showStateDropdown && (
+                <div className="dropdown-list">
+                  {filteredStates.length === 0 ? (
+                    <div className="dropdown-empty">No states found</div>
+                  ) : (
+                    filteredStates.map(s => (
+                      <div
+                        key={s}
+                        className={`dropdown-item ${s === form.state ? 'selected' : ''}`}
+                        onMouseDown={() => {
+                          setForm(prev => ({ ...prev, state: s, city: '' }));
+                          setCitySearch('');
+                          setStateSearch('');
+                          setShowStateDropdown(false);
+                          const tempErrors = { ...errors };
+                          delete tempErrors.state;
+                          setErrors(tempErrors);
+                        }}
+                      >
+                        {s}
+                      </div>
+                    ))
+                  )}
+                </div>
+              )}
+            </div>
+            {errors.state && <span className="error-message">{errors.state}</span>}
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="city" className="form-label">
+              City <span className="required">*</span>
+              {pincodeStatus === 'success' && form.city && <span className="auto-filled-badge">Auto-detected</span>}
+            </label>
+            <div className="searchable-select">
+              <input
+                id="city"
+                type="text"
+                value={showCityDropdown ? citySearch : form.city}
+                onChange={e => {
+                  setCitySearch(e.target.value);
+                  setShowCityDropdown(true);
+                }}
+                onFocus={() => {
+                  setShowCityDropdown(true);
+                  setCitySearch('');
+                }}
+                onBlur={() => {
+                  setTimeout(() => setShowCityDropdown(false), 200);
+                  handleBlur('city');
+                  // Allow manual city entry if not in dropdown
+                  if (citySearch.trim() && !form.city) {
+                    setForm(prev => ({ ...prev, city: citySearch.trim() }));
+                  }
+                }}
+                placeholder={form.state ? 'Search or select city' : 'Select state first'}
+                disabled={!form.state}
+                autoComplete="off"
+                className={`form-input ${errors.city ? 'error' : ''} ${!form.state ? 'disabled' : ''}`}
+              />
+              <span className="select-arrow">▾</span>
+              {showCityDropdown && form.state && (
+                <div className="dropdown-list">
+                  {filteredCities.length === 0 ? (
+                    <div className="dropdown-empty">
+                      {citySearch.trim() ? (
+                        <div
+                          className="dropdown-item add-custom"
+                          onMouseDown={() => {
+                            setForm(prev => ({ ...prev, city: citySearch.trim() }));
+                            setCitySearch('');
+                            setShowCityDropdown(false);
+                            const tempErrors = { ...errors };
+                            delete tempErrors.city;
+                            setErrors(tempErrors);
+                          }}
+                        >
+                          Use "{citySearch.trim()}" as city
+                        </div>
+                      ) : (
+                        'No cities found'
+                      )}
+                    </div>
+                  ) : (
+                    filteredCities.map(c => (
+                      <div
+                        key={c}
+                        className={`dropdown-item ${c === form.city ? 'selected' : ''}`}
+                        onMouseDown={() => {
+                          setForm(prev => ({ ...prev, city: c }));
+                          setCitySearch('');
+                          setShowCityDropdown(false);
+                          const tempErrors = { ...errors };
+                          delete tempErrors.city;
+                          setErrors(tempErrors);
+                        }}
+                      >
+                        {c}
+                      </div>
+                    ))
+                  )}
+                </div>
+              )}
+            </div>
+            {errors.city && <span className="error-message">{errors.city}</span>}
           </div>
         </div>
  

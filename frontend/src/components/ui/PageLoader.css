@@ -1,0 +1,118 @@
+/* ===== TOP PROGRESS BAR ===== */
+.page-loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.page-loader-bar__track {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-300) 0%,
+    var(--color-primary-500) 50%,
+    var(--color-primary-300) 100%
+  );
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(47, 191, 93, 0.5);
+  animation: page-loader-progress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes page-loader-progress {
+  0%   { width: 0%; }
+  20%  { width: 35%; }
+  50%  { width: 65%; }
+  80%  { width: 88%; }
+  100% { width: 95%; }
+}
+
+.page-loader-bar--done .page-loader-bar__track {
+  width: 100% !important;
+  animation: none;
+  transition: width 0.25s ease-out;
+}
+
+/* ===== FULL-PAGE OVERLAY ===== */
+.page-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 250, 248, 0.85);
+  backdrop-filter: blur(4px);
+  animation: page-loader-fade-in 0.15s ease-out;
+}
+
+@keyframes page-loader-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ===== PILL SPINNER ===== */
+.page-loader-spinner {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+}
+
+.page-loader-spinner__ring {
+  width: 56px;
+  height: 56px;
+  border: 3.5px solid var(--color-primary-100);
+  border-top-color: var(--color-primary-500);
+  border-radius: 50%;
+  animation: page-loader-spin 0.75s linear infinite;
+}
+
+@keyframes page-loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+.page-loader-spinner__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  line-height: 1;
+  animation: page-loader-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes page-loader-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+  50%      { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+/* ===== LOADING TEXT ===== */
+.page-loader-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  animation: page-loader-dots 1.4s steps(4, end) infinite;
+}
+
+.page-loader-text::after {
+  content: '';
+  display: inline-block;
+  width: 1.2em;
+  text-align: left;
+  animation: page-loader-dots-text 1.4s steps(4, end) infinite;
+}
+
+@keyframes page-loader-dots-text {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+  100% { content: ''; }
+}

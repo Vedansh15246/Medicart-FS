@@ -118,7 +118,11 @@ export default function CartPage() {
                   <div style={styles.qtyControls}>
                     <button 
                       style={styles.qtyBtn} 
-                      onClick={() => dispatch(decrementQty(item.product?.id))}
+                      onClick={() => {
+                        if (item.product?.id) {
+                          dispatch(decrementQty(item.product.id));
+                        }
+                      }}
                     >
                       -
                     </button>
