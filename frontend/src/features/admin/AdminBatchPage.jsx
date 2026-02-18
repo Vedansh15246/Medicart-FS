@@ -38,8 +38,8 @@ export default function AdminBatchPage() {
     <div className="batch-container">
       <div className="batch-header">
         <div>
-          <h1>Batch & Inventory</h1>
-          <p>Manage stock, expiry & batch tracking</p>
+          <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Batch & Inventory</h1>
+          <p className="text-slate-500 text-sm font-medium">Manage stock, expiry & batch tracking</p>
         </div>
 
         <button className="btn-primary" onClick={() => setEditingBatch({})}>

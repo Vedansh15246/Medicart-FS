@@ -1,18 +1,18 @@
 import client from "../../../api/client";
 
-// Fetch complete analytics summary with all metrics
+
 export const fetchAnalyticsSummary = async () => {
 	const response = await client.get("/api/admin/analytics/summary");
 	return response.data;
 };
 
-// Fetch sales breakdown by category
+
 export const fetchSalesByCategory = async () => {
 	const response = await client.get("/api/admin/analytics/sales-by-category");
 	return response.data;
 };
 
-// Fetch top products by revenue
+
 export const fetchTopProducts = async (limit = 6) => {
 	const response = await client.get("/api/admin/analytics/top-products", {
 		params: { limit },
@@ -21,11 +21,6 @@ export const fetchTopProducts = async (limit = 6) => {
 	return response.data;
 };
 
-// Fetch order status distribution
-export const fetchOrderStatusDistribution = async () => {
-	const response = await client.get("/api/admin/analytics/order-status-distribution");
-	return response.data;
-};
 
 export const fetchRevenueSeries = async (range = "weekly") => {
 	const response = await client.get("/api/admin/analytics/revenue-series", {

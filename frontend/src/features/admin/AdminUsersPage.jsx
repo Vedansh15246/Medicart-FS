@@ -43,8 +43,8 @@ export default function AdminUsersPage() {
   return (
     <div className="admin-container">
       <div className="admin-header">
-        <h1>User Directory</h1>
-        <p className="stats-text">
+        <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">User Directory</h1>
+        <p className="stats-text text-slate-500 text-sm font-medium">
           There are currently <strong>{users.length}</strong> users registered in MediCart.
         </p>
       </div>

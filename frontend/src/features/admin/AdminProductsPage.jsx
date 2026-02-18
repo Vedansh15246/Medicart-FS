@@ -53,8 +53,8 @@ export default function AdminProductsPage() {
     <div className="admin-container">
       <div className="admin-header">
         <div>
-          <h1>Admin — Medicines</h1>
-          <p>Manage product catalog</p>
+          <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Admin — Medicines</h1>
+          <p className="text-slate-500 text-sm font-medium">Manage product catalog</p>
         </div>
 
         <button

@@ -8,6 +8,20 @@ export default function ReportPreview({ preview, onExportCSV, onClear }) {
 		? preview.columns
 		: (rows[0] ? Object.keys(rows[0]) : []);
 
+	const formatCell = (col, value) => {
+		if (value === null || value === undefined) return "";
+		if (col === "registeredAt") {
+			if (Array.isArray(value) && value.length >= 3) {
+				const [year, month, day, hour = 0, minute = 0, second = 0] = value;
+				const date = new Date(year, (month || 1) - 1, day || 1, hour, minute, second);
+				return isNaN(date.getTime()) ? value.join("-") : date.toLocaleDateString();
+			}
+			const date = new Date(value);
+			return isNaN(date.getTime()) ? String(value) : date.toLocaleDateString();
+		}
+		return String(value);
+	};
+
 	return (
 		<div className="bg-white/80 rounded-xl shadow p-6">
 			<h2 className="text-lg font-semibold mb-4">Report Preview</h2>
@@ -45,7 +59,7 @@ export default function ReportPreview({ preview, onExportCSV, onClear }) {
 						{rows.map((row, idx) => (
 							<tr key={idx} className={`${idx % 2 === 0 ? "bg-white" : "bg-gray-50"} border-t`}>
 								{columns.map((col, i) => (
-									<td key={i} className="p-2 text-sm">{String(row?.[col] ?? "")}</td>
+									<td key={i} className="p-2 text-sm">{formatCell(col, row?.[col])}</td>
 								))}
 							</tr>
 						))}

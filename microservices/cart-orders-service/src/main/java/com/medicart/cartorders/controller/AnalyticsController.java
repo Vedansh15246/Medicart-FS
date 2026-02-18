@@ -148,4 +148,5 @@ public class AnalyticsController {
             return ResponseEntity.internalServerError().body(errorBody);
         }
     }
+    
 }

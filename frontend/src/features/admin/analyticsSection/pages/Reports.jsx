@@ -42,14 +42,19 @@ export default function ReportsPage() {
     const normalizedType = type?.toLowerCase() || "";
 
     if (normalizedType.includes("sales")) {
-      const rows = payload?.dailySales || payload?.rows || [];
+      const rows = Array.isArray(payload?.dailySales) ? payload.dailySales : [];
+      const totalOrders = rows.reduce((sum, row) => sum + (Number(row?.totalOrders) || 0), 0);
+      const totalRevenue = rows.reduce((sum, row) => sum + (Number(row?.totalRevenue) || 0), 0);
+      const avgOrderValue = totalOrders > 0 ? totalRevenue / totalOrders : 0;
       return { 
         type: "Sales", 
-        summary: { 
-          totalOrders: payload?.totalOrders ?? 0, 
-          totalRevenue: payload?.totalRevenue ?? 0, 
-          avgOrderValue: payload?.avgOrderValue ?? 0 
-        }, 
+        summary: rows.length
+          ? {
+              totalOrders,
+              totalRevenue,
+              avgOrderValue,
+            }
+          : null,
         rows: rows.slice(0, 10), 
         columns: ["date", "totalOrders", "totalRevenue"], 
         startDate: data?.startDate ?? payload?.startDate ?? null,
@@ -73,16 +78,14 @@ export default function ReportsPage() {
         raw: payload 
       };
     }
-    const rows = payload?.topCustomers || payload?.rows || [];
+    const rows = payload?.registrations || payload?.rows || [];
     return { 
       type: "User Activity", 
       summary: { 
-        totalCustomers: payload?.totalCustomers ?? 0, 
-        activeCustomers: payload?.activeCustomers ?? 0, 
-        inactiveCustomers: payload?.inactiveCustomers ?? 0 
+        totalCustomers: payload?.totalCustomers ?? 0
       }, 
       rows: rows.slice(0, 10), 
-      columns: ["userId", "fullName", "email", "totalOrders", "totalSpent"], 
+      columns: ["userId", "username", "email", "registeredAt"], 
       startDate: data?.startDate ?? payload?.startDate ?? null,
       endDate: data?.endDate ?? payload?.endDate ?? null,
       raw: payload 

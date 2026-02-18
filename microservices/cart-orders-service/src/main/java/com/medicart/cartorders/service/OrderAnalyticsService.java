@@ -249,6 +249,7 @@ public class OrderAnalyticsService {
         return report;
     }
 
+
     private SeriesResult buildSeries(String normalized) {
         LocalDate today = LocalDate.now();
         LocalDateTime end = today.plusDays(1).atStartOfDay();
