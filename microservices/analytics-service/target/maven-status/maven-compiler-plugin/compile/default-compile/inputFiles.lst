@@ -1,29 +1,29 @@
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\TopProduct.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\ReportRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\UserRegistrationRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\OrderStatisticRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\SalesByCategoryDTO.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\Report.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\RevenueDetailRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\config\AppConfig.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\AnalyticsSummaryDTO.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\service\AnalyticsService.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\controller\AnalyticsController.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\TopProductDTO.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\OrderStatusDistributionDTO.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\OrderStatusDistributionRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\OrderStatistic.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\OrderStatusDistribution.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\RevenueDetail.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\client\CartOrdersClient.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\config\OpenApiConfig.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\ReportDTO.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\controller\ReportsController.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\client\AuthClient.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\SalesByCategory.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\AnalyticsServiceApplication.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\UserRegistration.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\SalesByCategoryRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\TopProductRepository.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\client\CatalogueClient.java
-C:\workspace\Medicart-FS\microservices\analytics-service\src\main\java\com\medicart\analytics\service\ReportService.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\config\AppConfig.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\SalesByCategory.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\client\AuthClient.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\SalesByCategoryDTO.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\TopProductDTO.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\config\OpenApiConfig.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\ReportDTO.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\Report.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\RevenueDetailRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\UserRegistrationRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\UserRegistration.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\SalesByCategoryRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\client\CartOrdersClient.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\AnalyticsServiceApplication.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\controller\ReportsController.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\ReportRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\TopProductRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\TopProduct.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\OrderStatusDistributionRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\OrderStatusDistributionDTO.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\OrderStatusDistribution.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\service\AnalyticsService.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\OrderStatistic.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\client\CatalogueClient.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\repository\OrderStatisticRepository.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\entity\RevenueDetail.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\dto\response\AnalyticsSummaryDTO.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\service\ReportService.java
+C:\Users\2460680\Downloads\Medicart full stack\Medicart full stack\microservices\analytics-service\src\main\java\com\medicart\analytics\controller\AnalyticsController.java

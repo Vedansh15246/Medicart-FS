@@ -2,10 +2,12 @@ package com.medicart.admin.service;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.medicart.admin.entity.Batch;
 import com.medicart.admin.entity.Medicine;
 import com.medicart.admin.repository.BatchRepository;
@@ -61,6 +63,7 @@ public class MedicineService {
         medicine.setName(medicineDTO.getName());
         medicine.setCategory(medicineDTO.getCategory());
         medicine.setPrice(medicineDTO.getPrice());
+        medicine.setSku(medicineDTO.getSku());
         medicine.setRequiresRx(medicineDTO.getRequiresRx() != null ? medicineDTO.getRequiresRx() : medicine.getRequiresRx());
         medicine.setDescription(medicineDTO.getDescription());
         if (medicineDTO.getTotalQuantity() != null) {
@@ -81,6 +84,10 @@ public class MedicineService {
     private MedicineDTO convertToDTO(Medicine medicine) {
         String stockStatus = calculateStockStatus(medicine.getId());
         Integer totalQtyFromBatches = calculateTotalQuantityFromBatches(medicine.getId());
+        
+        // Check if medicine has batches
+        List<Batch> batches = batchRepository.findByMedicineId(medicine.getId());
+        boolean hasBatches = batches != null && !batches.isEmpty();
 
         return new MedicineDTO(
                 medicine.getId(),
@@ -92,7 +99,9 @@ public class MedicineService {
                 medicine.getDescription(),
                 medicine.getInStock(),
                 stockStatus,
-                totalQtyFromBatches > 0 ? totalQtyFromBatches : medicine.getTotalQuantity()
+                // If batches exist, use batch quantity (even if 0)
+                // If no batches, use medicine's totalQuantity
+                hasBatches ? totalQtyFromBatches : medicine.getTotalQuantity()
         );
     }
 

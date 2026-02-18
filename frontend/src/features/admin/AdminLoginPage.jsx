@@ -68,8 +68,8 @@ const AdminLoginPage = () => {
     <div className="admin-login-wrapper">
       <div className="login-box">
         <div className="login-header">
-          <h1>MediCart</h1>
-          <p>Administration Portal</p>
+          <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">MediCart</h1>
+          <p className="text-slate-500 text-sm font-medium">Administration Portal</p>
         </div>
 
         {error && (

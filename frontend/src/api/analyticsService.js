@@ -3,7 +3,6 @@ import {
   fetchAnalyticsSummary,
   fetchSalesByCategory,
   fetchTopProducts,
-  fetchOrderStatusDistribution,
   refreshAnalytics,
   fetchReportList,
   generateSalesReport,
@@ -16,7 +15,6 @@ export const analyticsService = {
   getSummary: fetchAnalyticsSummary,
   getSalesByCategory: fetchSalesByCategory,
   getTopProducts: (limit = 6) => fetchTopProducts(limit),
-  getOrderStatusDistribution: fetchOrderStatusDistribution,
   refresh: refreshAnalytics,
 };
 

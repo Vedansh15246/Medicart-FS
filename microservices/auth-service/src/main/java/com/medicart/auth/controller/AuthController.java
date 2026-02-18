@@ -1,5 +1,7 @@
 package com.medicart.auth.controller;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,6 @@ import com.medicart.auth.service.OtpService;
 import com.medicart.common.dto.LoginRequest;
 import com.medicart.common.dto.LoginResponse;
 import com.medicart.common.dto.RegisterRequest;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")

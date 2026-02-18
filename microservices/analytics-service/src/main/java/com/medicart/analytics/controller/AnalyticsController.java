@@ -73,20 +73,7 @@ public class AnalyticsController {
         }
     }
 
-    @GetMapping("/order-status-distribution")
-    public ResponseEntity<Map<String, Long>> getOrderStatusDistribution() {
-        try {
-            log.info("GET /api/admin/analytics/order-status-distribution");
-            Map<String, Long> distribution = analyticsService.getOrderStatusDistribution();
-            return ResponseEntity.ok(distribution != null ? distribution : Collections.emptyMap());
-        } catch (FeignException e) {
-            log.error("Feign error fetching order status distribution: {}", e.getMessage(), e);
-            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
-        } catch (Exception e) {
-            log.error("Error fetching order status distribution: {}", e.getMessage(), e);
-            return ResponseEntity.internalServerError().build();
-        }
-    }
+    // order-status-distribution endpoint removed — not used by frontend. See analytics/cart-orders services for distribution logic.
 
 
     @GetMapping("/order-series")

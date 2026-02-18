@@ -30,7 +30,7 @@ export default function AdminOrdersPage() {
   return (
     <div className="admin-container">
       <div className="admin-header">
-        <h1>User Orders Management</h1>
+        <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">User Orders Management</h1>
       </div>
 
       <OrdersTable 

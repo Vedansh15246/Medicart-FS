@@ -26,7 +26,7 @@ export default function AdminLayout() {
       <header className="admin-navbar">
         <div className="nav-container">
           <Link to="/"> 
-            <h2 className="admin-logo">MediCart</h2>
+            <h2 className="admin-logo text-2xl md:text-3xl font-black text-slate-900 tracking-tight">MediCart</h2>
           </Link>
           
           <nav className="nav-links">
@@ -43,11 +43,11 @@ export default function AdminLayout() {
               Reports
             </NavLink>
             <NavLink to="/admin/orders" className={({isActive}) => isActive ? "active" : ""}>
-  Orders
-</NavLink>
-<NavLink to="/admin/users" className={({isActive}) => isActive ? "active" : ""}>
-    Users
-</NavLink>
+              Orders
+            </NavLink>
+            <NavLink to="/admin/users" className={({isActive}) => isActive ? "active" : ""}>
+              Users
+            </NavLink>
           </nav>
 
           <button className="logout-btn" onClick={handleLogout}>

@@ -100,9 +100,6 @@ function OrderDetailsPage() {
                   <p className="font-medium text-gray-800">
                     {item.medicineName || medicineNames[item.medicineId] || item.batch?.medicine?.name || "Medicine Item"}
                   </p>
-                  {/* <p className="text-xs text-gray-500">
-                    Batch: {item.batchNo || item.batch?.batchNumber || "N/A"}
-                  </p> */}
                 </div>
                 <div className="text-right">
                   <p className="text-sm">Qty: {item.quantity}</p>

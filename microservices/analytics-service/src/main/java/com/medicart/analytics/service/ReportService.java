@@ -1,16 +1,21 @@
 package com.medicart.analytics.service;
 
+import com.medicart.analytics.client.AuthClient;
 import com.medicart.analytics.client.CartOrdersClient;
+import com.medicart.analytics.client.CatalogueClient;
 import com.medicart.analytics.dto.response.ReportDTO;
 import com.medicart.analytics.entity.Report;
 import com.medicart.analytics.repository.ReportRepository;
+import com.medicart.common.dto.MedicineDTO;
+import com.medicart.common.dto.UserDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +23,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class ReportService {
-    private static final Logger log = LoggerFactory.getLogger(ReportService.class);
+    
 
     @Autowired
     private ReportRepository reportRepository;
@@ -29,107 +34,155 @@ public class ReportService {
     @Autowired
     private CartOrdersClient cartOrdersClient;
 
+    @Autowired
+    private CatalogueClient catalogueClient;
+
+    @Autowired
+    private AuthClient authClient;
+
     public List<ReportDTO> getAllReports() {
-        log.info("📊 Fetching all reports");
         return reportRepository.findAllByOrderByGeneratedAtDesc().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    public ReportDTO generateSalesReport(LocalDate startDate, LocalDate endDate) {
+    public ReportDTO generateSalesReport(LocalDate startDate, LocalDate endDate) throws JsonProcessingException {
         LocalDate safeStart = startDate != null ? startDate : LocalDate.now().minusMonths(1);
         LocalDate safeEnd = endDate != null ? endDate : LocalDate.now();
-        log.info("📊 Generating sales report from {} to {}", safeStart, safeEnd);
-        
-        try {
-            Map<String, Object> reportData = cartOrdersClient.getSalesReport(
-                safeStart.toString(),
-                safeEnd.toString()
-            );
-            if (reportData == null) {
-                reportData = new HashMap<>();
+        Map<String, Object> reportData = cartOrdersClient.getSalesReport(
+            safeStart.toString(),
+            safeEnd.toString()
+        );
+        if (reportData == null) {
+            reportData = new HashMap<>();
+        }
+
+        String jsonData = objectMapper.writeValueAsString(reportData);
+
+        Report report = Report.builder()
+                .reportType("SALES")
+                .reportName("Sales Report: " + safeStart + " to " + safeEnd)
+                .startDate(safeStart)
+                .endDate(safeEnd)
+                .reportData(jsonData)
+                .generatedAt(LocalDateTime.now())
+                .build();
+
+        report = reportRepository.save(report);
+        return convertToDTO(report);
+    }
+
+    public ReportDTO generateInventoryReport() throws JsonProcessingException {
+        List<MedicineDTO> medicines = catalogueClient.getAllMedicines();
+        if (medicines == null) {
+            medicines = List.of();
+        }
+
+        int totalProducts = medicines.size();
+        int lowStockCount = 0;
+        int outOfStockCount = 0;
+        double totalInventoryValue = 0.0;
+        List<Map<String, Object>> lowStockItems = new ArrayList<>();
+
+        for (MedicineDTO medicine : medicines) {
+            if (medicine == null) {
+                continue;
             }
-            
-            String jsonData = objectMapper.writeValueAsString(reportData);
-            
-            Report report = Report.builder()
-                    .reportType("SALES")
-                    .reportName("Sales Report: " + safeStart + " to " + safeEnd)
-                    .startDate(safeStart)
-                    .endDate(safeEnd)
-                    .reportData(jsonData)
-                    .generatedAt(LocalDateTime.now())
-                    .build();
-            
-            report = reportRepository.save(report);
-            log.info("✅ Sales report generated successfully");
-            return convertToDTO(report);
-        } catch (Exception e) {
-            log.error("❌ Error generating sales report: {}", e.getMessage(), e);
-            throw new RuntimeException("Failed to generate sales report: " + e.getMessage());
+            Integer qty = medicine.getTotalQuantity() != null ? medicine.getTotalQuantity() : 0;
+            Double price = medicine.getPrice() != null ? medicine.getPrice() : 0.0;
+            totalInventoryValue += price * qty;
+
+            String status = medicine.getStockStatus();
+            if (status == null || status.isBlank()) {
+                if (qty <= 0) {
+                    status = "OUT_OF_STOCK";
+                } else if (qty <= 10) {
+                    status = "LOW_STOCK";
+                } else {
+                    status = "IN_STOCK";
+                }
+            }
+
+            if ("OUT_OF_STOCK".equalsIgnoreCase(status) || qty <= 0) {
+                outOfStockCount++;
+            } else if ("LOW_STOCK".equalsIgnoreCase(status) || qty <= 10) {
+                lowStockCount++;
+            }
+
+            if ("OUT_OF_STOCK".equalsIgnoreCase(status) || "LOW_STOCK".equalsIgnoreCase(status)) {
+                Map<String, Object> item = new HashMap<>();
+                item.put("medicineId", medicine.getId());
+                item.put("medicineName", medicine.getName());
+                item.put("totalQuantity", qty);
+                item.put("stockStatus", status);
+                lowStockItems.add(item);
+            }
         }
+
+        Map<String, Object> reportData = new HashMap<>();
+        reportData.put("totalProducts", totalProducts);
+        reportData.put("lowStockCount", lowStockCount);
+        reportData.put("outOfStockCount", outOfStockCount);
+        reportData.put("totalInventoryValue", totalInventoryValue);
+        reportData.put("lowStockItems", lowStockItems);
+
+        String jsonData = objectMapper.writeValueAsString(reportData);
+
+        Report report = Report.builder()
+                .reportType("INVENTORY")
+                .reportName("Inventory Report: " + LocalDate.now())
+                .startDate(LocalDate.now())
+                .endDate(LocalDate.now())
+                .reportData(jsonData)
+                .generatedAt(LocalDateTime.now())
+                .build();
+
+        report = reportRepository.save(report);
+        return convertToDTO(report);
     }
 
-    public ReportDTO generateInventoryReport() {
-        log.info("📊 Generating inventory report");
-        
-        try {
-            Map<String, Object> reportData = new HashMap<>();
-            reportData.put("totalProducts", 320);
-            reportData.put("inStockProducts", 285);
-            reportData.put("lowStockProducts", 25);
-            reportData.put("outOfStockProducts", 10);
-            reportData.put("totalInventoryValue", 850000.0);
-            
-            String jsonData = objectMapper.writeValueAsString(reportData);
-            
-            Report report = Report.builder()
-                    .reportType("INVENTORY")
-                    .reportName("Inventory Report: " + LocalDate.now())
-                    .startDate(LocalDate.now())
-                    .endDate(LocalDate.now())
-                    .reportData(jsonData)
-                    .generatedAt(LocalDateTime.now())
-                    .build();
-            
-            report = reportRepository.save(report);
-            log.info("✅ Inventory report generated successfully");
-            return convertToDTO(report);
-        } catch (Exception e) {
-            log.error("❌ Error generating inventory report: {}", e.getMessage(), e);
-            throw new RuntimeException("Failed to generate inventory report: " + e.getMessage());
-        }
-    }
+    public ReportDTO generateUserActivityReport(LocalDate startDate, LocalDate endDate) throws JsonProcessingException {
+        LocalDate safeStart = startDate != null ? startDate : LocalDate.now().minusMonths(1);
+        LocalDate safeEnd = endDate != null ? endDate : LocalDate.now();
 
-    public ReportDTO generateUserActivityReport(LocalDate startDate, LocalDate endDate) {
-        log.info("📊 Generating user activity report from {} to {}", startDate, endDate);
-        
-        try {
-            Map<String, Object> reportData = new HashMap<>();
-            reportData.put("totalUsers", 1250);
-            reportData.put("activeUsers", 890);
-            reportData.put("newRegistrations", 120);
-            reportData.put("averageOrdersPerUser", 3.2);
-            reportData.put("topUserSegment", "Regular Customers");
-            
-            String jsonData = objectMapper.writeValueAsString(reportData);
-            
-            Report report = Report.builder()
-                    .reportType("USER_ACTIVITY")
-                    .reportName("User Activity Report: " + startDate + " to " + endDate)
-                    .startDate(startDate)
-                    .endDate(endDate)
-                    .reportData(jsonData)
-                    .generatedAt(LocalDateTime.now())
-                    .build();
-            
-            report = reportRepository.save(report);
-            log.info("✅ User activity report generated successfully");
-            return convertToDTO(report);
-        } catch (Exception e) {
-            log.error("❌ Error generating user activity report: {}", e.getMessage(), e);
-            throw new RuntimeException("Failed to generate user activity report: " + e.getMessage());
+        List<UserDTO> users = authClient.getAllUsers();
+        if (users == null) {
+            users = List.of();
         }
+
+        List<Map<String, Object>> registrations = users.stream()
+                .filter(user -> user != null)
+                .map(user -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("userId", user.getId());
+                    row.put("username", user.getFullName() != null && !user.getFullName().isBlank()
+                            ? user.getFullName()
+                            : user.getEmail());
+                    row.put("registeredAt", user.getCreatedAt());
+                    row.put("email", user.getEmail());
+                    return row;
+                })
+                .toList();
+
+        Map<String, Object> reportData = new HashMap<>();
+        reportData.put("startDate", safeStart.toString());
+        reportData.put("endDate", safeEnd.toString());
+        reportData.put("totalCustomers", users.size());
+        reportData.put("registrations", registrations);
+
+        String jsonData = objectMapper.writeValueAsString(reportData);
+
+        Report report = Report.builder()
+                .reportType("USER_ACTIVITY")
+                .reportName("User Activity Report: " + safeStart + " to " + safeEnd)
+                .startDate(safeStart)
+                .endDate(safeEnd)
+                .reportData(jsonData)
+                .generatedAt(LocalDateTime.now())
+                .build();
+
+        report = reportRepository.save(report);
+        return convertToDTO(report);
     }
 
     public boolean deleteReport(Long reportId) {

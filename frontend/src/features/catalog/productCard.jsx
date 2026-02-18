@@ -33,10 +33,10 @@ export default function ProductCard({ product, onViewMore }) {
 
   // Stock status determination logic
   // The API returns: stockStatus (IN_STOCK/OUT_OF_STOCK/EXPIRED), totalQuantity, inStock flag
-  // Priority: 1) Check stockStatus field from backend, 2) Fallback to quantity checks
+  // Priority: 1) Check stockStatus field from backend, 2) Must have quantity available
   const isStockStatusInStock = product.stockStatus === "IN_STOCK";
   const hasQuantity = product.totalQuantity > 0;
-  const canBuy = isStockStatusInStock || hasQuantity;
+  const canBuy = isStockStatusInStock && hasQuantity;
   
   const isLimitReached = cartItem ? cartItem.qty >= (product.totalQuantity || 0) : false;
 

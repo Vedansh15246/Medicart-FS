@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { setSearchQuery, setCategory } from "./productSlice";
 import { fetchMedicines } from "./catalogApi";
-import ProductCard from "./ProductCard";
+import ProductCard from "./productCard";
 import Navbar from "../../components/navbar/Navbar";
 import MedicineModal from "../../components/modal/MedicineModal";
 import "./home.css";
@@ -42,6 +42,24 @@ const filteredData = data.filter((item) => {
 
   return matchesSearch && matchesCategory;
 });
+
+// Sort medicines: IN_STOCK items first, then by quantity (descending), then OUT_OF_STOCK/EXPIRED
+const sortedData = [...filteredData].sort((a, b) => {
+  const aInStock = a.stockStatus === "IN_STOCK" && a.totalQuantity > 0;
+  const bInStock = b.stockStatus === "IN_STOCK" && b.totalQuantity > 0;
+  
+  // Priority 1: IN_STOCK items first
+  if (aInStock && !bInStock) return -1;
+  if (!aInStock && bInStock) return 1;
+  
+  // Priority 2: Among IN_STOCK items, sort by quantity (higher first)
+  if (aInStock && bInStock) {
+    return (b.totalQuantity || 0) - (a.totalQuantity || 0);
+  }
+  
+  // Priority 3: For out of stock items, maintain original order
+  return 0;
+});
   return (
     <div className="page">
       {/* NAVBAR */}
@@ -75,12 +93,12 @@ const filteredData = data.filter((item) => {
           </p>
         )}
 
-        {!isLoading && !isError && filteredData.length === 0 && (
+        {!isLoading && !isError && sortedData.length === 0 && (
           <p className="status">No medicines found</p>
         )}
 
         <div className="grid">
-          {filteredData.map((product) => (
+          {sortedData.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
