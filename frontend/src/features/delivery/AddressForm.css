@@ -101,6 +101,167 @@
 .form-input.error:focus {
   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
+
+/* Pincode auto-detect styles */
+.pincode-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pincode-input-wrapper .form-input {
+  width: 100%;
+  padding-right: 36px;
+}
+
+.pincode-spinner,
+.pincode-success,
+.pincode-error {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.pincode-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pincode-hint {
+  font-size: 11px;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.pincode-hint.success {
+  color: #16a34a;
+}
+
+.pincode-hint.error {
+  color: #dc2626;
+}
+
+.auto-filled-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-input.auto-filled {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.form-input.disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Three column layout for pincode + state + city */
+.form-row.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Searchable Select Dropdown */
+.searchable-select {
+  position: relative;
+}
+
+.searchable-select .form-input {
+  width: 100%;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.dropdown-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-list::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.dropdown-item {
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.dropdown-item.selected {
+  background: #dcfce7;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.dropdown-item.add-custom {
+  color: #2563eb;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.dropdown-item.add-custom:hover {
+  background: #eff6ff;
+}
+
+.dropdown-empty {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+}
  
 .error-message {
   display: flex;
@@ -210,6 +371,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
+
+  .form-row.three-col {
+    grid-template-columns: 1fr 1fr;
+  }
  
   .section-title {
     font-size: 14px;
@@ -241,6 +406,10 @@
     grid-template-columns: 1fr;
     gap: 12px;
   }
+
+  .form-row.three-col {
+    grid-template-columns: 1fr;
+  }
  
   .form-label {
     font-size: 13px;
@@ -265,6 +434,10 @@
  
   .checkbox-label {
     padding: 10px;
+  }
+
+  .dropdown-list {
+    max-height: 180px;
   }
 }
  
