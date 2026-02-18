@@ -27,6 +27,19 @@ const AddressForm = ({ initialValues, onSubmit, onCancel }) => {
 
   const allStates = useMemo(() => getAllStates(), []);
 
+  const filteredStates = useMemo(() => {
+    if (!stateSearch.trim()) return allStates;
+    return allStates.filter(s => s.toLowerCase().includes(stateSearch.toLowerCase()));
+  }, [allStates, stateSearch]);
+
+  const allCities = useMemo(() => {
+    return form.state ? getCitiesForState(form.state) : [];
+  }, [form.state]);
+
+  const filteredCities = useMemo(() => {
+    if (!citySearch.trim()) return allCities;
+    return allCities.filter(c => c.toLowerCase().includes(citySearch.toLowerCase()));
+  }, [allCities, citySearch]);
 
   useEffect(() => {
     setForm(initialValues ? { ...initial, ...initialValues } : initial);
