@@ -1,3 +1,30 @@
+/**
+ * frontend/src/api/client.js
+ *
+ * Central Axios HTTP client used by the frontend to communicate with backend microservices
+ * through the API Gateway. This file centralizes cross-cutting concerns so service modules
+ * stay small and only declare endpoint paths and payloads.
+ *
+ * Responsibilities:
+ *  - Create a configured axios instance with a `baseURL` and sensible defaults.
+ *  - Attach a request interceptor that:
+ *      * Adds an Authorization header if an access token exists in localStorage.
+ *      * Extracts a numeric user id (from JWT or localStorage) and sets `X-User-Id` header.
+ *      * Handles FormData uploads by removing Content-Type so axios can set multipart
+ *        boundaries automatically.
+ *      * Logs request details via the project's `logger` utility.
+ *  - Attach a response interceptor that:
+ *      * Logs responses and errors.
+ *      * Handles common statuses like 401 (session expired) and 403 (forbidden).
+ *
+ * Notes and recommendations:
+ *  - The current `baseURL` is hard-coded to `http://localhost:8080` (API Gateway). For
+ *    production builds switch this to an environment variable (Vite: `import.meta.env.VITE_API_BASE_URL`).
+ *  - If you implement token refresh you should queue failed requests while refreshing and
+ *    replay them after refresh completes to avoid duplicate flows.
+ *  - Keep this file focused on headers/logging/error handling. Service modules should not
+ *    reimplement these behaviors.
+ */
 import axios from "axios";
 import logger from "../utils/logger";
 
