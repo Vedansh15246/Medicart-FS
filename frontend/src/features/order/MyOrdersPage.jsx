@@ -27,6 +27,18 @@ export default function MyOrdersPage() {
       .finally(() => setLoading(false));
   }, [navigate]);
 
+  // Calculate 7 working days from order date (skip weekends)
+  const getExpectedDelivery = (orderDate) => {
+    const date = new Date(orderDate);
+    let workingDays = 0;
+    while (workingDays < 7) {
+      date.setDate(date.getDate() + 1);
+      const day = date.getDay();
+      if (day !== 0 && day !== 6) workingDays++;
+    }
+    return date;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
@@ -60,6 +72,28 @@ export default function MyOrdersPage() {
                   <div className="text-right">
                     <p className="text-green-700 font-bold text-xl">₹{total.toFixed(2)}</p>
                     <p className="text-xs text-gray-500">Incl. GST & Delivery</p>
+                    {/* Order Status Badge */}
+                    {order.status && (
+                      <span style={{
+                        display: 'inline-block',
+                        marginTop: '6px',
+                        padding: '3px 10px',
+                        borderRadius: '12px',
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        ...(order.status === 'Pending Review' ? { backgroundColor: '#fef3cd', color: '#856404', border: '1px solid #ffc107' } :
+                           order.status === 'Approved' || order.status === 'CONFIRMED' ? { backgroundColor: '#d4edda', color: '#155724', border: '1px solid #28a745' } :
+                           order.status === 'Rejected' || order.status === 'Cancelled' ? { backgroundColor: '#f8d7da', color: '#721c24', border: '1px solid #dc3545' } :
+                           order.status === 'Delivered' ? { backgroundColor: '#d1ecf1', color: '#0c5460', border: '1px solid #17a2b8' } :
+                           order.status === 'Shipped' ? { backgroundColor: '#e2e3f1', color: '#383d6e', border: '1px solid #6c757d' } :
+                           { backgroundColor: '#fff3cd', color: '#856404', border: '1px solid #ffc107' })
+                      }}>
+                        {order.status === 'Pending Review' ? '📋 Pending Review' :
+                         order.status === 'Approved' ? '✅ Approved' :
+                         order.status === 'Rejected' ? '❌ Rejected' :
+                         order.status}
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -89,6 +123,24 @@ export default function MyOrdersPage() {
                   <div className="flex justify-between">
                     <span>Delivery:</span>
                     <span>{delivery === 0 ? <span className="text-green-600">Free</span> : `₹${delivery.toFixed(2)}`}</span>
+                  </div>
+                  <div className="flex justify-between pt-1 border-t mt-1">
+                    <span className="font-medium text-gray-700">📦 Expected Delivery:</span>
+                    <span className="font-medium text-gray-700">
+                      {(() => {
+                        const expDate = order.deliveryDate
+                          ? new Date(order.deliveryDate)
+                          : order.orderDate
+                            ? getExpectedDelivery(order.orderDate)
+                            : null;
+                        return expDate
+                          ? expDate.toLocaleDateString('en-IN', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
+                          : 'TBD';
+                      })()}
+                      {!order.deliveryDate && order.orderDate && (
+                        <span className="text-xs text-gray-400 ml-1">(Est.)</span>
+                      )}
+                    </span>
                   </div>
                 </div>
                 

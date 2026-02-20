@@ -125,6 +125,20 @@ export default function CardPayment() {
       // STEP 4: Clear cart and navigate to success
       // replace: true removes the payment page from history so back button won't return here
       dispatch(clearCart());
+
+      // STEP 4.5: If prescription was required, set order to "Pending Review"
+      const prescriptionRequired = sessionStorage.getItem('prescriptionRequired') === 'true';
+      if (prescriptionRequired) {
+        try {
+          await orderService.updateOrderStatus(orderId, 'Pending Review');
+          logger.info("📋 Order set to Pending Review (prescription required)", { orderId });
+        } catch (statusErr) {
+          logger.warn("⚠️ Failed to set Pending Review status", statusErr);
+        }
+        sessionStorage.removeItem('prescriptionRequired');
+        sessionStorage.removeItem('selectedAddressId');
+      }
+
       showToast('Order placed successfully! 🎉', 'success', 'Payment Complete', 5000);
      
       navigate('/payment/success', {
@@ -136,7 +150,8 @@ export default function CardPayment() {
           orderId: orderId,
           orderNumber: orderResponse.orderNumber,
           method: 'CREDIT_CARD',
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          prescriptionRequired
         }
       });
     } catch (err) {

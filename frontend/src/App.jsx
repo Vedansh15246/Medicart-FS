@@ -1,9 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { initializeAuth, logout } from "./features/auth/authSlice.js";
-import { isTokenExpired } from "./utils/jwtUtils.js";
-import logger from "./utils/logger.js";
+import { initializeAuth } from "./features/auth/authSlice.js";
 
 // Components that load instantly (layout shells, guards)
 import ProtectedRoute from "./features/auth/ProtectedRoute";
@@ -45,62 +43,9 @@ const Reports           = lazy(() => import("./features/admin/analyticsSection/p
 export default function App() {
   const dispatch = useDispatch();
 
-  // Initialize auth from localStorage on app start and check token expiration
+  // Initialize auth from localStorage on app start
   useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    
-    if (token && token !== "null" && token !== "undefined") {
-      // Check if token is expired
-      if (isTokenExpired(token)) {
-        logger.warn("⏰ Token expired on app load - logging out user");
-        
-        // Clear all auth data
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("userId");
-        localStorage.removeItem("userName");
-        localStorage.removeItem("userEmail");
-        localStorage.removeItem("userRole");
-        
-        // Dispatch logout action
-        dispatch(logout());
-        
-        // Optional: Show a message to user
-        console.log("Your session has expired. Please login again.");
-      } else {
-        // Token is valid, initialize auth state
-        dispatch(initializeAuth());
-        logger.info("✅ Valid token found - user authenticated");
-      }
-    } else {
-      logger.info("ℹ️ No token found - user not authenticated");
-    }
-
-    // Set up periodic token validation (check every 60 seconds)
-    const tokenCheckInterval = setInterval(() => {
-      const currentToken = localStorage.getItem("accessToken");
-      
-      if (currentToken && currentToken !== "null" && currentToken !== "undefined") {
-        if (isTokenExpired(currentToken)) {
-          logger.warn("⏰ Token expired during session - auto-logout");
-          
-          // Clear all auth data
-          localStorage.removeItem("accessToken");
-          localStorage.removeItem("userId");
-          localStorage.removeItem("userName");
-          localStorage.removeItem("userEmail");
-          localStorage.removeItem("userRole");
-          
-          // Dispatch logout action
-          dispatch(logout());
-          
-          // Reload to redirect to login
-          window.location.href = "/auth/login";
-        }
-      }
-    }, 60000); // Check every 60 seconds
-
-    // Cleanup interval on unmount
-    return () => clearInterval(tokenCheckInterval);
+    dispatch(initializeAuth());
   }, [dispatch]);
 
   return (

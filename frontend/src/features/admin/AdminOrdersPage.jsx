@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { orderService } from "../../api/orderService";
 import OrdersTable from "./OrdersTable";
 import OrderStatusModal from "./OrderStatusModal";
+import PrescriptionModal from "./PrescriptionModal";
 
 export default function AdminOrdersPage() {
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [prescriptionOrder, setPrescriptionOrder] = useState(null);
 
   const fetchOrders = async () => {
     try {
@@ -27,6 +29,10 @@ export default function AdminOrdersPage() {
     setIsModalOpen(true);
   };
 
+  const handleViewPrescription = (order) => {
+    setPrescriptionOrder(order);
+  };
+
   return (
     <div className="admin-container">
       <div className="admin-header">
@@ -35,7 +41,8 @@ export default function AdminOrdersPage() {
 
       <OrdersTable 
         orders={orders} 
-        onEdit={handleEdit} 
+        onEdit={handleEdit}
+        onViewPrescription={handleViewPrescription}
       />
 
       {isModalOpen && (
@@ -43,6 +50,13 @@ export default function AdminOrdersPage() {
           order={selectedOrder} 
           onClose={() => setIsModalOpen(false)} 
           onSaved={fetchOrders}
+        />
+      )}
+
+      {prescriptionOrder && (
+        <PrescriptionModal
+          order={prescriptionOrder}
+          onClose={() => setPrescriptionOrder(null)}
         />
       )}
     </div>

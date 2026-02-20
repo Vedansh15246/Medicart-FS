@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-export default function OrdersTable({ orders, onEdit }) {
+export default function OrdersTable({ orders, onEdit, onViewPrescription }) {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 8;
 
@@ -14,6 +14,9 @@ export default function OrdersTable({ orders, onEdit }) {
     switch (status) {
       case "Delivered": return <span className="badge ok">Delivered</span>;
       case "Pending": return <span className="badge warn">Pending</span>;
+      case "Pending Review": return <span className="badge" style={{ backgroundColor: '#fef3cd', color: '#856404', border: '1px solid #ffc107' }}>📋 Pending Review</span>;
+      case "Approved": return <span className="badge ok">✅ Approved</span>;
+      case "Rejected": return <span className="badge danger">❌ Rejected</span>;
       case "Cancelled": return <span className="badge danger">Cancelled</span>;
       default: return <span className="badge secondary">{status}</span>;
     }
@@ -57,8 +60,24 @@ export default function OrdersTable({ orders, onEdit }) {
                 </td>
 
                 <td>{renderStatusBadge(o.status)}</td>
-                <td className="actions">
+                <td className="actions" style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                   <button className="btn-edit" onClick={() => onEdit(o)}>Update Status</button>
+                  <button
+                    onClick={() => onViewPrescription(o)}
+                    style={{
+                      padding: '4px 10px',
+                      backgroundColor: '#6f42c1',
+                      color: '#fff',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '0.8rem',
+                      fontWeight: '600',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    📋 Prescription
+                  </button>
                 </td>
               </tr>
             ))}

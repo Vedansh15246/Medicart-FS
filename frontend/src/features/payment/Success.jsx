@@ -288,6 +288,18 @@ export default function Success() {
           <h1 className="text-4xl font-bold text-emerald-900 mb-2">Payment Successful! 🎉</h1>
           <p className="text-lg text-emerald-700 mb-1">Your order has been confirmed</p>
           <p className="text-sm text-emerald-600">Order confirmation email has been sent to your registered email</p>
+
+          {/* Prescription Review Notice */}
+          {orderDetails.prescriptionRequired && (
+            <div className="mt-4 bg-amber-50 border border-amber-300 rounded-lg px-5 py-3 inline-block">
+              <p className="text-amber-800 font-semibold text-sm flex items-center gap-2 justify-center">
+                📋 Your order is under prescription review
+              </p>
+              <p className="text-amber-700 text-xs mt-1">
+                Our pharmacist will verify your prescription. You'll be notified once approved.
+              </p>
+            </div>
+          )}
         </div>
  
         {/* Order Details Card */}
@@ -357,9 +369,23 @@ export default function Success() {
                 <p className="text-sm text-gray-600">You'll receive an order confirmation email shortly</p>
               </div>
             </div>
+
+            {/* Show prescription review step if prescription was required */}
+            {orderDetails.prescriptionRequired && (
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <p className="font-semibold text-amber-800">📋 Prescription Review</p>
+                  <p className="text-sm text-gray-600">Our pharmacist will review your uploaded prescription. If valid, your order will be approved. If invalid, it will be cancelled and refunded.</p>
+                </div>
+              </div>
+            )}
+
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold flex-shrink-0">
-                2
+                {orderDetails.prescriptionRequired ? '3' : '2'}
               </div>
               <div>
                 <p className="font-semibold text-gray-800">Order Verification</p>
@@ -368,7 +394,7 @@ export default function Success() {
             </div>
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold flex-shrink-0">
-                3
+                {orderDetails.prescriptionRequired ? '4' : '3'}
               </div>
               <div>
                 <p className="font-semibold text-gray-800">Shipment & Tracking</p>

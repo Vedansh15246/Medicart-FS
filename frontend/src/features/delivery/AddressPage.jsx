@@ -113,6 +113,7 @@ const AddressPage = () => {
       // Store selected address in sessionStorage to resume after prescription upload
       sessionStorage.setItem('selectedAddressId', selectedId);
       sessionStorage.setItem('redirectAfterPrescription', 'payment');
+      sessionStorage.setItem('prescriptionRequired', 'true');
       
       showToast("Some medicines require prescription. Please upload your prescription.", "info");
       navigate('/dashboard_client/prescription');

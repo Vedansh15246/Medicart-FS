@@ -44,6 +44,20 @@ public class PrescriptionController {
         }
     }
 
+    // Admin endpoint: fetch prescriptions for any user by userId path param
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Map<String, Object>>> getPrescriptionsByUserId(
+            @PathVariable Long userId) {
+        try {
+            List<Map<String, Object>> prescriptions = prescriptionStorage.getOrDefault(userId, new ArrayList<>());
+            log.debug("Admin: Returning {} prescriptions for userId: {}", prescriptions.size(), userId);
+            return ResponseEntity.ok(prescriptions);
+        } catch (Exception e) {
+            log.error("Error fetching prescriptions for userId {}: {}", userId, e.getMessage());
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     @PostMapping
     public ResponseEntity<?> uploadPrescription(
             @RequestParam("file") MultipartFile file,

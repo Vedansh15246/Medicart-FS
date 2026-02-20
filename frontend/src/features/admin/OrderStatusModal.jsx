@@ -45,9 +45,12 @@ export default function OrderStatusModal({ order, onClose, onSaved }) {
               style={{ width: "100%", padding: "10px", marginBottom: "15px" }}
             >
               <option value="Pending">Pending</option>
+              <option value="Pending Review">Pending Review</option>
               <option value="Processing">Processing</option>
+              <option value="Approved">Approved</option>
               <option value="Shipped">Shipped</option>
               <option value="Delivered">Delivered</option>
+              <option value="Rejected">Rejected</option>
               <option value="Cancelled">Cancelled</option>
             </select>
 

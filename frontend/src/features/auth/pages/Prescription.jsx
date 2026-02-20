@@ -15,8 +15,9 @@ const Prescription = () => {
   const [alertModal, setAlertModal] = useState({ open: false, title: "", message: "", type: "info" })
   const { showToast } = useToast()
 
-  // Check if user came from address page (checkout flow)
+  // Check if user came from address page (prescription-required checkout flow)
   const isCheckoutFlow = sessionStorage.getItem('redirectAfterPrescription') === 'payment';
+  const [hasUploadedInSession, setHasUploadedInSession] = useState(false);
 
   useEffect(() => {
     logger.info("📝 Prescription component mounted");
@@ -65,23 +66,12 @@ const Prescription = () => {
       const res = await client.post('/api/prescriptions', fd)
       logger.info("✅ Prescription uploaded successfully", { fileName: prescription.name });
       showToast("Prescription uploaded successfully!", "success")
+      setHasUploadedInSession(true);
       
       // refresh list
       const list = await client.get('/api/prescriptions')
       setHistory(list.data || [])
       setPrescription()
-      
-      // Check if user came from address page and needs to redirect to payment
-      const redirectTo = sessionStorage.getItem('redirectAfterPrescription');
-      if (redirectTo === 'payment') {
-        sessionStorage.removeItem('redirectAfterPrescription');
-        logger.info("🔄 Redirecting to payment after prescription upload");
-        
-        // Show success message and redirect after a short delay
-        setTimeout(() => {
-          navigate('/payment');
-        }, 1500);
-      }
     } catch (err) {
       logger.error('Upload failed', {
         status: err.response?.status,
@@ -112,64 +102,63 @@ const Prescription = () => {
       setError(err?.response?.data?.message || 'Download failed')
     }
   }
+  
 
-  // Continue to payment page (checkout flow)
   const handleContinueToPayment = () => {
+    // Clear the redirect flag
     sessionStorage.removeItem('redirectAfterPrescription');
     navigate('/payment');
   };
 
-  // Check if user already has prescriptions uploaded (can proceed without uploading again)
-  const hasPrescriptions = history.length > 0;
-  
-
   return (
     <div className="bg-body-tertiary h-100 w-100 rounded-3 border shadow-sm p-2">
-      {/* Checkout flow banner */}
+
+      {/* Checkout Flow Banner */}
       {isCheckoutFlow && (
         <div style={{
-          background: 'linear-gradient(135deg, #e0f2fe, #dbeafe)',
-          border: '1px solid #93c5fd',
+          background: 'linear-gradient(135deg, #fef3cd, #fff8e1)',
+          border: '1px solid #ffc107',
           borderRadius: '10px',
           padding: '16px 20px',
           marginBottom: '16px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
           gap: '12px',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '24px' }}>💊</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1 }}>
+            <span style={{ fontSize: '24px' }}>📋</span>
             <div>
-              <p style={{ margin: 0, fontWeight: 600, color: '#1e40af', fontSize: '15px' }}>
-                Prescription Required
-              </p>
-              <p style={{ margin: 0, color: '#3b82f6', fontSize: '13px' }}>
-                {hasPrescriptions 
-                  ? 'You already have prescriptions on file. Upload a new one or continue to payment.'
-                  : 'Please upload your prescription to proceed with your order.'}
+              <strong style={{ color: '#856404', fontSize: '14px' }}>Prescription Required</strong>
+              <p style={{ margin: 0, fontSize: '13px', color: '#856404' }}>
+                {hasUploadedInSession || history.length > 0
+                  ? "Your prescription has been uploaded. You can now continue to payment."
+                  : "Some medicines in your cart require a valid prescription. Please upload before continuing."}
               </p>
             </div>
           </div>
-          {hasPrescriptions && (
+          {(hasUploadedInSession || history.length > 0) && (
             <button
               onClick={handleContinueToPayment}
               style={{
-                padding: '10px 24px',
-                background: 'linear-gradient(135deg, #10b981, #059669)',
+                background: 'linear-gradient(135deg, #28a745, #20c997)',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',
-                fontWeight: 600,
+                padding: '10px 24px',
+                fontWeight: '700',
                 fontSize: '14px',
                 cursor: 'pointer',
-                boxShadow: '0 2px 8px rgba(16, 185, 129, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 2px 8px rgba(40,167,69,0.3)',
                 transition: 'all 0.2s ease',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'nowrap'
               }}
-              onMouseEnter={(e) => { e.target.style.transform = 'translateY(-1px)'; e.target.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.4)'; }}
-              onMouseLeave={(e) => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 2px 8px rgba(16, 185, 129, 0.3)'; }}
+              onMouseEnter={e => e.target.style.transform = 'translateY(-1px)'}
+              onMouseLeave={e => e.target.style.transform = 'translateY(0)'}
             >
               Continue to Payment →
             </button>
@@ -210,38 +199,6 @@ const Prescription = () => {
           </div>
         </form>
       </div>
-
-      {/* Continue to Payment button for checkout flow - shown after a successful upload */}
-      {isCheckoutFlow && hasPrescriptions && (
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          padding: '20px 0',
-        }}>
-          <button
-            onClick={handleContinueToPayment}
-            style={{
-              padding: '14px 40px',
-              background: 'linear-gradient(135deg, #10b981, #059669)',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '10px',
-              fontWeight: 700,
-              fontSize: '16px',
-              cursor: 'pointer',
-              boxShadow: '0 4px 14px rgba(16, 185, 129, 0.35)',
-              transition: 'all 0.2s ease',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-            onMouseEnter={(e) => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 6px 20px rgba(16, 185, 129, 0.45)'; }}
-            onMouseLeave={(e) => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 14px rgba(16, 185, 129, 0.35)'; }}
-          >
-            ✅ Continue to Payment →
-          </button>
-        </div>
-      )}
 
       <div className="my-5"></div>
 
