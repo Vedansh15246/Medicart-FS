@@ -34,22 +34,8 @@
             <version>2.2.0</version>
         </dependency>
 
-        <!-- JWT Dependencies -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-api</artifactId>
-            <version>0.12.3</version>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-impl</artifactId>
-            <version>0.12.3</version>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
-            <version>0.12.3</version>
-        </dependency>
+        <!-- JWT Dependencies REMOVED -->
+        <!-- Gateway handles JWT validation, this service doesn't need JWT libraries -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

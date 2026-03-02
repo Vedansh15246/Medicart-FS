@@ -16,33 +16,48 @@
     <description>API Gateway for routing requests to microservices</description>
 
     <dependencies>
+        <!-- Common module: Shared DTOs and utilities across all microservices
+             Purpose: Provides consistent data transfer objects (LoginRequest, UserDTO, etc.)
+                      used for communication between microservices and the gateway -->
         <dependency>
             <groupId>com.medicart</groupId>
             <artifactId>common</artifactId>
             <version>1.0.0</version>
         </dependency>
 
+        <!-- Spring Cloud Gateway: Core gateway functionality for routing and filtering
+             Purpose: Enables reactive API gateway features (routing, load balancing, filters)
+                      Routes incoming requests to backend microservices based on path patterns
+                      Supports WebFlux (non-blocking I/O) for high throughput -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
+        <!-- Eureka Client: Service discovery integration
+             Purpose: Allows the gateway to discover and route to microservices by logical name
+                      (e.g., "auth-service", "cart-orders-service") instead of hardcoded URLs
+                      Automatically updates routes when service instances start/stop -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <!-- Spring Security: Core security framework for authentication and authorization
+             Purpose: Provides security filter chain, authentication management, and CORS support
+                      Used to secure gateway endpoints and validate incoming requests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-        </dependency>
-
-        <!-- JWT Dependencies for Gateway JWT validation -->
+        <!-- JWT Dependencies: JSON Web Token parsing, validation, and signature verification
+             Purpose: Validates JWT tokens in Authorization headers before routing requests
+                      - jjwt-api: Core JWT API interfaces
+                      - jjwt-impl: Runtime implementation for creating/parsing JWTs
+                      - jjwt-jackson: JSON serialization/deserialization support
+             Use case: Extracts user claims (userId, role) from tokens and adds them as headers
+                       (X-User-Id) for downstream microservices -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
@@ -61,13 +76,19 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Spring Boot Test: Testing framework with JUnit, Mockito, and Spring test utilities
+             Purpose: Enables unit and integration testing of gateway filters, routes, and security
+                      Only included during test execution (not in production runtime) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
         
-        <!-- Springdoc OpenAPI for Gateway (WebFlux) -->
+        <!-- Springdoc OpenAPI: Automatic API documentation aggregation for microservices
+             Purpose: Aggregates OpenAPI documentation from all backend microservices
+                      Provides unified Swagger UI at gateway level (http://localhost:8080/swagger-ui.html)
+                      Uses WebFlux-compatible version for reactive gateway -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>

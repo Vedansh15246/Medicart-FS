@@ -1,191 +1,69 @@
+// Package declaration for the filter class
 package com.medicart.gateway.filter;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.security.Keys;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.gateway.filter.GatewayFilterChain;
-import org.springframework.cloud.gateway.filter.GlobalFilter;
-import org.springframework.core.Ordered;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.stereotype.Component;
-import org.springframework.web.server.ServerWebExchange;
-import reactor.core.publisher.Mono;
 
-import javax.crypto.SecretKey;
-import java.util.List;
+// Import JWT and Spring dependencies
+import io.jsonwebtoken.Jwts; // For parsing JWT tokens
+import io.jsonwebtoken.security.Keys; // For creating signing keys
+import org.springframework.beans.factory.annotation.Value; // For injecting property values
+import org.springframework.cloud.gateway.filter.GatewayFilterChain; // For chaining filters
+import org.springframework.cloud.gateway.filter.GlobalFilter; // For global filter interface
+import org.springframework.core.Ordered; // For filter order
+import org.springframework.http.HttpHeaders; // For HTTP header constants
+import org.springframework.http.HttpStatus; // For HTTP status codes
+import org.springframework.stereotype.Component; // For marking as Spring component
+import org.springframework.web.server.ServerWebExchange; // For web exchange object
+import reactor.core.publisher.Mono; // For reactive programming
 
 /**
  * Gateway-level JWT authentication filter.
- * Validates JWT tokens, extracts user info, and forwards
- * X-User-Id, X-User-Email, X-User-Role headers to downstream services.
+ * This filter runs on every request through the API Gateway.
+ * It validates JWT tokens for protected endpoints.
  * Public endpoints are excluded from JWT validation.
  */
-@Component
-public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
 
-    private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
+@Component // Registers this class as a Spring bean
+public class JwtAuthenticationFilter implements GlobalFilter, Ordered { // Implements a global filter with order
 
-    @Value("${jwt.secret}")
+
+    @Value("${jwt.secret}") // Injects the JWT secret from application.properties
     private String secret;
 
-    /** Paths that never require a JWT token */
-    private static final List<String> PUBLIC_PATHS = List.of(
-            "/auth/login",
-            "/auth/register",
-            "/auth/forgot-password",
-            "/auth/reset-password",
-            "/auth/validate",
-            "/auth/health",
-            "/auth/otp/",
-            "/api/auth/login",
-            "/api/auth/register",
-            "/api/auth/forgot-password",
-            "/api/auth/reset-password",
-            "/api/auth/validate",
-            "/api/auth/health",
-            "/api/auth/otp/",
-            "/health",
-            "/v3/api-docs",
-            "/swagger-ui",
-            "/webjars/"
-    );
-
-    /** Paths that are public only for GET requests */
-    private static final List<String> PUBLIC_GET_PATHS = List.of(
-            "/medicines",
-            "/batches"
-    );
 
     @Override
     public int getOrder() {
-        // Run before routing filter but after CORS
-        return -1;
+        return -1; // Sets filter priority (lower runs earlier)
     }
+
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        ServerHttpRequest request = exchange.getRequest();
-        String path = request.getURI().getPath();
-        HttpMethod method = request.getMethod();
-
-        // Skip JWT validation for public paths
-        if (isPublicPath(path, method)) {
-            return chain.filter(exchange);
+        // ServerWebExchange exchange: Represents the entire HTTP request and response in a reactive (non-blocking) way.
+        // It gives you access to request details (headers, path, etc.) and lets you modify the response.
+        // GatewayFilterChain chain: Represents the chain of filters in the API Gateway.
+        // You call chain.filter(exchange) to pass the request to the next filter or the backend service.
+        String path = exchange.getRequest().getURI().getPath(); // Get the request path     xchange is an object that represents the entire HTTP request and response in the API Gateway. It lets you read details about the incoming request and modify the outgoing response
+        // Allow all /auth/* and documentation endpoints without JWT
+        if (path.startsWith("/auth/") || path.startsWith("/v3/api-docs") || path.startsWith("/swagger-ui") || path.startsWith("/webjars/")) {
+            return chain.filter(exchange); // Let public requests through
+                                            //“I’m done with my filter’s logic, please continue with the rest of the filters and eventually send the request to the backend.”
         }
-
-        // Extract Authorization header
-        String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-
-        if (authHeader == null || authHeader.isBlank()) {
-            log.warn("Missing or invalid Authorization header for {} {}", method, path);
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
+        // Require JWT for all other endpoints
+        String authHeader = exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION); // Get Authorization header
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) { // If missing or not Bearer
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED); // Set 401 Unauthorized
+            return exchange.getResponse().setComplete(); // End response
         }
-
-        String token;
-        if (authHeader.regionMatches(true, 0, "Bearer ", 0, 7)) {
-            token = authHeader.substring(7);
-        } else {
-            // Accept raw tokens without the Bearer prefix to be more tolerant of clients.
-            token = authHeader;
-        }
-
-        if (token.isBlank()) {
-            log.warn("Missing JWT token value for {} {}", method, path);
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
-        }
-
+        String token = authHeader.substring(7); // Remove 'Bearer ' prefix to get token
         try {
-            Claims claims = Jwts.parser()
-                    .verifyWith(getSigningKey())
-                    .build()
-                    .parseSignedClaims(token)
-                    .getPayload();
-
-            String email = claims.getSubject();
-            String role = claims.get("scope", String.class);
-            Object userIdObj = claims.get("userId");
-
-            String userId = (userIdObj != null) ? userIdObj.toString() : "";
-
-            log.debug("JWT valid - userId: {}, email: {}, role: {}, path: {}", userId, email, role, path);
-
-            // Mutate the request to add user info headers for downstream services.
-            // Only add X-User-Id when we actually have a value to avoid empty header issues downstream.
-            ServerHttpRequest.Builder reqBuilder = request.mutate();
-            if (userId != null && !userId.isBlank()) {
-                reqBuilder.header("X-User-Id", userId);
-            }
-            reqBuilder.header("X-User-Email", email != null ? email : "");
-            reqBuilder.header("X-User-Role", role != null ? role : "");
-
-            ServerHttpRequest mutatedRequest = reqBuilder.build();
-
-            log.debug("Forwarding headers - X-User-Id: {}, X-User-Email: {}, X-User-Role: {}",
-                    userId, email, role);
-
-            // Check role-based access for admin-only endpoints
-            if (isAdminOnly(path, method) && !"ROLE_ADMIN".equals(role)) {
-                log.warn("Access denied - user {} with role {} attempted {} {}", email, role, method, path);
-                exchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
-                return exchange.getResponse().setComplete();
-            }
-
-            return chain.filter(exchange.mutate().request(mutatedRequest).build());
-
+            // Validate the JWT token signature using the secret
+            Jwts.parser().verifyWith(Keys.hmacShaKeyFor(secret.getBytes())).build().parseSignedClaims(token);
+            return chain.filter(exchange); // Token valid, continue filter chain
         } catch (Exception e) {
-            log.warn("JWT validation failed for {} {}: {}", method, path, e.getMessage());
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED); // Invalid token, set 401
+            return exchange.getResponse().setComplete(); // End response
         }
     }
-
-    private boolean isPublicPath(String path, HttpMethod method) {
-        // Always-public paths (any method)
-        for (String publicPath : PUBLIC_PATHS) {
-            if (path.equals(publicPath) || path.startsWith(publicPath)) {
-                return true;
-            }
-        }
-
-        // GET-only public paths (medicines, batches catalog)
-        if (HttpMethod.GET.equals(method)) {
-            for (String getPath : PUBLIC_GET_PATHS) {
-                if (path.equals(getPath) || path.startsWith(getPath + "/") || path.startsWith(getPath + "?")) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Checks if the endpoint requires ADMIN role.
-     * POST/PUT/DELETE on /medicines/** and DELETE on /batches/** require ADMIN.
-     */
-    private boolean isAdminOnly(String path, HttpMethod method) {
-        // POST/PUT/DELETE medicines → ADMIN only
-        if ((path.startsWith("/medicines") || path.startsWith("/api/medicines"))
-                && (HttpMethod.POST.equals(method) || HttpMethod.PUT.equals(method) || HttpMethod.DELETE.equals(method))) {
-            return true;
-        }
-        // DELETE batches → ADMIN only
-        if((path.startsWith("/batches") || path.startsWith("/api/batches"))
-                && HttpMethod.DELETE.equals(method)) {
-            return true;
-        }
-        return false;
-    }
-
-    private SecretKey getSigningKey() {
-        return Keys.hmacShaKeyFor(secret.getBytes());
-    }
+    // filter: Checks if the request is public or protected. If protected, validates JWT. Allows or blocks request accordingly.
+    // getOrder: Sets the priority of this filter in the filter chain.
 }

@@ -1,24 +1,36 @@
+/*
+ * ========================================
+ * OTP CONTROLLER - OTP VERIFICATION APIs
+ * ========================================
+ * This controller handles OTP (One-Time Password) operations for email verification.
+ * 
+ * BASE URL: /auth/otp
+ * 
+ * WHAT THIS CONTROLLER DOES:
+ * ✅ Send OTP to email (for verification)
+ * ✅ Verify OTP and complete registration
+ * 
+ * USE CASES:
+ * - Email verification during registration
+ * - Two-factor authentication
+ * - Secure login flow
+ */
+
 package com.medicart.auth.controller;
 
 import com.medicart.auth.service.AuthService;
 import com.medicart.auth.service.OtpService;
 import com.medicart.common.dto.LoginResponse;
 import com.medicart.common.dto.RegisterRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * OTP endpoints for email verification during registration and login
- */
 @RestController
 @RequestMapping("/auth/otp")
 public class OtpController {
-    private static final Logger log = LoggerFactory.getLogger(OtpController.class);
 
     @Autowired
     private OtpService otpService;
@@ -26,8 +38,17 @@ public class OtpController {
     @Autowired
     private AuthService authService;
 
-    /**
-     * Send OTP to email (mocked - returns OTP in response for demo)
+    /*
+     * SEND OTP TO EMAIL
+     * Endpoint: POST /auth/otp/send
+     * Access: Public
+     * 
+     * Generates 6-digit OTP and sends to user's email
+     * 
+     * Request: {"email": "user@example.com"}
+     * Response: {"message": "OTP sent", "demoOtp": "123456", "expiryMinutes": 10}
+     * 
+     * NOTE: In demo mode, OTP is returned in response and logged to console
      */
     @PostMapping("/send")
     public ResponseEntity<Map<String, Object>> sendOtp(@RequestBody Map<String, String> request) {
@@ -40,20 +61,36 @@ public class OtpController {
                 );
             }
 
-            log.info("Sending OTP to email: {}", email);
             Map<String, Object> response = otpService.generateAndSendOtp(email);
             
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            log.error("Failed to send OTP", e);
             return ResponseEntity.badRequest().body(
                 Map.of("error", "Failed to send OTP: " + e.getMessage())
             );
         }
     }
 
-    /**
-     * Verify OTP and complete registration/login
+    /*
+     * VERIFY OTP AND COMPLETE REGISTRATION
+     * Endpoint: POST /auth/otp/verify
+     * Access: Public
+     * 
+     * Verifies OTP code and completes user registration if additional data provided
+     * 
+     * FOR REGISTRATION:
+     * Request: {
+     *   "email": "user@example.com",
+     *   "otp": "123456",
+     *   "fullName": "John Doe",
+     *   "phone": "1234567890",
+     *   "password": "pass123"
+     * }
+     * Response: LoginResponse with JWT token
+     * 
+     * FOR SIMPLE VERIFICATION:
+     * Request: {"email": "user@example.com", "otp": "123456"}
+     * Response: {"message": "Email verified successfully", "status": "verified"}
      */
     @PostMapping("/verify")
     public ResponseEntity<?> verifyOtp(@RequestBody Map<String, Object> request) {
@@ -73,26 +110,22 @@ public class OtpController {
                 );
             }
 
-            log.info("Verifying OTP for email: {}", email);
 
             // Verify OTP
             if (!otpService.verifyOtp(email, otp)) {
-                log.error("OTP verification failed for email: {}", email);
                 return ResponseEntity.badRequest().body(
                     Map.of("error", "Invalid or expired OTP")
                 );
             }
 
-            log.info("OTP verified successfully for email: {}", email);
 
-            // Check if this is registration or login
+            // Check if this is registration or simple verification
             String fullName = (String) request.get("fullName");
             String phone = (String) request.get("phone");
             String password = (String) request.get("password");
 
             if (fullName != null && phone != null && password != null) {
-                // Registration flow
-                log.info("Processing registration for email: {}", email);
+                // Registration flow - create user account
                 
                 RegisterRequest registerRequest = RegisterRequest.builder()
                         .email(email)
@@ -104,7 +137,7 @@ public class OtpController {
                 LoginResponse response = authService.register(registerRequest);
                 return ResponseEntity.ok(response);
             } else {
-                // Login flow (not implemented in this version)
+                // Simple verification - just confirm OTP is valid
                 Map<String, Object> response = new HashMap<>();
                 response.put("message", "Email verified successfully");
                 response.put("email", email);
@@ -112,7 +145,6 @@ public class OtpController {
                 return ResponseEntity.ok(response);
             }
         } catch (Exception e) {
-            log.error("OTP verification error", e);
             return ResponseEntity.badRequest().body(
                 Map.of("error", e.getMessage())
             );
